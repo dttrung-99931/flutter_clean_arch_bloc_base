@@ -80,6 +80,7 @@ app.*.map.json
 
 # Firebase config key
 lib/firebase_options.dart
+firebase.json
 
 # Plugins
 plugins/heresdk-explore-flutter/

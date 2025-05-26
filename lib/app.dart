@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:easy_localization/easy_localization.dart';
-import 'package:evievm_app/core/utils/storage.dart';
 import 'package:evievm_app/core/utils/utils.dart';
 import 'package:evievm_app/global.dart';
 import 'package:evievm_app/src/config/app_bloc_observer.dart';
@@ -10,7 +9,6 @@ import 'package:evievm_app/src/config/app_nav_observer.dart';
 import 'package:evievm_app/src/config/app_router.dart';
 import 'package:evievm_app/src/config/app_translation.dart';
 import 'package:evievm_app/src/config/di/injection.dart';
-import 'package:evievm_app/src/config/firebase_config.dart';
 import 'package:evievm_app/src/config/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -39,7 +37,6 @@ Future<void> setupApp({bool isTest = false}) async {
   await ScreenUtil.ensureScreenSize();
   await configureDependencies();
   HttpOverrides.global = PandaHttpOverrides();
-  await FirebaseConfig.config();
   if (AppConfig.config.logBloc) {
     Bloc.observer = AppBlocObserver();
   }

@@ -9,14 +9,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "82.0.0"
-  _flutterfire_internals:
-    dependency: transitive
-    description:
-      name: _flutterfire_internals
-      sha256: de9ecbb3ddafd446095f7e833c853aff2fa1682b017921fe63a833f9d6f0e422
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.3.54"
   analyzer:
     dependency: transitive
     description:
@@ -179,7 +171,7 @@ packages:
     source: hosted
     version: "2.3.0"
   carousel_slider:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: carousel_slider
       sha256: "7b006ec356205054af5beaef62e2221160ea36b90fb70a35e4deacd49d0349ae"
@@ -370,14 +362,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.1"
-  dotted_border:
-    dependency: "direct main"
-    description:
-      name: dotted_border
-      sha256: "108837e11848ca776c53b30bc870086f84b62ed6e01c503ed976e8f8c7df9c04"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.1.0"
   easy_localization:
     dependency: "direct main"
     description:
@@ -467,54 +451,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "8.3.7"
-  firebase_core:
-    dependency: "direct main"
-    description:
-      name: firebase_core
-      sha256: "017d17d9915670e6117497e640b2859e0b868026ea36bf3a57feb28c3b97debe"
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.13.0"
-  firebase_core_platform_interface:
-    dependency: transitive
-    description:
-      name: firebase_core_platform_interface
-      sha256: d7253d255ff10f85cfd2adaba9ac17bae878fa3ba577462451163bd9f1d1f0bf
-      url: "https://pub.dev"
-    source: hosted
-    version: "5.4.0"
-  firebase_core_web:
-    dependency: transitive
-    description:
-      name: firebase_core_web
-      sha256: "129a34d1e0fb62e2b488d988a1fc26cc15636357e50944ffee2862efe8929b23"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.22.0"
-  firebase_messaging:
-    dependency: "direct main"
-    description:
-      name: firebase_messaging
-      sha256: "5f8918848ee0c8eb172fc7698619b2bcd7dda9ade8b93522c6297dd8f9178356"
-      url: "https://pub.dev"
-    source: hosted
-    version: "15.2.5"
-  firebase_messaging_platform_interface:
-    dependency: transitive
-    description:
-      name: firebase_messaging_platform_interface
-      sha256: "0bbea00680249595fc896e7313a2bd90bd55be6e0abbe8b9a39d81b6b306acb6"
-      url: "https://pub.dev"
-    source: hosted
-    version: "4.6.5"
-  firebase_messaging_web:
-    dependency: transitive
-    description:
-      name: firebase_messaging_web
-      sha256: ffb392ce2a7e8439cd0a9a80e3c702194e73c927e5c7b4f0adf6faa00b245b17
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.10.5"
   fixnum:
     dependency: transitive
     description:
@@ -616,30 +552,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.0"
-  flutter_local_notifications:
-    dependency: "direct main"
-    description:
-      name: flutter_local_notifications
-      sha256: "674173fd3c9eda9d4c8528da2ce0ea69f161577495a9cc835a2a4ecd7eadeb35"
-      url: "https://pub.dev"
-    source: hosted
-    version: "17.2.4"
-  flutter_local_notifications_linux:
-    dependency: transitive
-    description:
-      name: flutter_local_notifications_linux
-      sha256: c49bd06165cad9beeb79090b18cd1eb0296f4bf4b23b84426e37dd7c027fc3af
-      url: "https://pub.dev"
-    source: hosted
-    version: "4.0.1"
-  flutter_local_notifications_platform_interface:
-    dependency: transitive
-    description:
-      name: flutter_local_notifications_platform_interface
-      sha256: "85f8d07fe708c1bdcf45037f2c0109753b26ae077e9d9e899d55971711a4ea66"
-      url: "https://pub.dev"
-    source: hosted
-    version: "7.2.0"
   flutter_localizations:
     dependency: transitive
     description: flutter
@@ -661,14 +573,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.28"
-  flutter_rating_bar:
-    dependency: "direct main"
-    description:
-      name: flutter_rating_bar
-      sha256: d2af03469eac832c591a1eba47c91ecc871fe5708e69967073c043b2d775ed93
-      url: "https://pub.dev"
-    source: hosted
-    version: "4.0.1"
   flutter_screenutil:
     dependency: "direct main"
     description:
@@ -677,14 +581,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "5.9.3"
-  flutter_spinkit:
-    dependency: transitive
-    description:
-      name: flutter_spinkit
-      sha256: d2696eed13732831414595b98863260e33e8882fc069ee80ec35d4ac9ddb0472
-      url: "https://pub.dev"
-    source: hosted
-    version: "5.2.1"
   flutter_svg:
     dependency: "direct main"
     description:
@@ -719,14 +615,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.0"
-  geolocator:
-    dependency: transitive
-    description:
-      name: geolocator
-      sha256: "149876cc5207a0f5daf4fdd3bfcf0a0f27258b3fe95108fa084f527ad0568f1b"
-      url: "https://pub.dev"
-    source: hosted
-    version: "12.0.0"
   geolocator_android:
     dependency: "direct main"
     description:
@@ -735,14 +623,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.6.1"
-  geolocator_apple:
-    dependency: transitive
-    description:
-      name: geolocator_apple
-      sha256: dbdd8789d5aaf14cf69f74d4925ad1336b4433a6efdf2fce91e8955dc921bf22
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.3.13"
   geolocator_platform_interface:
     dependency: transitive
     description:
@@ -751,22 +631,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.2.6"
-  geolocator_web:
-    dependency: transitive
-    description:
-      name: geolocator_web
-      sha256: b1ae9bdfd90f861fde8fd4f209c37b953d65e92823cb73c7dee1fa021b06f172
-      url: "https://pub.dev"
-    source: hosted
-    version: "4.1.3"
-  geolocator_windows:
-    dependency: transitive
-    description:
-      name: geolocator_windows
-      sha256: "175435404d20278ffd220de83c2ca293b73db95eafbdc8131fe8609be1421eb6"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.2.5"
   get_it:
     dependency: "direct main"
     description:
@@ -791,15 +655,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.3.2"
-  here_panda_map:
-    dependency: "direct main"
-    description:
-      path: "."
-      ref: HEAD
-      resolved-ref: "4077e753ef7849439e6a6f18129ef6cb31159e59"
-      url: "https://github.com/dttrung-99931/HerePandaMap.git"
-    source: git
-    version: "0.0.1"
   here_sdk:
     dependency: "direct overridden"
     description:
@@ -999,14 +854,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.3.0"
-  maps_toolkit:
-    dependency: transitive
-    description:
-      name: maps_toolkit
-      sha256: ea5915a8e66737471030cd3e44ba688cc45b932972d1a3b485eaa57c4b68ec28
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.1.0"
   matcher:
     dependency: transitive
     description:
@@ -1039,14 +886,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.0"
-  message_pack_dart:
-    dependency: transitive
-    description:
-      name: message_pack_dart
-      sha256: "71b9f0ff60e5896e60b337960bb535380d7dba3297b457ac763ccae807385b59"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.1"
   meta:
     dependency: transitive
     description:
@@ -1112,7 +951,7 @@ packages:
     source: hosted
     version: "2.2.0"
   package_info_plus:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: package_info_plus
       sha256: "7976bfe4c583170d6cdc7077e3237560b364149fcd268b5f53d95a991963b191"
@@ -1135,15 +974,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.3.3+7"
-  panda_map:
-    dependency: "direct main"
-    description:
-      path: "."
-      ref: HEAD
-      resolved-ref: "2c3d12601554ad3d9119845d6e4f408472a3eeb0"
-      url: "https://github.com/dttrung-99931/PandaMap.git"
-    source: git
-    version: "0.0.1"
   path:
     dependency: transitive
     description:
@@ -1152,14 +982,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.9.1"
-  path_drawing:
-    dependency: transitive
-    description:
-      name: path_drawing
-      sha256: bbb1934c0cbb03091af082a6389ca2080345291ef07a5fa6d6e078ba8682f977
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.1"
   path_parsing:
     dependency: transitive
     description:
@@ -1432,14 +1254,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.0"
-  signalr_netcore:
-    dependency: "direct main"
-    description:
-      name: signalr_netcore
-      sha256: f0726f7dea94ca7e08ee21366e9caf21350c9f7f48939994c51307eae16a678c
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.4.3"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -1533,22 +1347,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.4.0"
-  sse:
-    dependency: transitive
-    description:
-      name: sse
-      sha256: "4389a01d5bc7ef3e90fbc645f8e7c6d8711268adb1f511e14ae9c71de47ee32b"
-      url: "https://pub.dev"
-    source: hosted
-    version: "4.1.7"
-  sse_channel:
-    dependency: transitive
-    description:
-      name: sse_channel
-      sha256: "9aad5d4eef63faf6ecdefb636c0f857bd6f74146d2196087dcf4b17ab5b49b1b"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.1.1"
   stack_trace:
     dependency: transitive
     description:
@@ -1621,14 +1419,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.6.8"
-  timezone:
-    dependency: transitive
-    description:
-      name: timezone
-      sha256: "2236ec079a174ce07434e89fcd3fcda430025eb7692244139a9cf54fdcf1fc7d"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.9.4"
   timing:
     dependency: transitive
     description:
@@ -1637,14 +1427,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.2"
-  tuple:
-    dependency: transitive
-    description:
-      name: tuple
-      sha256: a97ce2013f240b2f3807bcbaf218765b6f301c3eff91092bcfa23a039e7dd151
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.2"
   typed_data:
     dependency: transitive
     description:
