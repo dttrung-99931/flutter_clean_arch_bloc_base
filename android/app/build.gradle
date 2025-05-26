@@ -1,0 +1,123 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin"
+    id "com.google.gms.google-services"
+}
+
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file('local.properties')
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withReader('UTF-8') { reader ->
+        localProperties.load(reader)
+    }
+}
+
+def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
+if (flutterVersionCode == null) {
+    flutterVersionCode = '1'
+}
+
+def flutterVersionName = localProperties.getProperty('flutter.versionName')
+if (flutterVersionName == null) {
+    flutterVersionName = '1.0'
+}
+
+android {
+    namespace "pantech.panshop_app"
+    compileSdkVersion 35
+    ndkVersion  "26.3.11579264"
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_18
+        targetCompatibility JavaVersion.VERSION_18
+
+        // Flag to enable support for the new language APIs
+        // TODO: Used in the furture if lcoal noti get eorror
+        coreLibraryDesugaringEnabled true
+    }
+
+    kotlinOptions {
+        jvmTarget = '18'
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    defaultConfig {
+        applicationId "pantech.panshop_app"
+        minSdkVersion 24 // HERE MAP SDK REQUIRED
+        targetSdkVersion 35
+        compileSdkVersion 35
+        versionCode flutterVersionCode.toInteger()
+        versionName flutterVersionName
+        multiDexEnabled true
+    }
+
+    signingConfigs {
+        production {
+            storeFile file('evm_keystore.jks')
+            keyAlias 'EVM'
+            keyPassword 'evm2023'
+            storePassword 'evm2023'
+        }
+        staging {
+            storeFile file('evm_staging_keystore.jks')
+            keyAlias 'EVM Staging'
+            keyPassword 'evmstg'
+            storePassword 'evmstg'
+        }
+        dev {
+            storeFile file('evm_dev_keystore.jks')
+            keyAlias 'EVM Dev'
+            keyPassword 'evmdev'
+            storePassword 'evmdev'
+        }
+    }
+
+    flavorDimensions "evmapp"
+
+    productFlavors {
+       dev {
+            dimension "evmapp"// TODO: change
+            applicationIdSuffix ".dev"
+            resValue "string", "app_name", "PanshopDev"
+            signingConfig signingConfigs.dev
+        }
+        staging {
+            dimension "evmapp"// TODO: change
+            applicationIdSuffix ".staging"
+            resValue "string", "app_name", "PanshopStaging"
+            signingConfig signingConfigs.staging
+        }
+        production {
+            dimension "evmapp"// TODO: change
+            applicationIdSuffix ".production"
+            resValue "string", "app_name", "Panshop"
+            signingConfig signingConfigs.production
+        }
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+        }
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+flutter {
+    source '../..'
+}
+
+dependencies {
+    implementation 'androidx.window:window:1.0.0'
+    implementation 'androidx.window:window-java:1.0.0'
+
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.0.3' // support for local notification
+}
