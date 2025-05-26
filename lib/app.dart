@@ -1,15 +1,15 @@
 import 'dart:io';
 
 import 'package:easy_localization/easy_localization.dart';
-import 'package:evievm_app/core/utils/utils.dart';
-import 'package:evievm_app/global.dart';
-import 'package:evievm_app/src/config/app_bloc_observer.dart';
-import 'package:evievm_app/src/config/app_config.dart';
-import 'package:evievm_app/src/config/app_nav_observer.dart';
-import 'package:evievm_app/src/config/app_router.dart';
-import 'package:evievm_app/src/config/app_translation.dart';
-import 'package:evievm_app/src/config/di/injection.dart';
-import 'package:evievm_app/src/config/theme/app_theme.dart';
+import 'package:base_project/core/utils/utils.dart';
+import 'package:base_project/global.dart';
+import 'package:base_project/src/config/app_bloc_observer.dart';
+import 'package:base_project/src/config/app_config.dart';
+import 'package:base_project/src/config/app_nav_observer.dart';
+import 'package:base_project/src/config/app_router.dart';
+import 'package:base_project/src/config/app_translation.dart';
+import 'package:base_project/src/config/di/injection.dart';
+import 'package:base_project/src/config/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';

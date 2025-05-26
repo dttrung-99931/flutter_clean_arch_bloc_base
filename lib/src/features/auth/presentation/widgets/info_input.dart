@@ -1,11 +1,11 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:easy_localization/easy_localization.dart';
-import 'package:evievm_app/core/utils/app_colors.dart';
-import 'package:evievm_app/core/utils/evm_colors.dart';
-import 'package:evievm_app/core/utils/extensions/num_extensions.dart';
-import 'package:evievm_app/src/config/theme/app_theme.dart';
-import 'package:evievm_app/src/shared/widgets/sized_box.dart';
-import 'package:evievm_app/src/shared/widgets/text_input.dart';
+import 'package:base_project/core/utils/app_colors.dart';
+import 'package:base_project/core/utils/evm_colors.dart';
+import 'package:base_project/core/utils/extensions/num_extensions.dart';
+import 'package:base_project/src/config/theme/app_theme.dart';
+import 'package:base_project/src/shared/widgets/sized_box.dart';
+import 'package:base_project/src/shared/widgets/text_input.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' as s;
 import 'package:flutter_screenutil/flutter_screenutil.dart';

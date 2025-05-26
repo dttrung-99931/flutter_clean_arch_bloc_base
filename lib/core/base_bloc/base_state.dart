@@ -1,8 +1,8 @@
-import 'package:evievm_app/core/failures/failures.dart';
+import 'package:base_project/core/failures/failures.dart';
 import 'package:equatable/equatable.dart';
-import 'package:evievm_app/core/utils/constants.dart';
-import 'package:evievm_app/core/utils/extensions/list_extension.dart';
-import 'package:evievm_app/core/utils/time_utils.dart';
+import 'package:base_project/core/utils/constants.dart';
+import 'package:base_project/core/utils/extensions/list_extension.dart';
+import 'package:base_project/core/utils/time_utils.dart';
 
 abstract class BaseState extends Equatable {}
 

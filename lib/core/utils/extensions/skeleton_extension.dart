@@ -1,5 +1,5 @@
-import 'package:evievm_app/core/utils/mixins/is_loading_mixin.dart';
-import 'package:evievm_app/core/utils/app_colors.dart';
+import 'package:base_project/core/utils/mixins/is_loading_mixin.dart';
+import 'package:base_project/core/utils/app_colors.dart';
 import 'package:flutter/widgets.dart';
 import 'package:redacted/redacted.dart';
 

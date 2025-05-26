@@ -1,10 +1,10 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:easy_localization/easy_localization.dart';
-import 'package:evievm_app/src/shared/widgets/sized_box.dart';
+import 'package:base_project/src/shared/widgets/sized_box.dart';
 import 'package:flutter/material.dart';
 
-import 'package:evievm_app/core/utils/evm_colors.dart';
-import 'package:evievm_app/src/config/theme/app_theme.dart';
+import 'package:base_project/core/utils/evm_colors.dart';
+import 'package:base_project/src/config/theme/app_theme.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // Widget display points, minutes, ... with optional top title

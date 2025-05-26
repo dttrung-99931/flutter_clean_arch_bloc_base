@@ -2,16 +2,16 @@
 import 'dart:async';
 
 import 'package:bloc/src/bloc.dart';
-import 'package:evievm_app/core/base_bloc/base_bloc.dart';
-import 'package:evievm_app/core/base_bloc/base_event.dart';
-import 'package:evievm_app/core/base_bloc/base_state.dart';
-import 'package:evievm_app/core/use_case/use_case.dart';
-import 'package:evievm_app/global.dart';
-import 'package:evievm_app/src/config/app_config.dart';
-import 'package:evievm_app/src/config/di/injection.dart';
-import 'package:evievm_app/src/features/auth/domain/dtos/login_response_dto.dart';
-import 'package:evievm_app/src/features/auth/domain/use_cases/login_usecase.dart';
-import 'package:evievm_app/src/features/auth/domain/use_cases/logout_usecase.dart';
+import 'package:base_project/core/base_bloc/base_bloc.dart';
+import 'package:base_project/core/base_bloc/base_event.dart';
+import 'package:base_project/core/base_bloc/base_state.dart';
+import 'package:base_project/core/use_case/use_case.dart';
+import 'package:base_project/global.dart';
+import 'package:base_project/src/config/app_config.dart';
+import 'package:base_project/src/config/di/injection.dart';
+import 'package:base_project/src/features/auth/domain/dtos/login_response_dto.dart';
+import 'package:base_project/src/features/auth/domain/use_cases/login_usecase.dart';
+import 'package:base_project/src/features/auth/domain/use_cases/logout_usecase.dart';
 import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
 

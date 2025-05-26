@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:evievm_app/global.dart';
-import 'package:evievm_app/src/features/auth/presentation/bloc/login/login_bloc.dart';
-import 'package:evievm_app/src/features/auth/presentation/screens/login_screen.dart';
+import 'package:base_project/global.dart';
+import 'package:base_project/src/features/auth/presentation/bloc/login/login_bloc.dart';
+import 'package:base_project/src/features/auth/presentation/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 

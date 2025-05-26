@@ -1,8 +1,8 @@
 import 'dart:math' as math;
 
 import 'package:easy_localization/easy_localization.dart';
-import 'package:evievm_app/core/utils/constants.dart';
-import 'package:evievm_app/core/utils/utils.dart';
+import 'package:base_project/core/utils/constants.dart';
+import 'package:base_project/core/utils/utils.dart';
 import 'package:flutter/services.dart';
 
 class Validate {

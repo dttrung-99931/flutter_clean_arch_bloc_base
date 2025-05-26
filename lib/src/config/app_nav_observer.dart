@@ -1,6 +1,6 @@
 import 'package:another_flushbar/flushbar_route.dart';
-import 'package:evievm_app/core/utils/extensions/list_extension.dart';
-import 'package:evievm_app/src/config/app_router.dart';
+import 'package:base_project/core/utils/extensions/list_extension.dart';
+import 'package:base_project/src/config/app_router.dart';
 import 'package:flutter/material.dart';
 
 class AppNavObserver extends NavigatorObserver {

@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:evievm_app/core/utils/log.dart';
-import 'package:evievm_app/core/utils/storage.dart';
+import 'package:base_project/core/utils/log.dart';
+import 'package:base_project/core/utils/storage.dart';
 import 'package:injectable/injectable.dart';
 
 @lazySingleton

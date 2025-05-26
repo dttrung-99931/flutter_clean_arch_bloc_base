@@ -1,5 +1,5 @@
-import 'package:evievm_app/core/utils/dimensions.dart';
-import 'package:evievm_app/global.dart';
+import 'package:base_project/core/utils/dimensions.dart';
+import 'package:base_project/global.dart';
 import 'package:flutter/material.dart';
 
 class AppColors {

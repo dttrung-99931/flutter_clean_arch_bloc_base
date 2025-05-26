@@ -57,23 +57,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.12.0"
-  audio_session:
-    dependency: transitive
-    description:
-      name: audio_session
-      sha256: f100a780050adf5c552d8b59d7af32a60229fda79c623e64004caf9368ccc748
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.2.1"
-  awesome_video_player:
-    dependency: "direct main"
-    description:
-      path: "."
-      ref: HEAD
-      resolved-ref: "0a0f3ab7cf0e835b8d362410be88319534e007b4"
-      url: "https://github.com/dttrung-99931/awesome_video_player.git"
-    source: git
-    version: "1.0.4"
   bloc:
     dependency: transitive
     description:
@@ -162,22 +145,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "8.9.5"
-  camerawesome:
-    dependency: "direct main"
-    description:
-      name: camerawesome
-      sha256: "043c0886997bccee96d67d5cdb7bd13f43965affaa6a804fc774d15e9451458f"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.3.0"
-  carousel_slider:
-    dependency: transitive
-    description:
-      name: carousel_slider
-      sha256: "7b006ec356205054af5beaef62e2221160ea36b90fb70a35e4deacd49d0349ae"
-      url: "https://pub.dev"
-    source: hosted
-    version: "5.0.0"
   change_app_package_name:
     dependency: "direct dev"
     description:
@@ -242,14 +209,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.19.1"
-  colorfilter_generator:
-    dependency: transitive
-    description:
-      name: colorfilter_generator
-      sha256: ccc2995e440b1d828d55d99150e7cad64624f3cb4a1e235000de3f93cf10d35c
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.0.8"
   connectivity_plus:
     dependency: "direct main"
     description:
@@ -418,23 +377,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.4"
-  ffmpeg_kit_flutter:
-    dependency: "direct main"
-    description:
-      path: "flutter/flutter"
-      ref: "upgrade/flutter-3.29.0"
-      resolved-ref: a50d0f9e4b171ae77eb799d8ccb90b3d89c35c9c
-      url: "https://github.com/dttrung-99931/ffmpeg-kit"
-    source: git
-    version: "6.0.3"
-  ffmpeg_kit_flutter_platform_interface:
-    dependency: transitive
-    description:
-      name: ffmpeg_kit_flutter_platform_interface
-      sha256: addf046ae44e190ad0101b2fde2ad909a3cd08a2a109f6106d2f7048b7abedee
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.2.1"
   file:
     dependency: transitive
     description:
@@ -599,14 +541,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_widget_from_html_core:
-    dependency: transitive
-    description:
-      name: flutter_widget_from_html_core
-      sha256: f77ea1aa1ba29a38fcce04483f44f12382f541b9e8c2150df37166c23bbbd30f
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.16.0"
   frontend_server_client:
     dependency: transitive
     description:
@@ -615,22 +549,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.0"
-  geolocator_android:
-    dependency: "direct main"
-    description:
-      name: geolocator_android
-      sha256: "7aefc530db47d90d0580b552df3242440a10fe60814496a979aa67aa98b1fd47"
-      url: "https://pub.dev"
-    source: hosted
-    version: "4.6.1"
-  geolocator_platform_interface:
-    dependency: transitive
-    description:
-      name: geolocator_platform_interface
-      sha256: "30cb64f0b9adcc0fb36f628b4ebf4f731a2961a0ebd849f4b56200205056fe67"
-      url: "https://pub.dev"
-    source: hosted
-    version: "4.2.6"
   get_it:
     dependency: "direct main"
     description:
@@ -655,13 +573,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.3.2"
-  here_sdk:
-    dependency: "direct overridden"
-    description:
-      path: "plugins/heresdk-explore-flutter"
-      relative: true
-    source: path
-    version: "4.22.2"
   html:
     dependency: transitive
     description:
@@ -710,30 +621,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.5.4"
-  image_cropper:
-    dependency: "direct main"
-    description:
-      name: image_cropper
-      sha256: "4e9c96c029eb5a23798da1b6af39787f964da6ffc78fd8447c140542a9f7c6fc"
-      url: "https://pub.dev"
-    source: hosted
-    version: "9.1.0"
-  image_cropper_for_web:
-    dependency: transitive
-    description:
-      name: image_cropper_for_web
-      sha256: fd81ebe36f636576094377aab32673c4e5d1609b32dec16fad98d2b71f1250a9
-      url: "https://pub.dev"
-    source: hosted
-    version: "6.1.0"
-  image_cropper_platform_interface:
-    dependency: transitive
-    description:
-      name: image_cropper_platform_interface
-      sha256: "6ca6b81769abff9a4dcc3bbd3d75f5dfa9de6b870ae9613c8cd237333a4283af"
-      url: "https://pub.dev"
-    source: hosted
-    version: "7.1.0"
   injectable:
     dependency: "direct main"
     description:
@@ -790,30 +677,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.9.5"
-  just_audio:
-    dependency: "direct main"
-    description:
-      name: just_audio
-      sha256: "90421d34e9ee9a407c3722e9db6a45c57b90620b51fcf3a172bae4c3c3278ed5"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.10.2"
-  just_audio_platform_interface:
-    dependency: transitive
-    description:
-      name: just_audio_platform_interface
-      sha256: "4cd94536af0219fa306205a58e78d67e02b0555283c1c094ee41e402a14a5c4a"
-      url: "https://pub.dev"
-    source: hosted
-    version: "4.5.0"
-  just_audio_web:
-    dependency: transitive
-    description:
-      name: just_audio_web
-      sha256: "8c7e779892e180cbc9ffb5a3c52f6e90e1cbbf4a63694cc450972a7edbd2bb6d"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.4.15"
   leak_tracker:
     dependency: transitive
     description:
@@ -870,14 +733,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.11.1"
-  matrix2d:
-    dependency: transitive
-    description:
-      name: matrix2d
-      sha256: "188718dd3bc2a31e372cfd0791b0f77f4f13ea76164147342cc378d9132949e7"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.4"
   measure_size:
     dependency: transitive
     description:
@@ -951,7 +806,7 @@ packages:
     source: hosted
     version: "2.2.0"
   package_info_plus:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: package_info_plus
       sha256: "7976bfe4c583170d6cdc7077e3237560b364149fcd268b5f53d95a991963b191"
@@ -1483,14 +1338,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.4"
-  video_thumbnail:
-    dependency: "direct main"
-    description:
-      name: video_thumbnail
-      sha256: "35fc82a7179be8cd55ae47fd90b2624ac6f217c5a5fa82de29a17310a940a8c3"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.5.5"
   visibility_detector:
     dependency: "direct main"
     description:
@@ -1507,22 +1354,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "14.3.1"
-  wakelock_plus:
-    dependency: transitive
-    description:
-      name: wakelock_plus
-      sha256: a474e314c3e8fb5adef1f9ae2d247e57467ad557fa7483a2b895bc1b421c5678
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.3.2"
-  wakelock_plus_platform_interface:
-    dependency: transitive
-    description:
-      name: wakelock_plus_platform_interface
-      sha256: e10444072e50dbc4999d7316fd303f7ea53d31c824aa5eb05d7ccbdd98985207
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.2.3"
   watcher:
     dependency: transitive
     description:
@@ -1597,4 +1428,4 @@ packages:
     version: "3.1.3"
 sdks:
   dart: ">=3.7.0 <4.0.0"
-  flutter: ">=3.28.0-0.1.pre"
+  flutter: ">=3.27.0"

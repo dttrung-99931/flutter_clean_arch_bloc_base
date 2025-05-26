@@ -1,4 +1,4 @@
-import 'package:evievm_app/src/features/auth/data/models/response/login_response_model.dart';
+import 'package:base_project/src/features/auth/data/models/response/login_response_model.dart';
 
 class LoginResponseDto {
   final String accessToken;

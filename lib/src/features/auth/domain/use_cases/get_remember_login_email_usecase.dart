@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
-import 'package:evievm_app/core/failures/failures.dart';
-import 'package:evievm_app/core/use_case/use_case.dart';
-import 'package:evievm_app/core/utils/error_handlers.dart';
-import 'package:evievm_app/core/utils/storage.dart';
+import 'package:base_project/core/failures/failures.dart';
+import 'package:base_project/core/use_case/use_case.dart';
+import 'package:base_project/core/utils/error_handlers.dart';
+import 'package:base_project/core/utils/storage.dart';
 import 'package:injectable/injectable.dart';
 
 @lazySingleton

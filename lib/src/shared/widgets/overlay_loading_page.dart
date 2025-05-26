@@ -1,6 +1,6 @@
-import 'package:evievm_app/core/utils/evm_colors.dart';
-import 'package:evievm_app/core/utils/extensions/num_extensions.dart';
-import 'package:evievm_app/src/shared/widgets/loading_widget.dart';
+import 'package:base_project/core/utils/evm_colors.dart';
+import 'package:base_project/core/utils/extensions/num_extensions.dart';
+import 'package:base_project/src/shared/widgets/loading_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

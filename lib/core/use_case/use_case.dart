@@ -1,7 +1,7 @@
-import 'package:evievm_app/core/failures/failures.dart';
+import 'package:base_project/core/failures/failures.dart';
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
-import 'package:evievm_app/core/utils/error_handlers.dart';
+import 'package:base_project/core/utils/error_handlers.dart';
 
 abstract class UseCase<Type, Params> {
   Type call(Params param);

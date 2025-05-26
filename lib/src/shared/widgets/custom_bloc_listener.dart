@@ -1,8 +1,8 @@
-import 'package:evievm_app/core/base_bloc/base_bloc.dart';
-import 'package:evievm_app/core/base_bloc/base_event.dart';
-import 'package:evievm_app/core/base_bloc/base_state.dart';
-import 'package:evievm_app/core/utils/overlay_utils.dart';
-import 'package:evievm_app/src/config/di/injection.dart';
+import 'package:base_project/core/base_bloc/base_bloc.dart';
+import 'package:base_project/core/base_bloc/base_event.dart';
+import 'package:base_project/core/base_bloc/base_state.dart';
+import 'package:base_project/core/utils/overlay_utils.dart';
+import 'package:base_project/src/config/di/injection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

@@ -1,8 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:evievm_app/global.dart';
-import 'package:evievm_app/src/shared/widgets/common/keep_page_alive.dart';
-import 'package:evievm_app/src/shared/widgets/common/refresh_widget.dart';
-import 'package:evievm_app/src/shared/widgets/hidden_on_scroll_bottom_bar.dart';
+import 'package:base_project/global.dart';
+import 'package:base_project/src/shared/widgets/common/keep_page_alive.dart';
+import 'package:base_project/src/shared/widgets/common/refresh_widget.dart';
+import 'package:base_project/src/shared/widgets/hidden_on_scroll_bottom_bar.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/app_colors.dart';

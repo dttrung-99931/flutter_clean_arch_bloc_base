@@ -1,6 +1,6 @@
-import 'package:evievm_app/core/ui/auto_reset_bloc_state.dart';
-import 'package:evievm_app/src/features/auth/presentation/bloc/login/login_bloc.dart';
-import 'package:evievm_app/src/features/home/presentation/bloc/home_bloc.dart';
+import 'package:base_project/core/ui/auto_reset_bloc_state.dart';
+import 'package:base_project/src/features/auth/presentation/bloc/login/login_bloc.dart';
+import 'package:base_project/src/features/home/presentation/bloc/home_bloc.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {

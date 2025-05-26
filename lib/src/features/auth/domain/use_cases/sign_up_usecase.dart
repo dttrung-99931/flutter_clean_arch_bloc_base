@@ -1,11 +1,11 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first, avoid_renaming_method_parameters
 import 'package:dartz/dartz.dart';
-import 'package:evievm_app/core/failures/failures.dart';
-import 'package:evievm_app/core/use_case/use_case.dart';
-import 'package:evievm_app/src/features/auth/data/models/request/sign_up_request_model.dart';
-import 'package:evievm_app/src/features/auth/data/models/response/user_detail_model.dart';
-import 'package:evievm_app/src/features/auth/domain/dtos/user_detail_dto.dart';
-import 'package:evievm_app/src/features/auth/domain/repositories/auth_repo.dart';
+import 'package:base_project/core/failures/failures.dart';
+import 'package:base_project/core/use_case/use_case.dart';
+import 'package:base_project/src/features/auth/data/models/request/sign_up_request_model.dart';
+import 'package:base_project/src/features/auth/data/models/response/user_detail_model.dart';
+import 'package:base_project/src/features/auth/domain/dtos/user_detail_dto.dart';
+import 'package:base_project/src/features/auth/domain/repositories/auth_repo.dart';
 import 'package:injectable/injectable.dart';
 
 @lazySingleton

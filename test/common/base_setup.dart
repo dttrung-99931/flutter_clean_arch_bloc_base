@@ -1,6 +1,6 @@
-import 'package:evievm_app/core/utils/storage.dart';
-import 'package:evievm_app/main_dev_home_wifi.dart';
-import 'package:evievm_app/src/config/di/injection.dart';
+import 'package:base_project/core/utils/storage.dart';
+import 'package:base_project/main_dev_home_wifi.dart';
+import 'package:base_project/src/config/di/injection.dart';
 import 'package:get_it/get_it.dart';
 import 'package:mockito/annotations.dart';
 

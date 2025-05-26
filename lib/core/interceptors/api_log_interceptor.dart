@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:evievm_app/core/utils/log.dart';
+import 'package:base_project/core/utils/log.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../src/config/app_config.dart';

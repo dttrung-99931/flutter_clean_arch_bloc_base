@@ -1,4 +1,4 @@
-import 'package:evievm_app/core/utils/evm_colors.dart';
+import 'package:base_project/core/utils/evm_colors.dart';
 import 'package:flutter/cupertino.dart';
 
 class CustomCard extends StatelessWidget {

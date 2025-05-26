@@ -1,10 +1,10 @@
 import 'dart:developer';
 
-import 'package:evievm_app/core/utils/assets/assets.dart';
-import 'package:evievm_app/core/utils/evm_colors.dart';
-import 'package:evievm_app/core/utils/extensions/ui_extensions.dart';
-import 'package:evievm_app/core/utils/format_utils.dart';
-import 'package:evievm_app/src/config/theme/app_theme.dart';
+import 'package:base_project/core/utils/assets/assets.dart';
+import 'package:base_project/core/utils/evm_colors.dart';
+import 'package:base_project/core/utils/extensions/ui_extensions.dart';
+import 'package:base_project/core/utils/format_utils.dart';
+import 'package:base_project/src/config/theme/app_theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

@@ -2,9 +2,9 @@ import 'dart:io';
 
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
-import 'package:evievm_app/core/model/paginated_list.dart';
-import 'package:evievm_app/core/utils/log.dart';
-import 'package:evievm_app/core/utils/utils.dart';
+import 'package:base_project/core/model/paginated_list.dart';
+import 'package:base_project/core/utils/log.dart';
+import 'package:base_project/core/utils/utils.dart';
 
 import '../failures/failures.dart';
 import '../model/base_response.dart';

@@ -1,6 +1,6 @@
 import 'package:another_flushbar/flushbar_route.dart';
-import 'package:evievm_app/src/config/app_nav_observer.dart';
-import 'package:evievm_app/src/features/auth/domain/dtos/user_detail_dto.dart';
+import 'package:base_project/src/config/app_nav_observer.dart';
+import 'package:base_project/src/features/auth/domain/dtos/user_detail_dto.dart';
 import 'package:flutter/material.dart';
 
 import 'src/features/main/presentation/blocs/main/main_bloc.dart';

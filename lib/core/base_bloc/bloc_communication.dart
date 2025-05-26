@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:evievm_app/core/base_bloc/base_bloc.dart';
-import 'package:evievm_app/core/base_bloc/base_state.dart';
-import 'package:evievm_app/src/config/di/injection.dart';
+import 'package:base_project/core/base_bloc/base_bloc.dart';
+import 'package:base_project/core/base_bloc/base_state.dart';
+import 'package:base_project/src/config/di/injection.dart';
 import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
 

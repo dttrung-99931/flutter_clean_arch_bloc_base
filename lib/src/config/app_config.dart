@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:evievm_app/main.dart';
-import 'package:evievm_app/main_dev.dart';
-import 'package:evievm_app/main_staging.dart';
+import 'package:base_project/main.dart';
+import 'package:base_project/main_dev.dart';
+import 'package:base_project/main_staging.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:package_info_plus/package_info_plus.dart';

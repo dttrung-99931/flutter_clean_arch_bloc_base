@@ -1,6 +1,5 @@
-
 import 'package:dartz/dartz.dart';
-import 'package:evievm_app/core/failures/failures.dart';
+import 'package:base_project/core/failures/failures.dart';
 
 import 'log.dart';
 

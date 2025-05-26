@@ -1,6 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:evievm_app/core/utils/app_colors.dart';
-import 'package:evievm_app/src/config/theme/app_theme.dart';
+import 'package:base_project/core/utils/app_colors.dart';
+import 'package:base_project/src/config/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 class AppCustomCheckBox extends StatelessWidget {

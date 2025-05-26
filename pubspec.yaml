@@ -1,6 +1,6 @@
-name: evievm_app
+name: base_project
 
-description: EVM
+description: Flutter Clean Architecture Bloc Base Project
 
 publish_to: "none"
 
@@ -27,6 +27,7 @@ dependencies:
   easy_localization: ^3.0.1
   retrofit: ">=4.0.0 <5.0.0"
   file_picker: ^8.0.3
+  package_info_plus: ^8.3.0
   
   # --------------- UI ---------------
   extended_image: ^9.1.0
@@ -41,38 +42,10 @@ dependencies:
   redacted: ^1.0.13
   # Get backgorund color of images
   palette_generator: ^0.3.3
-  # Crop, scale product image...
-  image_cropper: ^9.1.0
-
-  camerawesome: ^2.3.0
-  # Fix compileSdkVersion is not specified error of geolocator_android
-  geolocator_android: 4.6.1
-  # awesome_video_player: ^1.0.4
-  awesome_video_player:
-    git: https://github.com/dttrung-99931/awesome_video_player.git
-    
-  # video_player: ^2.9.5
-  # Get thumnail image of a video
-  video_thumbnail: ^0.5.3
   preload_page_view: ^0.2.0
   visibility_detector: ^0.4.0+2
-  just_audio: ^0.10.1
-  
-  # Custom ffmpeg lib for video editting, the original one was retired
-  ffmpeg_kit_flutter:
-    git:
-      url: https://github.com/dttrung-99931/ffmpeg-kit
-      path: flutter/flutter
-      ref: upgrade/flutter-3.29.0 
-  
-  # Used to download panmusic & caching downloaded panmusic
   flutter_cache_manager: ^3.4.1
   flutter_dotenv: ^5.2.1
-
-
-dependency_overrides:
-  here_sdk:
-    path: plugins/heresdk-explore-flutter # 4.22.2
 
 dev_dependencies:
   flutter_test:

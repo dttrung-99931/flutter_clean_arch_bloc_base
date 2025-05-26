@@ -1,4 +1,4 @@
-import 'package:evievm_app/core/model/base_response.dart';
+import 'package:base_project/core/model/base_response.dart';
 
 class PaginationDto {
   PaginationDto({

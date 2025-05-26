@@ -1,14 +1,14 @@
 import 'package:bloc/src/bloc.dart';
 import 'dart:async';
 
-import 'package:evievm_app/core/base_bloc/base_bloc.dart';
-import 'package:evievm_app/core/base_bloc/base_event.dart';
-import 'package:evievm_app/core/base_bloc/base_state.dart';
-import 'package:evievm_app/core/utils/time_utils.dart';
-import 'package:evievm_app/src/config/di/injection.dart';
-import 'package:evievm_app/src/features/auth/data/models/request/sign_up_request_model.dart';
-import 'package:evievm_app/src/features/auth/domain/dtos/user_detail_dto.dart';
-import 'package:evievm_app/src/features/auth/domain/use_cases/sign_up_usecase.dart';
+import 'package:base_project/core/base_bloc/base_bloc.dart';
+import 'package:base_project/core/base_bloc/base_event.dart';
+import 'package:base_project/core/base_bloc/base_state.dart';
+import 'package:base_project/core/utils/time_utils.dart';
+import 'package:base_project/src/config/di/injection.dart';
+import 'package:base_project/src/features/auth/data/models/request/sign_up_request_model.dart';
+import 'package:base_project/src/features/auth/domain/dtos/user_detail_dto.dart';
+import 'package:base_project/src/features/auth/domain/use_cases/sign_up_usecase.dart';
 import 'package:flutter/widgets.dart';
 import 'package:injectable/injectable.dart';
 

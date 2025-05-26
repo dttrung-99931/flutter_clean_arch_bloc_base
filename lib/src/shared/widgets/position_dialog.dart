@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:evievm_app/core/utils/evm_colors.dart';
-import 'package:evievm_app/global.dart';
+import 'package:base_project/core/utils/evm_colors.dart';
+import 'package:base_project/global.dart';
 
 class PositionDialog extends StatelessWidget {
   const PositionDialog({

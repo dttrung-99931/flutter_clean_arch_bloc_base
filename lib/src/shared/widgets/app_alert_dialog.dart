@@ -1,10 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:evievm_app/core/utils/app_colors.dart';
-import 'package:evievm_app/core/utils/extensions/num_extensions.dart';
-import 'package:evievm_app/core/utils/extensions/ui_extensions.dart';
-import 'package:evievm_app/global.dart';
-import 'package:evievm_app/src/shared/widgets/neutral_button.dart';
-import 'package:evievm_app/src/shared/widgets/positive_button.dart';
+import 'package:base_project/core/utils/app_colors.dart';
+import 'package:base_project/core/utils/extensions/num_extensions.dart';
+import 'package:base_project/core/utils/extensions/ui_extensions.dart';
+import 'package:base_project/global.dart';
+import 'package:base_project/src/shared/widgets/neutral_button.dart';
+import 'package:base_project/src/shared/widgets/positive_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../config/theme/app_theme.dart';

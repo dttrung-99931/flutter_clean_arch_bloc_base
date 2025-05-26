@@ -1,8 +1,8 @@
-// import 'package:evievm_app/core/utils/constants.dart';
-// import 'package:evievm_app/core/utils/extensions/list_extension.dart';
-// import 'package:evievm_app/src/config/di/injection.dart';
-// import 'package:evievm_app/src/features/home/presentation/bloc/home_bloc.dart';
-// import 'package:evievm_app/src/shared/widgets/custom_bloc_builder.dart';
+// import 'package:base_project/core/utils/constants.dart';
+// import 'package:base_project/core/utils/extensions/list_extension.dart';
+// import 'package:base_project/src/config/di/injection.dart';
+// import 'package:base_project/src/features/home/presentation/bloc/home_bloc.dart';
+// import 'package:base_project/src/shared/widgets/custom_bloc_builder.dart';
 // import 'package:flutter/material.dart';
 // import '../../../../../core/utils/app_colors.dart';
 // import '../../../../../core/utils/dummy_data.dart';

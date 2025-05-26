@@ -1,5 +1,5 @@
-import 'package:evievm_app/core/utils/assets/assets.dart';
-import 'package:evievm_app/core/utils/encode_utils.dart';
+import 'package:base_project/core/utils/assets/assets.dart';
+import 'package:base_project/core/utils/encode_utils.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 

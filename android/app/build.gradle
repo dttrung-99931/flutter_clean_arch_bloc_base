@@ -46,7 +46,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "pantech.panshop_app"
+        applicationId "flutter.bloc.clean_arch.base"
         minSdkVersion 24 // HERE MAP SDK REQUIRED
         targetSdkVersion 35
         compileSdkVersion 35

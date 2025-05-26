@@ -1,10 +1,10 @@
 import 'package:another_flushbar/flushbar.dart';
-import 'package:evievm_app/core/utils/app_colors.dart';
-import 'package:evievm_app/core/utils/extensions/num_extensions.dart';
-import 'package:evievm_app/core/utils/extensions/ui_extensions.dart';
-import 'package:evievm_app/global.dart';
-import 'package:evievm_app/src/config/theme/app_theme.dart';
-import 'package:evievm_app/src/shared/widgets/overlay_loading_page.dart';
+import 'package:base_project/core/utils/app_colors.dart';
+import 'package:base_project/core/utils/extensions/num_extensions.dart';
+import 'package:base_project/core/utils/extensions/ui_extensions.dart';
+import 'package:base_project/global.dart';
+import 'package:base_project/src/config/theme/app_theme.dart';
+import 'package:base_project/src/shared/widgets/overlay_loading_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

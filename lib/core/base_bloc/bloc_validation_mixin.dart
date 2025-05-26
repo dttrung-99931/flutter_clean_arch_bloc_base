@@ -1,9 +1,9 @@
 import 'dart:async';
 
 import 'package:dartz/dartz.dart';
-import 'package:evievm_app/core/base_bloc/base_event.dart';
-import 'package:evievm_app/core/base_bloc/base_state.dart';
-import 'package:evievm_app/core/utils/bloc_concurrency.dart';
+import 'package:base_project/core/base_bloc/base_event.dart';
+import 'package:base_project/core/base_bloc/base_state.dart';
+import 'package:base_project/core/utils/bloc_concurrency.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 mixin BlocValidationMixin on Bloc<BaseEvent, BaseState> {

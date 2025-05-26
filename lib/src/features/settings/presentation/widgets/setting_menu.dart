@@ -1,11 +1,11 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:evievm_app/core/utils/dimensions.dart';
+import 'package:base_project/core/utils/dimensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'package:evievm_app/core/utils/assets/assets.dart';
-import 'package:evievm_app/core/utils/evm_colors.dart';
-import 'package:evievm_app/src/config/theme/app_theme.dart';
+import 'package:base_project/core/utils/assets/assets.dart';
+import 'package:base_project/core/utils/evm_colors.dart';
+import 'package:base_project/src/config/theme/app_theme.dart';
 
 class SettingMenu extends StatefulWidget {
   static const expandColapseDuration = Duration(milliseconds: 200);

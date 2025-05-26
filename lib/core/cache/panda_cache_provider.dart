@@ -1,8 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:dio/dio.dart';
 import 'package:dio_cache_interceptor/dio_cache_interceptor.dart';
-import 'package:evievm_app/core/utils/constants.dart';
-import 'package:evievm_app/core/utils/extensions/list_extension.dart';
+import 'package:base_project/core/utils/constants.dart';
+import 'package:base_project/core/utils/extensions/list_extension.dart';
 import 'package:injectable/injectable.dart';
 
 @module

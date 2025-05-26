@@ -2,12 +2,12 @@
 import 'dart:async';
 
 import 'package:bloc/src/bloc.dart';
-import 'package:evievm_app/core/base_bloc/base_bloc.dart';
-import 'package:evievm_app/core/base_bloc/base_event.dart';
-import 'package:evievm_app/core/base_bloc/base_state.dart';
-import 'package:evievm_app/core/utils/storage.dart';
-import 'package:evievm_app/global.dart';
-import 'package:evievm_app/src/config/di/injection.dart';
+import 'package:base_project/core/base_bloc/base_bloc.dart';
+import 'package:base_project/core/base_bloc/base_event.dart';
+import 'package:base_project/core/base_bloc/base_state.dart';
+import 'package:base_project/core/utils/storage.dart';
+import 'package:base_project/global.dart';
+import 'package:base_project/src/config/di/injection.dart';
 import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
 

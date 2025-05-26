@@ -1,4 +1,4 @@
-import 'package:evievm_app/core/utils/constants.dart';
+import 'package:base_project/core/utils/constants.dart';
 
 abstract class PaginatedRequest {
   final int pageSize;

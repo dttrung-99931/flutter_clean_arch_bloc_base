@@ -1,7 +1,7 @@
 // ignore_for_file: constant_identifier_names
 
-import 'package:evievm_app/core/utils/extensions/list_extension.dart';
-import 'package:evievm_app/src/features/main/presentation/blocs/main/main_bloc.dart';
+import 'package:base_project/core/utils/extensions/list_extension.dart';
+import 'package:base_project/src/features/main/presentation/blocs/main/main_bloc.dart';
 import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

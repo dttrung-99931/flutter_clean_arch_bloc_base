@@ -1,5 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:evievm_app/core/utils/network/network_info.dart';
+import 'package:base_project/core/utils/network/network_info.dart';
 
 class MockNetworkInfo implements NetworkInfo {
   final bool isConnectedMock;

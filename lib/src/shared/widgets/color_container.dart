@@ -1,4 +1,4 @@
-import 'package:evievm_app/core/utils/evm_colors.dart';
+import 'package:base_project/core/utils/evm_colors.dart';
 import 'package:flutter/cupertino.dart';
 
 /// Widget that used to to determine how much space [child] take

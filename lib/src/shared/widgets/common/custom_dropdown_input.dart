@@ -1,11 +1,11 @@
-import 'package:evievm_app/core/base_bloc/base_bloc.dart';
-import 'package:evievm_app/core/base_bloc/base_state.dart';
-import 'package:evievm_app/core/utils/evm_colors.dart';
-import 'package:evievm_app/src/config/di/injection.dart';
-import 'package:evievm_app/src/config/theme/app_theme.dart';
-import 'package:evievm_app/src/features/auth/presentation/widgets/info_input.dart';
-import 'package:evievm_app/src/shared/widgets/custom_bloc_builder.dart';
-import 'package:evievm_app/src/shared/widgets/custom_drop_down_button.dart';
+import 'package:base_project/core/base_bloc/base_bloc.dart';
+import 'package:base_project/core/base_bloc/base_state.dart';
+import 'package:base_project/core/utils/evm_colors.dart';
+import 'package:base_project/src/config/di/injection.dart';
+import 'package:base_project/src/config/theme/app_theme.dart';
+import 'package:base_project/src/features/auth/presentation/widgets/info_input.dart';
+import 'package:base_project/src/shared/widgets/custom_bloc_builder.dart';
+import 'package:base_project/src/shared/widgets/custom_drop_down_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

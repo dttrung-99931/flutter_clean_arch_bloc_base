@@ -1,7 +1,7 @@
-import 'package:evievm_app/core/base_bloc/base_bloc.dart';
-import 'package:evievm_app/core/base_bloc/base_state.dart';
-import 'package:evievm_app/src/config/di/injection.dart';
-import 'package:evievm_app/src/shared/widgets/custom_checkbox.dart';
+import 'package:base_project/core/base_bloc/base_bloc.dart';
+import 'package:base_project/core/base_bloc/base_state.dart';
+import 'package:base_project/src/config/di/injection.dart';
+import 'package:base_project/src/shared/widgets/custom_checkbox.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';

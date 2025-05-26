@@ -1,9 +1,9 @@
-import 'package:evievm_app/core/failures/failures.dart';
+import 'package:base_project/core/failures/failures.dart';
 import 'package:dartz/dartz.dart';
-import 'package:evievm_app/src/features/auth/data/models/request/login_request_model.dart';
-import 'package:evievm_app/src/features/auth/data/models/request/sign_up_request_model.dart';
-import 'package:evievm_app/src/features/auth/data/models/response/login_response_model.dart';
-import 'package:evievm_app/src/features/auth/data/models/response/user_detail_model.dart';
+import 'package:base_project/src/features/auth/data/models/request/login_request_model.dart';
+import 'package:base_project/src/features/auth/data/models/request/sign_up_request_model.dart';
+import 'package:base_project/src/features/auth/data/models/response/login_response_model.dart';
+import 'package:base_project/src/features/auth/data/models/response/user_detail_model.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../domain/repositories/auth_repo.dart';

@@ -1,7 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:equatable/equatable.dart';
-import 'package:evievm_app/core/utils/constants.dart';
-import 'package:evievm_app/core/utils/time_utils.dart';
+import 'package:base_project/core/utils/constants.dart';
+import 'package:base_project/core/utils/time_utils.dart';
 
 import 'base_state.dart';
 

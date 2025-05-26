@@ -1,4 +1,4 @@
-import 'package:evievm_app/src/shared/widgets/section.dart';
+import 'package:base_project/src/shared/widgets/section.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
