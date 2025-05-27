@@ -1,5 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:base_project/core/model/paginated_list.dart';
+import 'package:maingames_flutter_test/core/model/paginated_list.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'base_response.g.dart';
@@ -41,11 +41,7 @@ class PaginatedListResponse<T> extends BaseResponse<List<T>> {
 
 @JsonSerializable(createToJson: false)
 class PaginationModel {
-  PaginationModel({
-    required this.pageSize,
-    required this.pageNum,
-    required this.total,
-  });
+  PaginationModel({required this.pageSize, required this.pageNum, required this.total});
   final int pageSize;
   final int pageNum;
   final int total;

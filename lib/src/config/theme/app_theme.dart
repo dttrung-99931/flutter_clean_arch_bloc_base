@@ -1,8 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:base_project/core/utils/app_colors.dart';
-import 'package:base_project/core/utils/evm_colors.dart';
-import 'package:base_project/global.dart';
-import 'package:base_project/src/config/theme/app_text_theme.dart';
+import 'package:maingames_flutter_test/core/utils/app_colors.dart';
+import 'package:maingames_flutter_test/core/utils/evm_colors.dart';
+import 'package:maingames_flutter_test/global.dart';
+import 'package:maingames_flutter_test/src/config/theme/app_text_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -16,11 +16,7 @@ ThemeData get theme => AppTheme.themeOf(Global.context);
 class AppTheme extends InheritedWidget {
   final AppThemeState themneState;
 
-  const AppTheme({
-    super.key,
-    required this.themneState,
-    required super.child,
-  });
+  const AppTheme({super.key, required this.themneState, required super.child});
 
   static AppThemeState of(BuildContext context) {
     return context.dependOnInheritedWidgetOfExactType<AppTheme>()!.themneState;
@@ -37,10 +33,7 @@ class AppTheme extends InheritedWidget {
 }
 
 class AppThemeWidget extends StatefulWidget {
-  const AppThemeWidget({
-    super.key,
-    required this.builder,
-  });
+  const AppThemeWidget({super.key, required this.builder});
   final WidgetBuilder builder;
 
   @override
@@ -63,13 +56,14 @@ class AppThemeState extends State<AppThemeWidget> {
   @override
   Widget build(BuildContext _) {
     return AppTheme(
-        themneState: this,
-        child: Builder(
-          /// widget.builder can access [themeData] via AppTheme.of(context)
-          builder: (context) {
-            return widget.builder(context);
-          },
-        ));
+      themneState: this,
+      child: Builder(
+        /// widget.builder can access [themeData] via AppTheme.of(context)
+        builder: (context) {
+          return widget.builder(context);
+        },
+      ),
+    );
   }
 }
 

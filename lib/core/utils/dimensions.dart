@@ -1,4 +1,4 @@
-import 'package:base_project/core/utils/extensions/ui_extensions.dart';
+import 'package:maingames_flutter_test/core/utils/extensions/ui_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

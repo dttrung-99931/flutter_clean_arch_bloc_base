@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
-import 'package:base_project/core/failures/failures.dart';
-import 'package:base_project/core/use_case/use_case.dart';
-import 'package:base_project/core/utils/error_handlers.dart';
-import 'package:base_project/core/utils/storage.dart';
+import 'package:maingames_flutter_test/core/failures/failures.dart';
+import 'package:maingames_flutter_test/core/use_case/use_case.dart';
+import 'package:maingames_flutter_test/core/utils/error_handlers.dart';
+import 'package:maingames_flutter_test/core/utils/storage.dart';
 import 'package:injectable/injectable.dart';
 
 @lazySingleton

@@ -1,7 +1,7 @@
-import 'package:base_project/core/failures/failures.dart';
+import 'package:maingames_flutter_test/core/failures/failures.dart';
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
-import 'package:base_project/core/utils/error_handlers.dart';
+import 'package:maingames_flutter_test/core/utils/error_handlers.dart';
 
 abstract class UseCase<Type, Params> {
   Type call(Params param);
@@ -16,15 +16,12 @@ abstract class UseCase<Type, Params> {
     assert(onSuccess == null || nextRepoResult == null, 'onSuccess & nextRepoResult can not be used together');
     Either<Failure, TModel> result = await repoResult;
     try {
-      return result.fold(
-        (l) async => Left(onError != null ? await onError(l) : l),
-        (r) async {
-          if (onSuccess != null) {
-            return Right(await onSuccess(r));
-          }
-          return nextRepoResult!.call(r);
-        },
-      );
+      return result.fold((l) async => Left(onError != null ? await onError(l) : l), (r) async {
+        if (onSuccess != null) {
+          return Right(await onSuccess(r));
+        }
+        return nextRepoResult!.call(r);
+      });
     } catch (e) {
       return Left(handleError(e));
     }

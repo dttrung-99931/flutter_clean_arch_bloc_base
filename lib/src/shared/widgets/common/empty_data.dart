@@ -1,12 +1,8 @@
-import 'package:base_project/src/config/theme/app_theme.dart';
+import 'package:maingames_flutter_test/src/config/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 class EmptyData extends StatelessWidget {
-  const EmptyData({
-    super.key,
-    required this.title,
-    this.isSliver = false,
-  });
+  const EmptyData({super.key, required this.title, this.isSliver = false});
   final String title;
   final bool isSliver;
   @override

@@ -1,10 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:base_project/core/utils/assets/assets.dart';
-import 'package:base_project/core/utils/evm_colors.dart';
-import 'package:base_project/core/utils/extensions/list_extension.dart';
-import 'package:base_project/src/config/theme/app_theme.dart';
-import 'package:base_project/src/shared/widgets/loading_widget.dart';
-import 'package:base_project/src/shared/widgets/sized_box.dart';
+import 'package:maingames_flutter_test/core/utils/assets/assets.dart';
+import 'package:maingames_flutter_test/core/utils/evm_colors.dart';
+import 'package:maingames_flutter_test/core/utils/extensions/list_extension.dart';
+import 'package:maingames_flutter_test/src/config/theme/app_theme.dart';
+import 'package:maingames_flutter_test/src/shared/widgets/loading_widget.dart';
+import 'package:maingames_flutter_test/src/shared/widgets/sized_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -35,8 +35,8 @@ class EVMTable extends StatelessWidget {
     this.activeSortColumnIndex,
     this.isActiveSortAsc = false,
     this.sortFieldNames = const [],
-  })  : assert((rowFlex != null && headerText.length == rowFlex.length) || rowFlex == null),
-        assert((rowSpace != null && headerText.length == rowSpace.length + 1) || rowSpace == null);
+  }) : assert((rowFlex != null && headerText.length == rowFlex.length) || rowFlex == null),
+       assert((rowSpace != null && headerText.length == rowSpace.length + 1) || rowSpace == null);
 
   int get _nColumns => headerText.length;
   int get _nRows => rowItemBuilder.length;
@@ -52,10 +52,7 @@ class EVMTable extends StatelessWidget {
             itemCount: isLoadingMore ? _nRows + 1 : _nRows,
             itemBuilder: (ctx, i) {
               if (isLoadingMore && i == _nRows) {
-                return Container(
-                  margin: EdgeInsets.symmetric(vertical: 10.h),
-                  child: LoadingWidget(size: 40.r),
-                );
+                return Container(margin: EdgeInsets.symmetric(vertical: 10.h), child: LoadingWidget(size: 40.r));
               }
               return _row(i);
             },
@@ -75,21 +72,16 @@ class EVMTable extends StatelessWidget {
         children: List.generate(
           _nColumns,
           (j) => _itemHeader(
-              title: headerText[j],
-              flex: rowFlex?[j] ?? 1,
-              onTap: () {
-                if (onSort == null) return;
-                onSort!(
-                  j,
-                  sortFieldNames[j],
-                  activeSortColumnIndex != j ? false : !isActiveSortAsc,
-                );
-              },
-              isSortActive: activeSortColumnIndex == j,
-              isSortAsc: isActiveSortAsc),
-        ).interleave(
-          List.generate(_nColumns - 1, (j) => sw(rowSpace?[j] ?? 0)),
-        ),
+            title: headerText[j],
+            flex: rowFlex?[j] ?? 1,
+            onTap: () {
+              if (onSort == null) return;
+              onSort!(j, sortFieldNames[j], activeSortColumnIndex != j ? false : !isActiveSortAsc);
+            },
+            isSortActive: activeSortColumnIndex == j,
+            isSortAsc: isActiveSortAsc,
+          ),
+        ).interleave(List.generate(_nColumns - 1, (j) => sw(rowSpace?[j] ?? 0))),
       ),
     );
   }
@@ -136,13 +128,8 @@ class EVMTable extends StatelessWidget {
       child: Row(
         children: List<Widget>.generate(
           _nColumns,
-          (j) => Expanded(
-            flex: rowFlex?[j] ?? 1,
-            child: rowItemBuilder[i].call(j),
-          ),
-        ).interleave(
-          List<Widget>.generate(_nColumns - 1, (j) => sw(rowSpace?[j] ?? 0)),
-        ),
+          (j) => Expanded(flex: rowFlex?[j] ?? 1, child: rowItemBuilder[i].call(j)),
+        ).interleave(List<Widget>.generate(_nColumns - 1, (j) => sw(rowSpace?[j] ?? 0))),
       ),
     );
   }

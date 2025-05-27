@@ -1,16 +1,16 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:base_project/src/features/main/presentation/screens/main_screen.dart';
-import 'package:base_project/src/shared/widgets/question_mark.dart';
-import 'package:base_project/src/shared/widgets/sized_box.dart';
+import 'package:maingames_flutter_test/src/features/main/presentation/screens/main_screen.dart';
+import 'package:maingames_flutter_test/src/shared/widgets/question_mark.dart';
+import 'package:maingames_flutter_test/src/shared/widgets/sized_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'package:base_project/core/utils/assets/assets.dart';
-import 'package:base_project/core/utils/dimensions.dart';
-import 'package:base_project/core/utils/evm_colors.dart';
-import 'package:base_project/global.dart';
-import 'package:base_project/src/config/theme/app_theme.dart';
+import 'package:maingames_flutter_test/core/utils/assets/assets.dart';
+import 'package:maingames_flutter_test/core/utils/dimensions.dart';
+import 'package:maingames_flutter_test/core/utils/evm_colors.dart';
+import 'package:maingames_flutter_test/global.dart';
+import 'package:maingames_flutter_test/src/config/theme/app_theme.dart';
 
 class EVMAppBar extends StatelessWidget {
   final String title;
@@ -59,11 +59,7 @@ class EVMAppBar extends StatelessWidget {
           sw(4.w),
           if (guide.isNotEmpty) QuestionMark(guide),
           const Spacer(),
-          if (redNote.isNotEmpty)
-            Text(
-              redNote.tr(),
-              style: textTheme.bodyMedium?.copyWith(color: EVMColors.redDeep),
-            ),
+          if (redNote.isNotEmpty) Text(redNote.tr(), style: textTheme.bodyMedium?.copyWith(color: EVMColors.redDeep)),
           if (redNote.isNotEmpty) sw(12.w),
           if (trailings != null) ...trailings!,
         ],

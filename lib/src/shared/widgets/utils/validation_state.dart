@@ -1,6 +1,6 @@
-import 'package:base_project/core/base_bloc/base_bloc.dart';
-import 'package:base_project/core/base_bloc/base_event.dart';
-import 'package:base_project/src/config/di/injection.dart';
+import 'package:maingames_flutter_test/core/base_bloc/base_bloc.dart';
+import 'package:maingames_flutter_test/core/base_bloc/base_event.dart';
+import 'package:maingames_flutter_test/src/config/di/injection.dart';
 import 'package:flutter/widgets.dart';
 
 abstract class ValidationState<T extends StatefulWidget, Bloc extends BaseBloc> extends State<T> {
@@ -10,9 +10,11 @@ abstract class ValidationState<T extends StatefulWidget, Bloc extends BaseBloc> 
   @override
   void initState() {
     super.initState();
-    bloc.add(OnSetFormValidateCallBack(() {
-      return formKey.currentState?.validate() ?? false;
-    }));
+    bloc.add(
+      OnSetFormValidateCallBack(() {
+        return formKey.currentState?.validate() ?? false;
+      }),
+    );
   }
 
   @override

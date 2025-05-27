@@ -1,4 +1,4 @@
-import 'package:base_project/core/utils/extensions/num_extensions.dart';
+import 'package:maingames_flutter_test/core/utils/extensions/num_extensions.dart';
 import 'package:flutter/widgets.dart';
 
 class Constants {

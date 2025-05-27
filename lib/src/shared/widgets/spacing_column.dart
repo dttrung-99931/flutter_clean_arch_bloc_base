@@ -1,4 +1,4 @@
-import 'package:base_project/core/utils/extensions/list_extension.dart';
+import 'package:maingames_flutter_test/core/utils/extensions/list_extension.dart';
 import 'package:flutter/material.dart';
 
 class SpacingColumn extends Column {
@@ -9,7 +9,5 @@ class SpacingColumn extends Column {
     super.mainAxisAlignment = MainAxisAlignment.start,
     super.crossAxisAlignment = CrossAxisAlignment.start,
     super.key,
-  }) : super(
-          children: children.addBetweenEvery(SizedBox(height: spacing)),
-        );
+  }) : super(children: children.addBetweenEvery(SizedBox(height: spacing)));
 }

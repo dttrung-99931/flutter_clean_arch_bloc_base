@@ -1,9 +1,9 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:base_project/core/utils/utils.dart';
-import 'package:base_project/global.dart';
-import 'package:base_project/src/shared/widgets/common/keep_page_alive.dart';
-import 'package:base_project/src/shared/widgets/common/refresh_widget.dart';
-import 'package:base_project/src/shared/widgets/hidden_on_scroll_bottom_bar.dart';
+import 'package:maingames_flutter_test/core/utils/utils.dart';
+import 'package:maingames_flutter_test/global.dart';
+import 'package:maingames_flutter_test/src/shared/widgets/common/keep_page_alive.dart';
+import 'package:maingames_flutter_test/src/shared/widgets/common/refresh_widget.dart';
+import 'package:maingames_flutter_test/src/shared/widgets/hidden_on_scroll_bottom_bar.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/app_colors.dart';
@@ -81,33 +81,15 @@ class _MainShopScreenState extends State<MainShopScreen> {
           itemBuilder: (context, index) {
             switch (index) {
               case 0:
-                return KeepAlivePage(
-                  child: RefreshChildBuilder(
-                    builder: (_) => const Placeholder(),
-                  ),
-                );
+                return KeepAlivePage(child: RefreshChildBuilder(builder: (_) => const Placeholder()));
               case 1:
-                return KeepAlivePage(
-                  child: RefreshChildBuilder(
-                    builder: (_) => const Placeholder(),
-                  ),
-                );
+                return KeepAlivePage(child: RefreshChildBuilder(builder: (_) => const Placeholder()));
               case 2:
-                return RefreshChildBuilder(
-                  builder: (_) => const Placeholder(),
-                );
+                return RefreshChildBuilder(builder: (_) => const Placeholder());
               case 3:
-                return KeepAlivePage(
-                  child: RefreshChildBuilder(
-                    builder: (_) => const Placeholder(),
-                  ),
-                );
+                return KeepAlivePage(child: RefreshChildBuilder(builder: (_) => const Placeholder()));
               case 4:
-                return KeepAlivePage(
-                  child: RefreshChildBuilder(
-                    builder: (_) => const Placeholder(),
-                  ),
-                );
+                return KeepAlivePage(child: RefreshChildBuilder(builder: (_) => const Placeholder()));
               default:
             }
 
@@ -117,10 +99,7 @@ class _MainShopScreenState extends State<MainShopScreen> {
       ),
       bottomNavigationBar: ValueListenableBuilder(
         valueListenable: _currentPageIndex,
-        builder: (_, __, ___) => HiddenOnSrollWidget(
-          scrollController: _scrollController,
-          child: const Placeholder(),
-        ),
+        builder: (_, __, ___) => HiddenOnSrollWidget(scrollController: _scrollController, child: const Placeholder()),
       ),
     );
   }

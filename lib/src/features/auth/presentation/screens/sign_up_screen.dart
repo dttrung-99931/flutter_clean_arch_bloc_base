@@ -1,25 +1,25 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:easy_localization/easy_localization.dart';
-import 'package:base_project/core/base_bloc/base_event.dart';
-import 'package:base_project/core/base_bloc/base_state.dart';
-import 'package:base_project/core/utils/app_colors.dart';
-import 'package:base_project/core/utils/evm_colors.dart';
-import 'package:base_project/core/utils/extensions/num_extensions.dart';
-import 'package:base_project/core/utils/extensions/ui_extensions.dart';
-import 'package:base_project/core/utils/overlay_utils.dart';
-import 'package:base_project/core/utils/validate.dart';
-import 'package:base_project/global.dart';
-import 'package:base_project/src/config/di/injection.dart';
-import 'package:base_project/src/config/theme/app_theme.dart';
-import 'package:base_project/src/features/auth/presentation/bloc/login/login_bloc.dart';
-import 'package:base_project/src/features/auth/presentation/bloc/sign_up/sign_up_bloc.dart';
-import 'package:base_project/src/features/auth/presentation/screens/login_screen.dart';
-import 'package:base_project/src/features/auth/presentation/widgets/info_input.dart';
-import 'package:base_project/src/shared/widgets/app_alert_dialog.dart';
-import 'package:base_project/src/shared/widgets/common/triangle_clip_path.dart';
-import 'package:base_project/src/shared/widgets/custom_bloc_listener.dart';
-import 'package:base_project/src/shared/widgets/cutstom_button.dart';
-import 'package:base_project/src/shared/widgets/utils/validation_state.dart';
+import 'package:maingames_flutter_test/core/base_bloc/base_event.dart';
+import 'package:maingames_flutter_test/core/base_bloc/base_state.dart';
+import 'package:maingames_flutter_test/core/utils/app_colors.dart';
+import 'package:maingames_flutter_test/core/utils/evm_colors.dart';
+import 'package:maingames_flutter_test/core/utils/extensions/num_extensions.dart';
+import 'package:maingames_flutter_test/core/utils/extensions/ui_extensions.dart';
+import 'package:maingames_flutter_test/core/utils/overlay_utils.dart';
+import 'package:maingames_flutter_test/core/utils/validate.dart';
+import 'package:maingames_flutter_test/global.dart';
+import 'package:maingames_flutter_test/src/config/di/injection.dart';
+import 'package:maingames_flutter_test/src/config/theme/app_theme.dart';
+import 'package:maingames_flutter_test/src/features/auth/presentation/bloc/login/login_bloc.dart';
+import 'package:maingames_flutter_test/src/features/auth/presentation/bloc/sign_up/sign_up_bloc.dart';
+import 'package:maingames_flutter_test/src/features/auth/presentation/screens/login_screen.dart';
+import 'package:maingames_flutter_test/src/features/auth/presentation/widgets/info_input.dart';
+import 'package:maingames_flutter_test/src/shared/widgets/app_alert_dialog.dart';
+import 'package:maingames_flutter_test/src/shared/widgets/common/triangle_clip_path.dart';
+import 'package:maingames_flutter_test/src/shared/widgets/custom_bloc_listener.dart';
+import 'package:maingames_flutter_test/src/shared/widgets/cutstom_button.dart';
+import 'package:maingames_flutter_test/src/shared/widgets/utils/validation_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -93,10 +93,11 @@ class _SignUpScreenState extends ValidationState<SignUpScreen, SignUpBloc> {
                           controller: signUpBloc.passwordConfirmEdtController,
                           isPasswordInput: true,
                           inputAction: TextInputAction.done,
-                          validator: (text) => Validate.confirmPass(
-                            confirmPass: signUpBloc.passwordConfirmEdtController.text,
-                            pass: signUpBloc.passwordEdtController.text,
-                          ),
+                          validator:
+                              (text) => Validate.confirmPass(
+                                confirmPass: signUpBloc.passwordConfirmEdtController.text,
+                                pass: signUpBloc.passwordEdtController.text,
+                              ),
                           onSubmited: (_) {
                             _onSignUpButtonPressed();
                           },
@@ -107,12 +108,7 @@ class _SignUpScreenState extends ValidationState<SignUpScreen, SignUpBloc> {
                           onPressed: () {
                             Global.pushReplacementNamed(LoginScreen.router);
                           },
-                          child: Text(
-                            tr('Đăng nhập'),
-                            style: textTheme.titleSmall.withColor(
-                              AppColors.primary,
-                            ),
-                          ),
+                          child: Text(tr('Đăng nhập'), style: textTheme.titleSmall.withColor(AppColors.primary)),
                         ),
                       ],
                     ),
@@ -129,10 +125,7 @@ class _SignUpScreenState extends ValidationState<SignUpScreen, SignUpBloc> {
 
 _onSignUpButtonPressed() {
   if (signUpBloc.isValid()) {
-    signUpBloc.add(OnSignUp(
-      signUpBloc.phoneEdtController.text,
-      signUpBloc.passwordEdtController.text,
-    ));
+    signUpBloc.add(OnSignUp(signUpBloc.phoneEdtController.text, signUpBloc.passwordEdtController.text));
   } else {
     showSnackBar('Vui lòng nhập đầy đủ thông tin!');
   }
@@ -190,13 +183,7 @@ class _Background extends StatelessWidget {
       children: [
         Column(
           children: [
-            ClipPath(
-              clipper: TriangleClipPath(),
-              child: Container(
-                height: 128,
-                color: AppColors.primary,
-              ),
-            ),
+            ClipPath(clipper: TriangleClipPath(), child: Container(height: 128, color: AppColors.primary)),
             // 16.shb,
             // Text(
             //   'PanShop',
@@ -208,13 +195,7 @@ class _Background extends StatelessWidget {
           alignment: Alignment.bottomCenter,
           child: RotatedBox(
             quarterTurns: 2,
-            child: ClipPath(
-              clipper: TriangleClipPath(),
-              child: Container(
-                height: 128,
-                color: AppColors.primary,
-              ),
-            ),
+            child: ClipPath(clipper: TriangleClipPath(), child: Container(height: 128, color: AppColors.primary)),
           ),
         ),
       ],

@@ -1,11 +1,11 @@
-import 'package:base_project/core/base_bloc/base_bloc.dart';
-import 'package:base_project/core/base_bloc/base_state.dart';
-import 'package:base_project/core/utils/evm_colors.dart';
-import 'package:base_project/src/config/di/injection.dart';
-import 'package:base_project/src/config/theme/app_theme.dart';
-import 'package:base_project/src/features/auth/presentation/widgets/info_input.dart';
-import 'package:base_project/src/shared/widgets/custom_bloc_builder.dart';
-import 'package:base_project/src/shared/widgets/custom_drop_down_button.dart';
+import 'package:maingames_flutter_test/core/base_bloc/base_bloc.dart';
+import 'package:maingames_flutter_test/core/base_bloc/base_state.dart';
+import 'package:maingames_flutter_test/core/utils/evm_colors.dart';
+import 'package:maingames_flutter_test/src/config/di/injection.dart';
+import 'package:maingames_flutter_test/src/config/theme/app_theme.dart';
+import 'package:maingames_flutter_test/src/features/auth/presentation/widgets/info_input.dart';
+import 'package:maingames_flutter_test/src/shared/widgets/custom_bloc_builder.dart';
+import 'package:maingames_flutter_test/src/shared/widgets/custom_drop_down_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -30,8 +30,8 @@ class CustomDropdownInput<TDto, TId, TState extends ListLoadedState<TDto, TId>, 
     this.titleFontWeight = FontWeight.normal,
     TBloc? bloc,
     double? height,
-  })  : bloc = bloc ?? getIt(),
-        height = height ?? 56.h;
+  }) : bloc = bloc ?? getIt(),
+       height = height ?? 56.h;
 
   final bool isEditMode;
   final bool isRequired;
@@ -69,9 +69,7 @@ class _CustomDropdownInputState<TDto, TId, TState extends ListLoadedState<TDto, 
   Widget build(BuildContext context) {
     return InfoInput(
       direction: widget.direction,
-      titleStyle: textTheme.bodyMedium!.copyWith(
-        fontWeight: widget.titleFontWeight,
-      ),
+      titleStyle: textTheme.bodyMedium!.copyWith(fontWeight: widget.titleFontWeight),
       paddingLeft: 0,
       titleFlex: widget.titleFlex,
       inputWidth: widget.inputWidth,
@@ -88,49 +86,48 @@ class _CustomDropdownInputState<TDto, TId, TState extends ListLoadedState<TDto, 
       //     : null,
       bottomTextType: TextType.error,
       customInput: CustomBlocBuilder<TBloc>(
-          bloc: widget.bloc,
-          buildForStates: [TState],
-          buildCondition: widget.buildCondition,
-          loadingStateType: LoadingState<TState>,
-          handleLoading: false,
-          builder: (state) {
-            if (state is! TState) {
-              return const SizedBox.shrink();
-            }
-            // ** Note: Validate will cause build recursely
-            // if (state.isValid) {
-            //   doOnBuildUICompleted(() {
-            //     _validate(true);
-            //   });
-            // }
-            return CustomDropdownButton<TDto>(
-              height: widget.height,
-              enabled: widget.enabled,
-              selectedItem: state.selected,
-              onSelected: (TDto? field) {
-                if (field == null) {
-                  return;
-                }
-                widget.onSelected(field);
-                // ** Note: Validate will cause build recursely
-                // doOnBuildUICompleted(() {
-                //   _validate(true);
-                // });
-              },
-              dataItems: state.data,
-              itemBuilder: (item) {
-                return Container(
-                  padding: const EdgeInsets.all(8),
-                  child: Text(
-                    widget.nameGetter(item),
-                    style: textTheme.bodyMedium?.copyWith(
-                      color: state.isValid ? widget.hintColor : EVMColors.blackLight,
-                    ),
-                  ),
-                );
-              },
-            );
-          }),
+        bloc: widget.bloc,
+        buildForStates: [TState],
+        buildCondition: widget.buildCondition,
+        loadingStateType: LoadingState<TState>,
+        handleLoading: false,
+        builder: (state) {
+          if (state is! TState) {
+            return const SizedBox.shrink();
+          }
+          // ** Note: Validate will cause build recursely
+          // if (state.isValid) {
+          //   doOnBuildUICompleted(() {
+          //     _validate(true);
+          //   });
+          // }
+          return CustomDropdownButton<TDto>(
+            height: widget.height,
+            enabled: widget.enabled,
+            selectedItem: state.selected,
+            onSelected: (TDto? field) {
+              if (field == null) {
+                return;
+              }
+              widget.onSelected(field);
+              // ** Note: Validate will cause build recursely
+              // doOnBuildUICompleted(() {
+              //   _validate(true);
+              // });
+            },
+            dataItems: state.data,
+            itemBuilder: (item) {
+              return Container(
+                padding: const EdgeInsets.all(8),
+                child: Text(
+                  widget.nameGetter(item),
+                  style: textTheme.bodyMedium?.copyWith(color: state.isValid ? widget.hintColor : EVMColors.blackLight),
+                ),
+              );
+            },
+          );
+        },
+      ),
     );
   }
 }

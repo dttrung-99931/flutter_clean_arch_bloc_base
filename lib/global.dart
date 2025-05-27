@@ -1,6 +1,6 @@
 import 'package:another_flushbar/flushbar_route.dart';
-import 'package:base_project/src/config/app_nav_observer.dart';
-import 'package:base_project/src/features/auth/domain/dtos/user_detail_dto.dart';
+import 'package:maingames_flutter_test/src/config/app_nav_observer.dart';
+import 'package:maingames_flutter_test/src/features/auth/domain/dtos/user_detail_dto.dart';
 import 'package:flutter/material.dart';
 
 import 'src/features/main/presentation/blocs/main/main_bloc.dart';
@@ -87,14 +87,14 @@ class Global {
     if (AppNavObserver.previousRoute != routeName) {
       return Global.pushNamed(routeName, args: args);
     } else {
-      return Global.swapCurrentAndPrevRoute(updatedArgs: {
-        routeName: args,
-      });
+      return Global.swapCurrentAndPrevRoute(updatedArgs: {routeName: args});
     }
   }
 
   static void hideAllDialogs({List<String> ignoreDialogRoutes = const []}) {
-    Global.navigator.popUntil((route) =>
-        (route is! DialogRoute || ignoreDialogRoutes.contains(route.settings.name)) || (!Global.navigator.canPop()));
+    Global.navigator.popUntil(
+      (route) =>
+          (route is! DialogRoute || ignoreDialogRoutes.contains(route.settings.name)) || (!Global.navigator.canPop()),
+    );
   }
 }

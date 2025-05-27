@@ -1,8 +1,8 @@
-import 'package:base_project/core/base_bloc/base_bloc.dart';
-import 'package:base_project/core/base_bloc/base_event.dart';
-import 'package:base_project/core/base_bloc/base_state.dart';
-import 'package:base_project/core/utils/overlay_utils.dart';
-import 'package:base_project/src/config/di/injection.dart';
+import 'package:maingames_flutter_test/core/base_bloc/base_bloc.dart';
+import 'package:maingames_flutter_test/core/base_bloc/base_event.dart';
+import 'package:maingames_flutter_test/core/base_bloc/base_state.dart';
+import 'package:maingames_flutter_test/core/utils/overlay_utils.dart';
+import 'package:maingames_flutter_test/src/config/di/injection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -48,11 +48,12 @@ class _CustomBlocListenerState<T extends BaseBloc> extends State<CustomBlocListe
   Widget build(BuildContext context) {
     return BlocListener<T, BaseState>(
       bloc: _bloc,
-      listenWhen: widget.listenForStates == null
-          ? null
-          : (previous, current) {
-              return widget.listenForStates!.contains(current.runtimeType);
-            },
+      listenWhen:
+          widget.listenForStates == null
+              ? null
+              : (previous, current) {
+                return widget.listenForStates!.contains(current.runtimeType);
+              },
       listener: (context, state) {
         _handleShowHideGlobalLoading(state);
         widget.listener(state);

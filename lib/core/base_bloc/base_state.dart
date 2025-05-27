@@ -1,8 +1,8 @@
-import 'package:base_project/core/failures/failures.dart';
+import 'package:maingames_flutter_test/core/failures/failures.dart';
 import 'package:equatable/equatable.dart';
-import 'package:base_project/core/utils/constants.dart';
-import 'package:base_project/core/utils/extensions/list_extension.dart';
-import 'package:base_project/core/utils/time_utils.dart';
+import 'package:maingames_flutter_test/core/utils/constants.dart';
+import 'package:maingames_flutter_test/core/utils/extensions/list_extension.dart';
+import 'package:maingames_flutter_test/core/utils/time_utils.dart';
 
 abstract class BaseState extends Equatable {}
 
@@ -70,12 +70,8 @@ class ValidateDataState extends BaseState {
   final bool isValidateToSubmit;
   bool get shouldShowError => !isValid && showErrorMsg;
 
-  ValidateDataState(
-    this.isValid, {
-    this.showErrorMsg = false,
-    required this.isValidateToSubmit,
-    String? message,
-  }) : message = message ?? 'Vui lòng nhập đầy đủ thông tin!';
+  ValidateDataState(this.isValid, {this.showErrorMsg = false, required this.isValidateToSubmit, String? message})
+    : message = message ?? 'Vui lòng nhập đầy đủ thông tin!';
 
   @override
   List<Object?> get props => [isValid, now.toString(), showErrorMsg, message];

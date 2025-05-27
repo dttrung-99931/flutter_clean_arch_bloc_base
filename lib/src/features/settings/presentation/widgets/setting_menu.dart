@@ -1,11 +1,11 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:base_project/core/utils/dimensions.dart';
+import 'package:maingames_flutter_test/core/utils/dimensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'package:base_project/core/utils/assets/assets.dart';
-import 'package:base_project/core/utils/evm_colors.dart';
-import 'package:base_project/src/config/theme/app_theme.dart';
+import 'package:maingames_flutter_test/core/utils/assets/assets.dart';
+import 'package:maingames_flutter_test/core/utils/evm_colors.dart';
+import 'package:maingames_flutter_test/src/config/theme/app_theme.dart';
 
 class SettingMenu extends StatefulWidget {
   static const expandColapseDuration = Duration(milliseconds: 200);
@@ -132,10 +132,7 @@ class _CollapseExpandButton extends StatelessWidget {
   final Function() onPressed;
   final Alignment alignment;
 
-  const _CollapseExpandButton({
-    required this.onPressed,
-    required this.alignment,
-  });
+  const _CollapseExpandButton({required this.onPressed, required this.alignment});
 
   @override
   Widget build(BuildContext context) {
@@ -159,12 +156,7 @@ class _SettingItem extends StatelessWidget {
   final bool showTitle;
   final Function() onPressed;
 
-  const _SettingItem({
-    required this.svgIcon,
-    required this.title,
-    required this.showTitle,
-    required this.onPressed,
-  });
+  const _SettingItem({required this.svgIcon, required this.title, required this.showTitle, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -182,10 +174,7 @@ class _SettingItem extends StatelessWidget {
               AnimatedOpacity(
                 opacity: showTitle ? 1 : 0,
                 duration: SettingMenu.expandColapseDuration,
-                child: Text(
-                  tr(title),
-                  style: textTheme.bodyLarge?.copyWith(color: EVMColors.white),
-                ),
+                child: Text(tr(title), style: textTheme.bodyLarge?.copyWith(color: EVMColors.white)),
               ),
             ],
           ),

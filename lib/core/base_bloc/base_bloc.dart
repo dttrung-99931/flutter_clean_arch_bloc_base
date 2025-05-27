@@ -1,20 +1,17 @@
 import 'dart:async';
 
 import 'package:dartz/dartz.dart';
-import 'package:base_project/core/base_bloc/base_event.dart';
-import 'package:base_project/core/base_bloc/base_state.dart';
-import 'package:base_project/core/base_bloc/bloc_communication.dart';
-import 'package:base_project/core/base_bloc/bloc_validation_mixin.dart';
-import 'package:base_project/core/failures/failures.dart';
-import 'package:base_project/core/utils/overlay_utils.dart';
-import 'package:base_project/global.dart';
+import 'package:maingames_flutter_test/core/base_bloc/base_event.dart';
+import 'package:maingames_flutter_test/core/base_bloc/base_state.dart';
+import 'package:maingames_flutter_test/core/base_bloc/bloc_communication.dart';
+import 'package:maingames_flutter_test/core/base_bloc/bloc_validation_mixin.dart';
+import 'package:maingames_flutter_test/core/failures/failures.dart';
+import 'package:maingames_flutter_test/core/utils/overlay_utils.dart';
+import 'package:maingames_flutter_test/global.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-typedef EventHandlerType<T> = FutureOr<void> Function(
-  T event,
-  Emitter<BaseState> emit,
-);
+typedef EventHandlerType<T> = FutureOr<void> Function(T event, Emitter<BaseState> emit);
 
 typedef TransformerType<T> = Stream<T> Function(Stream<T>, Stream<T> Function(T))?;
 
@@ -37,15 +34,15 @@ abstract class BaseBloc extends Bloc<BaseEvent, BaseState> with BlocValidationMi
   BlocCommunication? get blocCommunication => null;
 
   /// Same to [on] method, but pre-handle loading event by set [LoadingState]
-  void onLoad<T extends BaseEvent>(EventHandlerType<T> handler,
-      {TransformerType<T> transformer, LoadingState Function(T event)? loadingBuilder}) {
-    on<T>(
-      (event, emit) async {
-        emit(loadingBuilder != null ? loadingBuilder(event) : LoadingState());
-        await handler(event, emit);
-      },
-      transformer: transformer,
-    );
+  void onLoad<T extends BaseEvent>(
+    EventHandlerType<T> handler, {
+    TransformerType<T> transformer,
+    LoadingState Function(T event)? loadingBuilder,
+  }) {
+    on<T>((event, emit) async {
+      emit(loadingBuilder != null ? loadingBuilder(event) : LoadingState());
+      await handler(event, emit);
+    }, transformer: transformer);
   }
 
   FutureOr<void> onEveryEvent(BaseEvent event, Emitter<BaseState> emit) async {

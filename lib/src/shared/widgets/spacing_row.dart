@@ -1,4 +1,4 @@
-import 'package:base_project/core/utils/extensions/list_extension.dart';
+import 'package:maingames_flutter_test/core/utils/extensions/list_extension.dart';
 import 'package:flutter/material.dart';
 
 class SpacingRow extends Row {
@@ -9,7 +9,5 @@ class SpacingRow extends Row {
     super.mainAxisAlignment = MainAxisAlignment.start,
     super.crossAxisAlignment = CrossAxisAlignment.center,
     super.key,
-  }) : super(
-          children: children.addBetweenEvery(SizedBox(width: spacing)),
-        );
+  }) : super(children: children.addBetweenEvery(SizedBox(width: spacing)));
 }

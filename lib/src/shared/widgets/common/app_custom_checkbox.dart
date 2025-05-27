@@ -1,18 +1,13 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:base_project/core/utils/app_colors.dart';
-import 'package:base_project/src/config/theme/app_theme.dart';
+import 'package:maingames_flutter_test/core/utils/app_colors.dart';
+import 'package:maingames_flutter_test/src/config/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 class AppCustomCheckBox extends StatelessWidget {
   final void Function(bool isChecked) onChanged;
   final bool isChecked;
   final String title;
-  const AppCustomCheckBox({
-    super.key,
-    required this.onChanged,
-    required this.isChecked,
-    required this.title,
-  });
+  const AppCustomCheckBox({super.key, required this.onChanged, required this.isChecked, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -26,9 +21,7 @@ class AppCustomCheckBox extends StatelessWidget {
               width: 40,
               height: 40,
               child: Checkbox(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(4),
-                ),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
                 side: BorderSide(color: AppColors.border, width: 1),
                 fillColor: WidgetStateColor.resolveWith((states) => AppColors.primary),
                 value: isChecked,
@@ -37,10 +30,7 @@ class AppCustomCheckBox extends StatelessWidget {
                 },
               ),
             ),
-            Text(
-              tr(title),
-              style: textTheme.bodyMedium,
-            ),
+            Text(tr(title), style: textTheme.bodyMedium),
           ],
         ),
       ),

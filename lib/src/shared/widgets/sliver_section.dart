@@ -1,4 +1,4 @@
-import 'package:base_project/src/shared/widgets/section.dart';
+import 'package:maingames_flutter_test/src/shared/widgets/section.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -18,13 +18,6 @@ class SliverSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverToBoxAdapter(
-      child: Section(
-        title: title,
-        padding: padding,
-        titlePadding: titlePadding,
-        child: child,
-      ),
-    );
+    return SliverToBoxAdapter(child: Section(title: title, padding: padding, titlePadding: titlePadding, child: child));
   }
 }

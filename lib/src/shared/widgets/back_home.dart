@@ -1,11 +1,8 @@
-import 'package:base_project/core/utils/evm_colors.dart';
+import 'package:maingames_flutter_test/core/utils/evm_colors.dart';
 import 'package:flutter/material.dart';
 
 class BackHome extends StatelessWidget {
-  const BackHome({
-    super.key,
-    this.pageText = "",
-  });
+  const BackHome({super.key, this.pageText = ""});
 
   final String pageText;
 
@@ -26,14 +23,7 @@ class BackHome extends StatelessWidget {
             // );
           },
         ),
-        Text(
-          pageText,
-          style: const TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            color: EVMColors.white,
-          ),
-        ),
+        Text(pageText, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: EVMColors.white)),
       ],
     );
   }

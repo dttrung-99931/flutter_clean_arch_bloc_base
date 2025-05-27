@@ -1,10 +1,10 @@
 import 'dart:developer';
 
-import 'package:base_project/core/utils/assets/assets.dart';
-import 'package:base_project/core/utils/evm_colors.dart';
-import 'package:base_project/core/utils/extensions/ui_extensions.dart';
-import 'package:base_project/core/utils/format_utils.dart';
-import 'package:base_project/src/config/theme/app_theme.dart';
+import 'package:maingames_flutter_test/core/utils/assets/assets.dart';
+import 'package:maingames_flutter_test/core/utils/evm_colors.dart';
+import 'package:maingames_flutter_test/core/utils/extensions/ui_extensions.dart';
+import 'package:maingames_flutter_test/core/utils/format_utils.dart';
+import 'package:maingames_flutter_test/src/config/theme/app_theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -41,19 +41,20 @@ class TimePickerButton extends StatelessWidget {
           color: enabled ? EVMColors.white : EVMColors.lightGrey2,
         ),
         padding: EdgeInsets.symmetric(horizontal: 8.w),
-        child: enabled
-            ? Row(
-                children: [
-                  if (selectedTime != null)
-                    Text(
-                      FormatUtils.formatTimeOfDay(selectedTime!),
-                      style: textTheme.bodyMedium!.arial().spacing(-24).regular(),
-                    ),
-                  const Spacer(),
-                  SvgPicture.asset(Assets.ic.arrowDown, width: 13.w, color: EVMColors.blue),
-                ],
-              )
-            : null,
+        child:
+            enabled
+                ? Row(
+                  children: [
+                    if (selectedTime != null)
+                      Text(
+                        FormatUtils.formatTimeOfDay(selectedTime!),
+                        style: textTheme.bodyMedium!.arial().spacing(-24).regular(),
+                      ),
+                    const Spacer(),
+                    SvgPicture.asset(Assets.ic.arrowDown, width: 13.w, color: EVMColors.blue),
+                  ],
+                )
+                : null,
       ),
       overlay: SizedBox(
         height: 250.h,

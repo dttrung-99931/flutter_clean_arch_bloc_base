@@ -1,5 +1,5 @@
-import 'package:base_project/app.dart';
-import 'package:base_project/src/config/app_config.dart';
+import 'package:maingames_flutter_test/app.dart';
+import 'package:maingames_flutter_test/src/config/app_config.dart';
 import 'package:flutter/widgets.dart';
 
 void main() async {

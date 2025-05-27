@@ -1,9 +1,9 @@
 import 'package:dio/dio.dart';
-import 'package:base_project/core/model/base_response.dart';
-import 'package:base_project/src/features/auth/data/models/response/user_detail_model.dart';
-import 'package:base_project/src/features/auth/data/models/request/login_request_model.dart';
-import 'package:base_project/src/features/auth/data/models/request/sign_up_request_model.dart';
-import 'package:base_project/src/features/auth/data/models/response/login_response_model.dart';
+import 'package:maingames_flutter_test/core/model/base_response.dart';
+import 'package:maingames_flutter_test/src/features/auth/data/models/response/user_detail_model.dart';
+import 'package:maingames_flutter_test/src/features/auth/data/models/request/login_request_model.dart';
+import 'package:maingames_flutter_test/src/features/auth/data/models/request/sign_up_request_model.dart';
+import 'package:maingames_flutter_test/src/features/auth/data/models/response/login_response_model.dart';
 import 'package:injectable/injectable.dart';
 import 'package:retrofit/retrofit.dart';
 

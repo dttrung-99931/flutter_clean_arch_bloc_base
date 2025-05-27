@@ -1,10 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:base_project/core/utils/app_colors.dart';
-import 'package:base_project/core/utils/extensions/num_extensions.dart';
-import 'package:base_project/core/utils/extensions/ui_extensions.dart';
-import 'package:base_project/global.dart';
-import 'package:base_project/src/shared/widgets/neutral_button.dart';
-import 'package:base_project/src/shared/widgets/positive_button.dart';
+import 'package:maingames_flutter_test/core/utils/app_colors.dart';
+import 'package:maingames_flutter_test/core/utils/extensions/num_extensions.dart';
+import 'package:maingames_flutter_test/core/utils/extensions/ui_extensions.dart';
+import 'package:maingames_flutter_test/global.dart';
+import 'package:maingames_flutter_test/src/shared/widgets/neutral_button.dart';
+import 'package:maingames_flutter_test/src/shared/widgets/positive_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../config/theme/app_theme.dart';
@@ -49,12 +49,13 @@ class AppAlertDialog extends StatelessWidget {
   }) async {
     return showDialog(
       context: context,
-      builder: (context) => AppAlertDialog(
-        primaryColor: isPositive ? AppColors.primary : AppColors.red,
-        title: title,
-        onConfirm: onConfirm,
-        onCancelPressed: onCancel,
-      ),
+      builder:
+          (context) => AppAlertDialog(
+            primaryColor: isPositive ? AppColors.primary : AppColors.red,
+            title: title,
+            onConfirm: onConfirm,
+            onCancelPressed: onCancel,
+          ),
     );
   }
 
@@ -81,20 +82,12 @@ class AppAlertDialog extends StatelessWidget {
                   20.shb,
                 ],
                 if (message != null) ...[
-                  Row(children: [
-                    Expanded(
-                      child: Text(
-                        tr(message!),
-                        style: textTheme.bodyLarge!.spacing(-24).light(),
-                      ),
-                    )
-                  ]),
+                  Row(
+                    children: [Expanded(child: Text(tr(message!), style: textTheme.bodyLarge!.spacing(-24).light()))],
+                  ),
                   10.shb,
                 ],
-                if (content != null) ...[
-                  content!,
-                  24.shb,
-                ],
+                if (content != null) ...[content!, 24.shb],
                 SpacingRow(
                   spacing: 12.w,
                   children: [
@@ -105,13 +98,7 @@ class AppAlertDialog extends StatelessWidget {
                       ),
                     ),
                     if (negativeLabel != null)
-                      Expanded(
-                        child: NeutralButton(
-                          label: negativeLabel!,
-                          onPressed: onNegativePressed,
-                          color: color,
-                        ),
-                      ),
+                      Expanded(child: NeutralButton(label: negativeLabel!, onPressed: onNegativePressed, color: color)),
                     Expanded(
                       child: PositiveButton(
                         label: confirmLabel,

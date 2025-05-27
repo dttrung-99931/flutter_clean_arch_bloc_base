@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:base_project/core/utils/evm_colors.dart';
-import 'package:base_project/src/config/theme/app_theme.dart';
-import 'package:base_project/src/shared/widgets/evm_text.dart';
+import 'package:maingames_flutter_test/core/utils/evm_colors.dart';
+import 'package:maingames_flutter_test/src/config/theme/app_theme.dart';
+import 'package:maingames_flutter_test/src/shared/widgets/evm_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -47,15 +47,16 @@ class PositiveButton extends StatelessWidget {
           padding: EdgeInsets.zero,
           tapTargetSize: MaterialTapTargetSize.shrinkWrap,
         ),
-        child: isLoading
-            ? LoadingWidget(size: _height * 0.5)
-            : FittedBox(
-                child: EVMText(
-                  tr(label),
-                  style: labelStyle ?? textTheme.bodyMedium!.copyWith(color: EVMColors.white),
-                  textAlign: TextAlign.center,
+        child:
+            isLoading
+                ? LoadingWidget(size: _height * 0.5)
+                : FittedBox(
+                  child: EVMText(
+                    tr(label),
+                    style: labelStyle ?? textTheme.bodyMedium!.copyWith(color: EVMColors.white),
+                    textAlign: TextAlign.center,
+                  ),
                 ),
-              ),
       ),
     );
   }

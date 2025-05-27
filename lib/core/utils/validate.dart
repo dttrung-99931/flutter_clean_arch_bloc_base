@@ -1,8 +1,8 @@
 import 'dart:math' as math;
 
 import 'package:easy_localization/easy_localization.dart';
-import 'package:base_project/core/utils/constants.dart';
-import 'package:base_project/core/utils/utils.dart';
+import 'package:maingames_flutter_test/core/utils/constants.dart';
+import 'package:maingames_flutter_test/core/utils/utils.dart';
 import 'package:flutter/services.dart';
 
 class Validate {
@@ -162,10 +162,8 @@ class Validate {
 }
 
 class DecimalTextInputFormatter extends TextInputFormatter {
-  DecimalTextInputFormatter({
-    this.decimalrange,
-    this.beforedecimalrange,
-  }) : assert(decimalrange == null || decimalrange > 0 || beforedecimalrange == null || beforedecimalrange > 0);
+  DecimalTextInputFormatter({this.decimalrange, this.beforedecimalrange})
+    : assert(decimalrange == null || decimalrange > 0 || beforedecimalrange == null || beforedecimalrange > 0);
 
   final int? decimalrange;
   final int? beforedecimalrange;
@@ -202,11 +200,7 @@ class DecimalTextInputFormatter extends TextInputFormatter {
             extentOffset: math.min(truncated.length, truncated.length + 1),
           );
         }
-        return TextEditingValue(
-          text: truncated,
-          selection: newselection,
-          composing: TextRange.empty,
-        );
+        return TextEditingValue(text: truncated, selection: newselection, composing: TextRange.empty);
       }
     }
 

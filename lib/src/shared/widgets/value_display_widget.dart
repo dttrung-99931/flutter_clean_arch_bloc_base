@@ -1,10 +1,10 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:easy_localization/easy_localization.dart';
-import 'package:base_project/src/shared/widgets/sized_box.dart';
+import 'package:maingames_flutter_test/src/shared/widgets/sized_box.dart';
 import 'package:flutter/material.dart';
 
-import 'package:base_project/core/utils/evm_colors.dart';
-import 'package:base_project/src/config/theme/app_theme.dart';
+import 'package:maingames_flutter_test/core/utils/evm_colors.dart';
+import 'package:maingames_flutter_test/src/config/theme/app_theme.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // Widget display points, minutes, ... with optional top title
@@ -50,14 +50,10 @@ class ValueDisplayWidget extends StatelessWidget {
                       ? '+'
                       : ''
                   : showPlusMinusSignIfValueZero
-                      ? '±'
-                      : '') +
+                  ? '±'
+                  : '') +
               value.toStringAsFixed(valuePrecision),
-          style: TextStyle(
-            color: valueColor,
-            fontSize: valueFontSize,
-            height: 1.2,
-          ),
+          style: TextStyle(color: valueColor, fontSize: valueFontSize, height: 1.2),
           maxLines: 1,
         ),
         const SizedBox(width: 2),
@@ -75,13 +71,7 @@ class ValueDisplayWidget extends StatelessWidget {
     if (title.isEmpty) return content;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          tr(title),
-          style: textTheme.labelMedium?.copyWith(color: titleColor),
-        ),
-        content,
-      ],
+      children: [Text(tr(title), style: textTheme.labelMedium?.copyWith(color: titleColor)), content],
     );
   }
 }

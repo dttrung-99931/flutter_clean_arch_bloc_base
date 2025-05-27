@@ -1,8 +1,8 @@
-import 'package:base_project/core/base_bloc/base_bloc.dart';
-import 'package:base_project/core/base_bloc/base_event.dart';
-import 'package:base_project/core/base_bloc/base_state.dart';
-import 'package:base_project/src/config/di/injection.dart';
-import 'package:base_project/src/shared/widgets/loading_widget.dart';
+import 'package:maingames_flutter_test/core/base_bloc/base_bloc.dart';
+import 'package:maingames_flutter_test/core/base_bloc/base_event.dart';
+import 'package:maingames_flutter_test/core/base_bloc/base_state.dart';
+import 'package:maingames_flutter_test/src/config/di/injection.dart';
+import 'package:maingames_flutter_test/src/shared/widgets/loading_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -30,8 +30,8 @@ class CustomBlocBuilder2<T extends BaseBloc> extends StatefulWidget {
     this.buildCondition,
     T? bloc,
     this.useProvider = false,
-  })  : bloc = useProvider ? null : bloc ?? getIt(),
-        assert(useProvider || bloc == null, 'bloc must be null when useProvider = true');
+  }) : bloc = useProvider ? null : bloc ?? getIt(),
+       assert(useProvider || bloc == null, 'bloc must be null when useProvider = true');
 
   @override
   State<CustomBlocBuilder2<T>> createState() => _CustomBlocBuilder2State<T>();
@@ -60,9 +60,10 @@ class _CustomBlocBuilder2State<T extends BaseBloc> extends State<CustomBlocBuild
       bloc: _bloc,
       // only build when
       buildWhen: (previous, current) {
-        bool isOkType = widget.buildForStates != null
-            ? [widget.loadingStateType, ErrorState, ...widget.buildForStates!].contains(current.runtimeType)
-            : true;
+        bool isOkType =
+            widget.buildForStates != null
+                ? [widget.loadingStateType, ErrorState, ...widget.buildForStates!].contains(current.runtimeType)
+                : true;
         bool isOkCondition = widget.buildCondition != null ? widget.buildCondition!(current) : true;
         return isOkType && isOkCondition;
       },

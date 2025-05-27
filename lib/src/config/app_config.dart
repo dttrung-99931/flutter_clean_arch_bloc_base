@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:base_project/main.dart';
-import 'package:base_project/main_dev.dart';
-import 'package:base_project/main_staging.dart';
+import 'package:maingames_flutter_test/main.dart';
+import 'package:maingames_flutter_test/main_dev.dart';
+import 'package:maingames_flutter_test/main_staging.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:package_info_plus/package_info_plus.dart';
@@ -80,11 +80,7 @@ class AppConfig {
     final flavorByBundleId = await getFlavorByCurrentAppBundleId();
     bool isMathching = flavor == flavorByBundleId;
     if (!isMathching) {
-      final flavorsWithSameBnundleId = [
-        AppFlavor.dev,
-        AppFlavor.devHome,
-        AppFlavor.devHomeWifi,
-      ];
+      final flavorsWithSameBnundleId = [AppFlavor.dev, AppFlavor.devHome, AppFlavor.devHomeWifi];
       isMathching = flavorsWithSameBnundleId.contains(flavor) && flavorsWithSameBnundleId.contains(flavorByBundleId);
     }
     assert(

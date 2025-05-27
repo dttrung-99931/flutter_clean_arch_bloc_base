@@ -1,6 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:base_project/core/utils/evm_colors.dart';
-import 'package:base_project/src/config/theme/app_theme.dart';
+import 'package:maingames_flutter_test/core/utils/evm_colors.dart';
+import 'package:maingames_flutter_test/src/config/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -39,18 +39,14 @@ class NeutralButton extends StatelessWidget {
           foregroundColor: color,
           side: BorderSide(color: onPressed != null ? color : disabledColor),
           tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(borderRadius),
-          ),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(borderRadius)),
         ),
         child: FittedBox(
           child: Text(
             tr(label),
-            style: labelStyle ??
-                textTheme.bodyMedium!.copyWith(
-                  color: onPressed != null ? color : disabledColor,
-                  fontSize: fontSize,
-                ),
+            style:
+                labelStyle ??
+                textTheme.bodyMedium!.copyWith(color: onPressed != null ? color : disabledColor, fontSize: fontSize),
             textAlign: TextAlign.center,
           ),
         ),

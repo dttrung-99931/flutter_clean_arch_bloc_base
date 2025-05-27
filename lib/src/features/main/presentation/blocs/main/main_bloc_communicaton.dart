@@ -1,5 +1,5 @@
-import 'package:base_project/src/features/auth/presentation/bloc/login/login_bloc.dart';
-import 'package:base_project/src/features/main/presentation/blocs/main/main_bloc.dart';
+import 'package:maingames_flutter_test/src/features/auth/presentation/bloc/login/login_bloc.dart';
+import 'package:maingames_flutter_test/src/features/main/presentation/blocs/main/main_bloc.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../../../../../../core/base_bloc/bloc_communication.dart';

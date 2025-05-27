@@ -1,6 +1,6 @@
-import 'package:base_project/core/utils/evm_colors.dart';
-import 'package:base_project/core/utils/extensions/ui_extensions.dart';
-import 'package:base_project/src/config/theme/app_theme.dart';
+import 'package:maingames_flutter_test/core/utils/evm_colors.dart';
+import 'package:maingames_flutter_test/core/utils/extensions/ui_extensions.dart';
+import 'package:maingames_flutter_test/src/config/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 class ProcessAndProcessGroupName extends StatelessWidget {
@@ -21,13 +21,8 @@ class ProcessAndProcessGroupName extends StatelessWidget {
       children: [
         Container(
           padding: const EdgeInsets.symmetric(vertical: 2, horizontal: 6),
-          decoration: BoxDecoration(
-            border: Border.all(width: 1.5, color: EVMColors.border),
-          ),
-          child: Text(
-            processGroupName,
-            style: textTheme.labelMedium?.copyWith(fontWeight: nameFontWeight).bold(),
-          ),
+          decoration: BoxDecoration(border: Border.all(width: 1.5, color: EVMColors.border)),
+          child: Text(processGroupName, style: textTheme.labelMedium?.copyWith(fontWeight: nameFontWeight).bold()),
         ),
         Text(
           processName,

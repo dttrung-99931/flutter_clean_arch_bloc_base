@@ -1,6 +1,6 @@
-import 'package:base_project/core/utils/evm_colors.dart';
-import 'package:base_project/core/utils/extensions/num_extensions.dart';
-import 'package:base_project/src/shared/widgets/loading_widget.dart';
+import 'package:maingames_flutter_test/core/utils/evm_colors.dart';
+import 'package:maingames_flutter_test/core/utils/extensions/num_extensions.dart';
+import 'package:maingames_flutter_test/src/shared/widgets/loading_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -29,18 +29,12 @@ class OverlayLoadingPage extends ModalRoute<void> {
   bool get maintainState => true;
 
   @override
-  Widget buildPage(
-    BuildContext context,
-    Animation<double> animation,
-    Animation<double> secondaryAnimation,
-  ) {
+  Widget buildPage(BuildContext context, Animation<double> animation, Animation<double> secondaryAnimation) {
     // This makes sure that text and other content follows the material style
     return Material(
       type: MaterialType.transparency,
       // make sure that the overlay content is not cut off
-      child: SafeArea(
-        child: _buildOverlayContent(context),
-      ),
+      child: SafeArea(child: _buildOverlayContent(context)),
     );
   }
 
@@ -56,12 +50,6 @@ class OverlayLoadingPage extends ModalRoute<void> {
     Widget child,
   ) {
     // You can add your own animations for the overlay content
-    return FadeTransition(
-      opacity: animation,
-      child: ScaleTransition(
-        scale: animation,
-        child: child,
-      ),
-    );
+    return FadeTransition(opacity: animation, child: ScaleTransition(scale: animation, child: child));
   }
 }

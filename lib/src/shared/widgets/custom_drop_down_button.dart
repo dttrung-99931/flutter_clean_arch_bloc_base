@@ -1,6 +1,6 @@
-import 'package:base_project/core/utils/app_colors.dart';
-import 'package:base_project/core/utils/extensions/ui_extensions.dart';
-import 'package:base_project/src/config/theme/app_theme.dart';
+import 'package:maingames_flutter_test/core/utils/app_colors.dart';
+import 'package:maingames_flutter_test/core/utils/extensions/ui_extensions.dart';
+import 'package:maingames_flutter_test/src/config/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -67,31 +67,34 @@ class _CustomDropdownButtonState<T> extends State<CustomDropdownButton<T>> {
         iconDisabledColor: AppColors.divider,
         iconSize: 32.r,
         underline: const SizedBox.shrink(),
-        items: widget.dataItems
-            .map(
-              (T value) => DropdownMenuItem<T>(
-                value: value,
-                enabled: !widget.disableItems.contains(value),
-                child: widget.itemBuilder(value),
-              ),
-            )
-            .toList(),
-        onChanged: widget.enabled
-            ? (value) {
-                _selectedItem = value;
-                setState(() {});
-                widget.onSelected(value);
-              }
-            : null,
-        hint: widget.hintText == null
-            ? null
-            : Padding(
-                padding: EdgeInsets.symmetric(horizontal: 8.w),
-                child: Text(
-                  widget.hintText!,
-                  style: widget.hintStyle ?? textTheme.bodySmall!.withColor(AppColors.hint).spacing(-20),
+        items:
+            widget.dataItems
+                .map(
+                  (T value) => DropdownMenuItem<T>(
+                    value: value,
+                    enabled: !widget.disableItems.contains(value),
+                    child: widget.itemBuilder(value),
+                  ),
+                )
+                .toList(),
+        onChanged:
+            widget.enabled
+                ? (value) {
+                  _selectedItem = value;
+                  setState(() {});
+                  widget.onSelected(value);
+                }
+                : null,
+        hint:
+            widget.hintText == null
+                ? null
+                : Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 8.w),
+                  child: Text(
+                    widget.hintText!,
+                    style: widget.hintStyle ?? textTheme.bodySmall!.withColor(AppColors.hint).spacing(-20),
+                  ),
                 ),
-              ),
       ),
     );
   }

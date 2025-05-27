@@ -1,12 +1,12 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:base_project/core/utils/extensions/ui_extensions.dart';
+import 'package:maingames_flutter_test/core/utils/extensions/ui_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'package:base_project/core/utils/assets/assets.dart';
-import 'package:base_project/core/utils/evm_colors.dart';
-import 'package:base_project/src/config/theme/app_theme.dart';
+import 'package:maingames_flutter_test/core/utils/assets/assets.dart';
+import 'package:maingames_flutter_test/core/utils/evm_colors.dart';
+import 'package:maingames_flutter_test/src/config/theme/app_theme.dart';
 
 import 'position_dialog.dart';
 
@@ -17,8 +17,8 @@ class QuestionMark extends StatelessWidget {
   final Offset translatePopupOffset;
 
   QuestionMark(this.guide, {super.key, this.width, Offset? translateOffset})
-      : translatePopupOffset = translateOffset ?? Offset(40.w, -16.h),
-        _key = GlobalKey();
+    : translatePopupOffset = translateOffset ?? Offset(40.w, -16.h),
+      _key = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
@@ -28,18 +28,19 @@ class QuestionMark extends StatelessWidget {
         showDialog(
           barrierColor: EVMColors.transparent,
           context: context,
-          builder: (context) => PositionDialog(
-            showingPosition: _key.position.translate(translatePopupOffset.dx, translatePopupOffset.dy),
-            child: Container(
-              padding: EdgeInsets.all(16.w),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5),
-                color: EVMColors.bgInformationDialog,
-                border: Border.all(color: EVMColors.borderInformationDialog),
+          builder:
+              (context) => PositionDialog(
+                showingPosition: _key.position.translate(translatePopupOffset.dx, translatePopupOffset.dy),
+                child: Container(
+                  padding: EdgeInsets.all(16.w),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    color: EVMColors.bgInformationDialog,
+                    border: Border.all(color: EVMColors.borderInformationDialog),
+                  ),
+                  child: Text(guide.tr(), style: textTheme.bodySmall),
+                ),
               ),
-              child: Text(guide.tr(), style: textTheme.bodySmall),
-            ),
-          ),
         );
       },
       child: SvgPicture.asset(Assets.ic.questionMark, width: width),

@@ -1,19 +1,16 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:easy_localization/easy_localization.dart';
-import 'package:base_project/core/utils/app_colors.dart';
-import 'package:base_project/core/utils/evm_colors.dart';
-import 'package:base_project/core/utils/extensions/num_extensions.dart';
-import 'package:base_project/src/config/theme/app_theme.dart';
-import 'package:base_project/src/shared/widgets/sized_box.dart';
-import 'package:base_project/src/shared/widgets/text_input.dart';
+import 'package:maingames_flutter_test/core/utils/app_colors.dart';
+import 'package:maingames_flutter_test/core/utils/evm_colors.dart';
+import 'package:maingames_flutter_test/core/utils/extensions/num_extensions.dart';
+import 'package:maingames_flutter_test/src/config/theme/app_theme.dart';
+import 'package:maingames_flutter_test/src/shared/widgets/sized_box.dart';
+import 'package:maingames_flutter_test/src/shared/widgets/text_input.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' as s;
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-enum TextType {
-  normal,
-  error,
-}
+enum TextType { normal, error }
 
 class InfoInput extends StatelessWidget {
   final TextEditingController? controller;
@@ -126,17 +123,18 @@ class InfoInput extends StatelessWidget {
     this.direction = Axis.horizontal,
     double? spacing,
     this.onTap,
-  })  : trailingSpacing = trailingSpacing ?? 16.w,
-        titleStyle = titleStyle ??
-            textTheme.bodyMedium!.copyWith(
-              fontWeight: direction == Axis.horizontal ? FontWeight.normal : FontWeight.w600,
-            ),
-        assert(
-          // ignore: unrelated_type_equality_checks
-          controller != customInput, // both must not be null together
-          'Either controller must be != null OR customInput != null',
-        ),
-        spacing = spacing ?? (direction == Axis.horizontal ? 0 : 12.h);
+  }) : trailingSpacing = trailingSpacing ?? 16.w,
+       titleStyle =
+           titleStyle ??
+           textTheme.bodyMedium!.copyWith(
+             fontWeight: direction == Axis.horizontal ? FontWeight.normal : FontWeight.w600,
+           ),
+       assert(
+         // ignore: unrelated_type_equality_checks
+         controller != customInput, // both must not be null together
+         'Either controller must be != null OR customInput != null',
+       ),
+       spacing = spacing ?? (direction == Axis.horizontal ? 0 : 12.h);
 
   factory InfoInput.onlyInput({
     required String hint,
@@ -166,15 +164,13 @@ class InfoInput extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Widget inputContent = isEditable
-        ? _inputContent(_input(), _secondInput())
-        : Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8.0),
-            child: Text(
-              controller?.text ?? textDisplayWhenNotEditable,
-              style: textTheme.bodyMedium,
-            ),
-          );
+    Widget inputContent =
+        isEditable
+            ? _inputContent(_input(), _secondInput())
+            : Padding(
+              padding: const EdgeInsets.symmetric(vertical: 8.0),
+              child: Text(controller?.text ?? textDisplayWhenNotEditable, style: textTheme.bodyMedium),
+            );
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -185,13 +181,7 @@ class InfoInput extends StatelessWidget {
           crossAxisAlignment: columnCrossAxisAlignment,
           children: [
             SizedBox(width: paddingLeft),
-            if (showTitle)
-              isHorizontal
-                  ? Expanded(
-                      flex: titleFlex,
-                      child: _title(),
-                    )
-                  : _title(),
+            if (showTitle) isHorizontal ? Expanded(flex: titleFlex, child: _title()) : _title(),
             isHorizontal ? spacing.swb : spacing.shb,
             isHorizontal ? Expanded(flex: 14, child: inputContent) : inputContent,
             if (hasRightSpace) const ExpandedSizedBox(flex: 4),
@@ -208,33 +198,33 @@ class InfoInput extends StatelessWidget {
   Widget? _secondInput() {
     return secondController != null
         ? ValueListenableBuilder<bool>(
-            valueListenable: _shouldShowSecondInputErr,
-            builder: (_, showErr, __) {
-              return TextInput(
-                // inputFormatters: inputFormatters,
-                onFocusChanged: (hasFocus) {
-                  if (!hasFocus) {
-                    _shouldShowSecondInputErr.value = true;
-                  }
-                },
-                textInputType: inputType,
-                textInputAction: inputAction,
-                // isPasswordInput: isPasswordInput,
-                hintText: secondHint,
-                controller: secondController,
-                validator: secondValidator,
-                // autovalidateMode: AutovalidateMode.onUserInteraction,
-                // autoValidateOnUnfocus: true,
-                style: textTheme.bodyMedium,
-                onChange: (text) {
+          valueListenable: _shouldShowSecondInputErr,
+          builder: (_, showErr, __) {
+            return TextInput(
+              // inputFormatters: inputFormatters,
+              onFocusChanged: (hasFocus) {
+                if (!hasFocus) {
                   _shouldShowSecondInputErr.value = true;
-                  onSecondaryTextChanged?.call(text);
-                },
-                enabled: enabled,
-                errorFontSize: showErr ? 14.sp : 0,
-              );
-            },
-          )
+                }
+              },
+              textInputType: inputType,
+              textInputAction: inputAction,
+              // isPasswordInput: isPasswordInput,
+              hintText: secondHint,
+              controller: secondController,
+              validator: secondValidator,
+              // autovalidateMode: AutovalidateMode.onUserInteraction,
+              // autoValidateOnUnfocus: true,
+              style: textTheme.bodyMedium,
+              onChange: (text) {
+                _shouldShowSecondInputErr.value = true;
+                onSecondaryTextChanged?.call(text);
+              },
+              enabled: enabled,
+              errorFontSize: showErr ? 14.sp : 0,
+            );
+          },
+        )
         : null;
   }
 
@@ -254,9 +244,7 @@ class InfoInput extends StatelessWidget {
               autovalidateMode: autovalidateMode,
               textInputType: inputType,
               textInputAction: inputAction,
-              border: OutlineInputBorder(
-                borderSide: BorderSide(color: AppColors.border),
-              ),
+              border: OutlineInputBorder(borderSide: BorderSide(color: AppColors.border)),
               isPasswordInput: isPasswordInput,
               hintText: tr(hint),
               controller: controller,
@@ -329,20 +317,11 @@ class InfoInput extends StatelessWidget {
             const SizedBox(width: 20),
             if (showRequiredLabel)
               Container(
-                decoration: BoxDecoration(
-                  color: requireBackgroundColor,
-                  borderRadius: BorderRadius.circular(3),
-                ),
-                padding: const EdgeInsets.symmetric(
-                  vertical: 3,
-                  horizontal: 6,
-                ),
+                decoration: BoxDecoration(color: requireBackgroundColor, borderRadius: BorderRadius.circular(3)),
+                padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 6),
                 child: Text(
                   tr('common.required'),
-                  style: textTheme.labelSmall?.copyWith(
-                    fontWeight: FontWeight.w700,
-                    color: EVMColors.white,
-                  ),
+                  style: textTheme.labelSmall?.copyWith(fontWeight: FontWeight.w700, color: EVMColors.white),
                 ),
               ),
           ],
@@ -354,10 +333,7 @@ class InfoInput extends StatelessWidget {
 
 class ExpandedSizedBox extends StatelessWidget {
   final int flex;
-  const ExpandedSizedBox({
-    super.key,
-    required this.flex,
-  });
+  const ExpandedSizedBox({super.key, required this.flex});
 
   @override
   Widget build(BuildContext context) {

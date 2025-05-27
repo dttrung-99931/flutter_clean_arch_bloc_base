@@ -1,12 +1,16 @@
-import 'package:base_project/core/utils/evm_colors.dart';
+import 'package:maingames_flutter_test/core/utils/evm_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 enum BubbleAlignment { top, bottom }
 
 class BubbleSpeechWidget extends StatelessWidget {
-  const BubbleSpeechWidget(
-      {required this.position, this.alignment = BubbleAlignment.bottom, required this.child, super.key});
+  const BubbleSpeechWidget({
+    required this.position,
+    this.alignment = BubbleAlignment.bottom,
+    required this.child,
+    super.key,
+  });
 
   // Khoảng cách của tam giác so với cạnh trái của Container
   final double position;
@@ -27,18 +31,14 @@ class BubbleSpeechWidget extends StatelessWidget {
             color: EVMColors.grey2,
             borderRadius: BorderRadius.circular(8),
             boxShadow: [
-              BoxShadow(
-                color: EVMColors.grey.withOpacity(0.5),
-                spreadRadius: 2,
-                blurRadius: 2,
-                offset: Offset(0, 2.h),
-              ),
+              BoxShadow(color: EVMColors.grey.withOpacity(0.5), spreadRadius: 2, blurRadius: 2, offset: Offset(0, 2.h)),
             ],
           ),
           padding: EdgeInsets.symmetric(horizontal: 16.w),
-          margin: alignment == BubbleAlignment.bottom
-              ? EdgeInsets.only(bottom: triangleSize - 1) // trừ 1 là để tam giác nằm sát Container hơn
-              : EdgeInsets.only(top: triangleSize - 1),
+          margin:
+              alignment == BubbleAlignment.bottom
+                  ? EdgeInsets.only(bottom: triangleSize - 1) // trừ 1 là để tam giác nằm sát Container hơn
+                  : EdgeInsets.only(top: triangleSize - 1),
           child: child,
         ),
         Positioned(
@@ -63,11 +63,7 @@ class BubbleSpeechWidget extends StatelessWidget {
 }
 
 class TriangleCustomPainter extends CustomPainter {
-  const TriangleCustomPainter({
-    required this.color,
-    this.shadowColor,
-    this.elevation = 0,
-  });
+  const TriangleCustomPainter({required this.color, this.shadowColor, this.elevation = 0});
 
   final Color color;
   final Color? shadowColor;
@@ -75,10 +71,11 @@ class TriangleCustomPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    Paint paint = Paint()
-      ..color = color
-      ..strokeWidth = 0
-      ..style = PaintingStyle.fill;
+    Paint paint =
+        Paint()
+          ..color = color
+          ..strokeWidth = 0
+          ..style = PaintingStyle.fill;
 
     final path = _getPath(size.width, size.height);
     if (shadowColor != null) {

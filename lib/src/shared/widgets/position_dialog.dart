@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
 
-import 'package:base_project/core/utils/evm_colors.dart';
-import 'package:base_project/global.dart';
+import 'package:maingames_flutter_test/core/utils/evm_colors.dart';
+import 'package:maingames_flutter_test/global.dart';
 
 class PositionDialog extends StatelessWidget {
-  const PositionDialog({
-    super.key,
-    required this.child,
-    required this.showingPosition,
-  });
+  const PositionDialog({super.key, required this.child, required this.showingPosition});
 
   final Widget child;
   final Offset showingPosition;
@@ -29,11 +25,7 @@ class PositionDialog extends StatelessWidget {
               },
             ),
           ),
-          Positioned(
-            left: showingPosition.dx,
-            top: showingPosition.dy,
-            child: child,
-          ),
+          Positioned(left: showingPosition.dx, top: showingPosition.dy, child: child),
         ],
       ),
     );

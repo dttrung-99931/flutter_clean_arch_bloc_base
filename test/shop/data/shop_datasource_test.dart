@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:base_project/src/config/di/injection.dart';
+import 'package:maingames_flutter_test/src/config/di/injection.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 

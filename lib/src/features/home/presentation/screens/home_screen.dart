@@ -1,6 +1,6 @@
-import 'package:base_project/core/ui/auto_reset_bloc_state.dart';
-import 'package:base_project/src/features/auth/presentation/bloc/login/login_bloc.dart';
-import 'package:base_project/src/features/home/presentation/bloc/home_bloc.dart';
+import 'package:maingames_flutter_test/core/ui/auto_reset_bloc_state.dart';
+import 'package:maingames_flutter_test/src/features/auth/presentation/bloc/login/login_bloc.dart';
+import 'package:maingames_flutter_test/src/features/home/presentation/bloc/home_bloc.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -16,9 +16,7 @@ class _HomeScreenState extends AutoResetBlocState<HomeScreen, HomeBloc> {
 
   @override
   void initState() {
-    loginBloc.add(OnDoCheckLogin(
-      onDidLogin: () {},
-    ));
+    loginBloc.add(OnDoCheckLogin(onDidLogin: () {}));
     super.initState();
   }
 
@@ -35,9 +33,7 @@ class _HomeScreenState extends AutoResetBlocState<HomeScreen, HomeBloc> {
             homeBloc.add(OnGetHomeBanners());
             homeBloc.add(OnGetHomeProductCates());
             homeBloc.add(OnGetHomeProducts());
-            loginBloc.add(OnDoCheckLogin(
-              onDidLogin: () {},
-            ));
+            loginBloc.add(OnDoCheckLogin(onDidLogin: () {}));
           },
           child: CustomScrollView(
             physics: const BouncingScrollPhysics(),

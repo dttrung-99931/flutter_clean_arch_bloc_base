@@ -1,9 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:base_project/core/utils/app_colors.dart';
-import 'package:base_project/core/utils/evm_colors.dart';
-import 'package:base_project/core/utils/extensions/ui_extensions.dart';
-import 'package:base_project/src/config/theme/app_theme.dart';
-import 'package:base_project/src/shared/widgets/loading_widget.dart';
+import 'package:maingames_flutter_test/core/utils/app_colors.dart';
+import 'package:maingames_flutter_test/core/utils/evm_colors.dart';
+import 'package:maingames_flutter_test/core/utils/extensions/ui_extensions.dart';
+import 'package:maingames_flutter_test/src/config/theme/app_theme.dart';
+import 'package:maingames_flutter_test/src/shared/widgets/loading_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -51,7 +51,8 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TextStyle style = titleStyle ??
+    TextStyle style =
+        titleStyle ??
         textTheme.bodyMedium!
             .copyWith(
               color: EVMColors.white,
@@ -65,22 +66,18 @@ class CustomButton extends StatelessWidget {
         color: theme.colorScheme.onSurface.withOpacity(0.12),
       );
     }
-    Widget buttonContent = child ??
-        Text(
-          tr(title!),
-          style: style,
-          textAlign: TextAlign.center,
-        );
+    Widget buttonContent = child ?? Text(tr(title!), style: style, textAlign: TextAlign.center);
     return Container(
       width: width,
       height: height,
       margin: margin,
       child: ElevatedButton(
-        onPressed: !isLoading && onPressed != null
-            ? () {
-                onPressed?.call();
-              }
-            : null,
+        onPressed:
+            !isLoading && onPressed != null
+                ? () {
+                  onPressed?.call();
+                }
+                : null,
         style: ElevatedButton.styleFrom(
           backgroundColor: backgroundColor,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(borderRadius)),
@@ -96,12 +93,7 @@ class CustomButton extends StatelessWidget {
             isLoading
                 ?
                 // Use stack to show loading icon overlaying on text to keep button form when loading
-                Stack(
-                    children: [
-                      buttonContent,
-                      Positioned.fill(child: LoadingWidget(size: 24.r, color: loadingColor)),
-                    ],
-                  )
+                Stack(children: [buttonContent, Positioned.fill(child: LoadingWidget(size: 24.r, color: loadingColor))])
                 : buttonContent,
           ],
         ),

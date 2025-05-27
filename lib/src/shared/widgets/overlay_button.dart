@@ -1,4 +1,4 @@
-import 'package:base_project/global.dart';
+import 'package:maingames_flutter_test/global.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -32,12 +32,13 @@ class _OverlayButtonState extends State<OverlayButton> {
     return CompositedTransformTarget(
       link: _layerLink,
       child: GestureDetector(
-        onTap: widget.enabled
-            ? () {
-                final bool isToggle = widget.onTap?.call() ?? true;
-                if (isToggle) _toggleOverlay();
-              }
-            : null,
+        onTap:
+            widget.enabled
+                ? () {
+                  final bool isToggle = widget.onTap?.call() ?? true;
+                  if (isToggle) _toggleOverlay();
+                }
+                : null,
         child: widget.button,
       ),
     );
@@ -48,16 +49,17 @@ class _OverlayButtonState extends State<OverlayButton> {
       Global.overlayEntries.removeLast().remove();
     }
     final entry = OverlayEntry(
-      builder: (context) => Positioned(
-        top: 0,
-        left: 0,
-        child: CompositedTransformFollower(
-          offset: widget.offset ?? Offset(0, 45.h),
-          link: _layerLink,
-          showWhenUnlinked: false,
-          child: widget.overlay,
-        ),
-      ),
+      builder:
+          (context) => Positioned(
+            top: 0,
+            left: 0,
+            child: CompositedTransformFollower(
+              offset: widget.offset ?? Offset(0, 45.h),
+              link: _layerLink,
+              showWhenUnlinked: false,
+              child: widget.overlay,
+            ),
+          ),
     );
     Global.overlayEntries.add(entry);
     Overlay.of(context).insert(entry);

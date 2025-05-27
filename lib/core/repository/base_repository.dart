@@ -2,9 +2,9 @@ import 'dart:io';
 
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
-import 'package:base_project/core/model/paginated_list.dart';
-import 'package:base_project/core/utils/log.dart';
-import 'package:base_project/core/utils/utils.dart';
+import 'package:maingames_flutter_test/core/model/paginated_list.dart';
+import 'package:maingames_flutter_test/core/utils/log.dart';
+import 'package:maingames_flutter_test/core/utils/utils.dart';
 
 import '../failures/failures.dart';
 import '../model/base_response.dart';
@@ -51,36 +51,19 @@ abstract class BaseRepo {
         throw 'Required mapper to map TDatasourceModel => TRepoModel';
       }
 
-      return Left(
-        ServerError(
-          msg: response.message ?? '',
-          statusCode: response.statusCode,
-        )..log(),
-      );
+      return Left(ServerError(msg: response.message ?? '', statusCode: response.statusCode)..log());
     } on DioException catch (e) {
       loge('$e\n${e.response?.data}');
       if (e.error is SocketException) {
         return Left(NetworkFailure());
       }
       if (e.error is HandshakeException) {
-        return Left(
-          ServerError(
-            msg: 'Không thể kết nối đến server',
-            statusCode: e.response?.statusCode ?? 0,
-          )..log(),
-        );
+        return Left(ServerError(msg: 'Không thể kết nối đến server', statusCode: e.response?.statusCode ?? 0)..log());
       }
-      return Left(
-        ServerError(
-          msg: e.response?.data['message'] ?? '',
-          statusCode: e.response?.statusCode ?? 0,
-        )..log(),
-      );
+      return Left(ServerError(msg: e.response?.data['message'] ?? '', statusCode: e.response?.statusCode ?? 0)..log());
     } catch (e) {
       loge(e.toString());
-      return Left(
-        UnexpectedFailure()..log(moreDetailedStackTrace: e is TypeError ? e.stackTrace : null),
-      );
+      return Left(UnexpectedFailure()..log(moreDetailedStackTrace: e is TypeError ? e.stackTrace : null));
     }
   }
 }

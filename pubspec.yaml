@@ -1,6 +1,6 @@
-name: base_project
+name: maingames_flutter_test
 
-description: Flutter Clean Architecture Bloc Base Project
+description: Maingames Flutter Test App
 
 publish_to: "none"
 

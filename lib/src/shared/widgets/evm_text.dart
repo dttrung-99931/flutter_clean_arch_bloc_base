@@ -1,4 +1,4 @@
-import 'package:base_project/core/utils/extensions/ui_extensions.dart';
+import 'package:maingames_flutter_test/core/utils/extensions/ui_extensions.dart';
 import 'package:flutter/material.dart';
 
 class EVMText extends StatelessWidget {
@@ -14,12 +14,10 @@ class EVMText extends StatelessWidget {
     final texts = _separateText();
     return Text.rich(
       TextSpan(
-        children: texts.map((e) {
-          return TextSpan(
-            text: e.text,
-            style: e.isArial ? style.arial().bold() : style.notoSansJP(),
-          );
-        }).toList(),
+        children:
+            texts.map((e) {
+              return TextSpan(text: e.text, style: e.isArial ? style.arial().bold() : style.notoSansJP());
+            }).toList(),
       ),
       overflow: overflow,
       textAlign: textAlign,

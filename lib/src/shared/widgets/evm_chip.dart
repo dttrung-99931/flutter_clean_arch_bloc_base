@@ -1,5 +1,5 @@
-import 'package:base_project/core/utils/evm_colors.dart';
-import 'package:base_project/src/config/theme/app_theme.dart';
+import 'package:maingames_flutter_test/core/utils/evm_colors.dart';
+import 'package:maingames_flutter_test/src/config/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -31,10 +31,7 @@ class EVMChip extends StatelessWidget {
       ),
       margin: EdgeInsets.only(left: leftMargin),
       padding: padding ?? EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
-      child: Text(
-        label,
-        style: textTheme.labelMedium!.copyWith(color: isOutlined ? color : EVMColors.white),
-      ),
+      child: Text(label, style: textTheme.labelMedium!.copyWith(color: isOutlined ? color : EVMColors.white)),
     );
   }
 }

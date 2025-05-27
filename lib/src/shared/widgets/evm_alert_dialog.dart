@@ -1,12 +1,12 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:base_project/core/utils/assets/assets.dart';
-import 'package:base_project/core/utils/evm_colors.dart';
-import 'package:base_project/core/utils/extensions/ui_extensions.dart';
-import 'package:base_project/global.dart';
-import 'package:base_project/src/config/theme/app_theme.dart';
-import 'package:base_project/src/shared/widgets/neutral_button.dart';
-import 'package:base_project/src/shared/widgets/positive_button.dart';
-import 'package:base_project/src/shared/widgets/sized_box.dart';
+import 'package:maingames_flutter_test/core/utils/assets/assets.dart';
+import 'package:maingames_flutter_test/core/utils/evm_colors.dart';
+import 'package:maingames_flutter_test/core/utils/extensions/ui_extensions.dart';
+import 'package:maingames_flutter_test/global.dart';
+import 'package:maingames_flutter_test/src/config/theme/app_theme.dart';
+import 'package:maingames_flutter_test/src/shared/widgets/neutral_button.dart';
+import 'package:maingames_flutter_test/src/shared/widgets/positive_button.dart';
+import 'package:maingames_flutter_test/src/shared/widgets/sized_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -63,14 +63,9 @@ class EVMAlertDialog extends StatelessWidget {
                 Text(tr(title), style: textTheme.titleSmall!.copyWith(fontWeight: FontWeight.bold)),
                 sh(29.h),
                 if (message != null)
-                  Row(children: [
-                    Expanded(
-                      child: Text(
-                        tr(message!),
-                        style: textTheme.bodyLarge!.spacing(-24).light(),
-                      ),
-                    )
-                  ]),
+                  Row(
+                    children: [Expanded(child: Text(tr(message!), style: textTheme.bodyLarge!.spacing(-24).light()))],
+                  ),
                 sh(10.h),
                 if (content != null) content!,
                 sh(24.h),
@@ -84,20 +79,8 @@ class EVMAlertDialog extends StatelessWidget {
                       ),
                     ),
                     if (negativeLabel != null)
-                      Expanded(
-                        child: NeutralButton(
-                          label: negativeLabel!,
-                          onPressed: onNegativePressed,
-                          color: color,
-                        ),
-                      ),
-                    Expanded(
-                      child: PositiveButton(
-                        label: positiveLabel,
-                        onPressed: onPositivePressed,
-                        color: color,
-                      ),
-                    ),
+                      Expanded(child: NeutralButton(label: negativeLabel!, onPressed: onNegativePressed, color: color)),
+                    Expanded(child: PositiveButton(label: positiveLabel, onPressed: onPositivePressed, color: color)),
                   ],
                 ),
               ],

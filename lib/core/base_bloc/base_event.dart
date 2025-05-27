@@ -1,7 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:equatable/equatable.dart';
-import 'package:base_project/core/utils/constants.dart';
-import 'package:base_project/core/utils/time_utils.dart';
+import 'package:maingames_flutter_test/core/utils/constants.dart';
+import 'package:maingames_flutter_test/core/utils/time_utils.dart';
 
 import 'base_state.dart';
 
@@ -9,9 +9,7 @@ abstract class BaseEvent extends Equatable {}
 
 class OnGetSelectData extends BaseEvent {
   final int selectedId;
-  OnGetSelectData({
-    this.selectedId = Constants.idEmpty,
-  });
+  OnGetSelectData({this.selectedId = Constants.idEmpty});
 
   @override
   List<Object?> get props => [selectedId];
@@ -62,9 +60,7 @@ class OnSetState<T extends BaseState> extends BaseEvent {
 
 class OnSelect<T> extends BaseEvent {
   final T? selected;
-  OnSelect({
-    required this.selected,
-  });
+  OnSelect({required this.selected});
 
   @override
   List<Object?> get props => [selected];
@@ -72,9 +68,7 @@ class OnSelect<T> extends BaseEvent {
 
 class OnGetListSelect extends BaseEvent {
   final int? selectedId;
-  OnGetListSelect({
-    required this.selectedId,
-  });
+  OnGetListSelect({required this.selectedId});
 
   @override
   List<Object?> get props => [selectedId];
@@ -105,9 +99,7 @@ class OnValidateData extends BaseEvent {
     this.isValidateToSubmit = false,
   });
 
-  OnValidateData.validateToSubmit()
-      : isValidateToSubmit = true,
-        showErrorMsg = true;
+  OnValidateData.validateToSubmit() : isValidateToSubmit = true, showErrorMsg = true;
 
   @override
   List<Object?> get props => [now.toString(), showErrorMsg];

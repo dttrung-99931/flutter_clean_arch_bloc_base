@@ -1,7 +1,7 @@
 // ignore_for_file: constant_identifier_names
 
-import 'package:base_project/core/utils/extensions/list_extension.dart';
-import 'package:base_project/src/features/main/presentation/blocs/main/main_bloc.dart';
+import 'package:maingames_flutter_test/core/utils/extensions/list_extension.dart';
+import 'package:maingames_flutter_test/src/features/main/presentation/blocs/main/main_bloc.dart';
 import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -91,9 +91,6 @@ extension AppModeStrorage on Storage {
   }
 
   AppMode get appMode {
-    return AppMode.values.firstWhereOrNull(
-          (p0) => p0.name == _storage.getString(KEY_APP_MODE),
-        ) ??
-        AppMode.user;
+    return AppMode.values.firstWhereOrNull((p0) => p0.name == _storage.getString(KEY_APP_MODE)) ?? AppMode.user;
   }
 }

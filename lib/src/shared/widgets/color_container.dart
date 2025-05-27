@@ -1,4 +1,4 @@
-import 'package:base_project/core/utils/evm_colors.dart';
+import 'package:maingames_flutter_test/core/utils/evm_colors.dart';
 import 'package:flutter/cupertino.dart';
 
 /// Widget that used to to determine how much space [child] take
@@ -9,9 +9,6 @@ class ColorContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: EVMColors.green,
-      child: child,
-    );
+    return Container(color: EVMColors.green, child: child);
   }
 }

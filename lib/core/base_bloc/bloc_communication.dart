@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:base_project/core/base_bloc/base_bloc.dart';
-import 'package:base_project/core/base_bloc/base_state.dart';
-import 'package:base_project/src/config/di/injection.dart';
+import 'package:maingames_flutter_test/core/base_bloc/base_bloc.dart';
+import 'package:maingames_flutter_test/core/base_bloc/base_state.dart';
+import 'package:maingames_flutter_test/src/config/di/injection.dart';
 import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
 
@@ -17,23 +17,24 @@ abstract class BlocCommunication<TBloc extends BaseBloc> {
     _bloc = bloc;
   }
 
-  void listenOtherBloc<TOtherBloc extends BaseBloc>(
-    Function(BaseState state) onStateChanged, {
-    TOtherBloc? bloc,
-  }) {
+  void listenOtherBloc<TOtherBloc extends BaseBloc>(Function(BaseState state) onStateChanged, {TOtherBloc? bloc}) {
     TOtherBloc blocToListen = bloc ?? getIt<TOtherBloc>();
-    _subscriptions.add((blocToListen).stream.listen((BaseState state) {
-      onStateChanged(state);
-    }));
+    _subscriptions.add(
+      (blocToListen).stream.listen((BaseState state) {
+        onStateChanged(state);
+      }),
+    );
   }
 
   /// Listen self bloc that contains this BlocCommunication
   /// Can used this after  [startCommunication] called
   /// Note: if use [listenOtherBloc] to listen self bloc will cause stack overflow errro
   void listenSelf(Function(BaseState state) onStateChanged) {
-    _subscriptions.add(_bloc.stream.listen((BaseState state) {
-      onStateChanged(state);
-    }));
+    _subscriptions.add(
+      _bloc.stream.listen((BaseState state) {
+        onStateChanged(state);
+      }),
+    );
   }
 
   @mustCallSuper

@@ -1,4 +1,4 @@
-import 'package:base_project/core/utils/app_colors.dart';
+import 'package:maingames_flutter_test/core/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'my_card.dart';
 
@@ -15,17 +15,8 @@ class CardIcon extends StatelessWidget {
   final Color backgroundColor;
   final Color? color;
 
-  factory CardIcon.zeroPadding(
-    IconData iconData, {
-    Color backgroundColor = AppColors.white,
-    Color? color,
-  }) {
-    return CardIcon(
-      iconData: iconData,
-      padding: EdgeInsets.zero,
-      backgroundColor: backgroundColor,
-      color: color,
-    );
+  factory CardIcon.zeroPadding(IconData iconData, {Color backgroundColor = AppColors.white, Color? color}) {
+    return CardIcon(iconData: iconData, padding: EdgeInsets.zero, backgroundColor: backgroundColor, color: color);
   }
 
   @override

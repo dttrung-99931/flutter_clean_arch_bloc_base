@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:base_project/core/utils/app_colors.dart';
-import 'package:base_project/core/utils/evm_colors.dart';
-import 'package:base_project/core/utils/extensions/ui_extensions.dart';
-import 'package:base_project/src/config/theme/app_theme.dart';
+import 'package:maingames_flutter_test/core/utils/app_colors.dart';
+import 'package:maingames_flutter_test/core/utils/evm_colors.dart';
+import 'package:maingames_flutter_test/core/utils/extensions/ui_extensions.dart';
+import 'package:maingames_flutter_test/src/config/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -97,14 +97,14 @@ class _TextInputState extends State<TextInput> {
   Timer? timer;
 
   OutlineInputBorder get _border => OutlineInputBorder(
-        borderSide: BorderSide(color: widget.borderColor),
-        borderRadius: BorderRadius.circular(widget.borderRadius),
-      );
+    borderSide: BorderSide(color: widget.borderColor),
+    borderRadius: BorderRadius.circular(widget.borderRadius),
+  );
 
   OutlineInputBorder get _focusedBorder => OutlineInputBorder(
-        borderSide: const BorderSide(color: AppColors.primary, width: 1.5),
-        borderRadius: BorderRadius.circular(widget.borderRadius),
-      );
+    borderSide: const BorderSide(color: AppColors.primary, width: 1.5),
+    borderRadius: BorderRadius.circular(widget.borderRadius),
+  );
 
   late FocusNode _focusNode;
   late final _controller = widget.controller ?? TextEditingController();
@@ -155,10 +155,7 @@ class _TextInputState extends State<TextInput> {
       mainAxisSize: MainAxisSize.min,
       children: [
         widget.title != null
-            ? Padding(
-                padding: const EdgeInsets.only(bottom: 2),
-                child: widget.title,
-              )
+            ? Padding(padding: const EdgeInsets.only(bottom: 2), child: widget.title)
             : const SizedBox(),
         SizedBox(
           width: widget.width ?? double.infinity,
@@ -234,22 +231,19 @@ class _TextInputState extends State<TextInput> {
     return Padding(
       padding: EdgeInsets.only(right: 6.w),
       child: InkWell(
-          child: Stack(
-            alignment: Alignment.center,
-            children: [
-              const Icon(Icons.remove_red_eye_outlined, color: AppColors.blackLight),
-              if (isSecure)
-                Text(
-                  '/',
-                  style: textTheme.bodyMedium.withColor(AppColors.blackLight).bold(),
-                ),
-            ],
-          ),
-          onTap: () {
-            setState(() {
-              isSecure = !isSecure;
-            });
-          }),
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            const Icon(Icons.remove_red_eye_outlined, color: AppColors.blackLight),
+            if (isSecure) Text('/', style: textTheme.bodyMedium.withColor(AppColors.blackLight).bold()),
+          ],
+        ),
+        onTap: () {
+          setState(() {
+            isSecure = !isSecure;
+          });
+        },
+      ),
     );
   }
 }

@@ -1,8 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 
-import 'package:base_project/core/utils/app_colors.dart';
-import 'package:base_project/core/utils/extensions/ui_extensions.dart';
-import 'package:base_project/src/config/theme/app_theme.dart';
+import 'package:maingames_flutter_test/core/utils/app_colors.dart';
+import 'package:maingames_flutter_test/core/utils/extensions/ui_extensions.dart';
+import 'package:maingames_flutter_test/src/config/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 class AppIconButton extends StatelessWidget {
@@ -15,8 +15,8 @@ class AppIconButton extends StatelessWidget {
     this.size = 22,
     double? fontSize,
     EdgeInsets? padding,
-  })  : fontSize = fontSize ?? textTheme.bodySmall!.fontSize!,
-        padding = padding ?? const EdgeInsets.all(4.0);
+  }) : fontSize = fontSize ?? textTheme.bodySmall!.fontSize!,
+       padding = padding ?? const EdgeInsets.all(4.0);
   final String? title;
   final IconData iconData;
   final Function()? onPressed;
@@ -36,11 +36,7 @@ class AppIconButton extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(iconData, color: color, size: size),
-            if (title != null)
-              Text(
-                title!,
-                style: textTheme.bodySmall.withColor(color).withSize(fontSize),
-              ),
+            if (title != null) Text(title!, style: textTheme.bodySmall.withColor(color).withSize(fontSize)),
           ],
         ),
       ),

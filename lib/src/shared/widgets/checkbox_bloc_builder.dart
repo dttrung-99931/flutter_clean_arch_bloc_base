@@ -1,7 +1,7 @@
-import 'package:base_project/core/base_bloc/base_bloc.dart';
-import 'package:base_project/core/base_bloc/base_state.dart';
-import 'package:base_project/src/config/di/injection.dart';
-import 'package:base_project/src/shared/widgets/custom_checkbox.dart';
+import 'package:maingames_flutter_test/core/base_bloc/base_bloc.dart';
+import 'package:maingames_flutter_test/core/base_bloc/base_state.dart';
+import 'package:maingames_flutter_test/src/config/di/injection.dart';
+import 'package:maingames_flutter_test/src/shared/widgets/custom_checkbox.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';

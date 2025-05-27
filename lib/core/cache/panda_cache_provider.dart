@@ -1,8 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:dio/dio.dart';
 import 'package:dio_cache_interceptor/dio_cache_interceptor.dart';
-import 'package:base_project/core/utils/constants.dart';
-import 'package:base_project/core/utils/extensions/list_extension.dart';
+import 'package:maingames_flutter_test/core/utils/constants.dart';
+import 'package:maingames_flutter_test/core/utils/extensions/list_extension.dart';
 import 'package:injectable/injectable.dart';
 
 @module
@@ -63,11 +63,7 @@ class CacheMaxStaleModifierInterceptor extends Interceptor {
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
     final String uri = options.uri.toString();
-    final Duration? maxStale = maxStalesByUrl.entries
-        .firstWhereOrNull(
-          (entry) => uri.contains(entry.key),
-        )
-        ?.value;
+    final Duration? maxStale = maxStalesByUrl.entries.firstWhereOrNull((entry) => uri.contains(entry.key))?.value;
     if (maxStale != null) {
       // Set the modified CacheOptions to extra for DioCacheInterceptor on the next
       options.extra = baseCacheOptions.copyWith(maxStale: Nullable(maxStale)).toExtra();

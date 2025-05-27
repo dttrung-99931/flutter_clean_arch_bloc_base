@@ -1,5 +1,5 @@
-import 'package:base_project/core/base_bloc/base_bloc.dart';
-import 'package:base_project/src/config/di/injection.dart';
+import 'package:maingames_flutter_test/core/base_bloc/base_bloc.dart';
+import 'package:maingames_flutter_test/src/config/di/injection.dart';
 import 'package:flutter/material.dart';
 
 // State that automatically resets the lazy single bloc when the widget is disposed

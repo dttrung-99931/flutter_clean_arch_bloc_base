@@ -1,4 +1,4 @@
-import 'package:base_project/global.dart';
+import 'package:maingames_flutter_test/global.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -43,21 +43,12 @@ class AppSearchBar extends StatelessWidget {
         readOnly: navigateToScreenOnPressed != null,
         decoration: InputDecoration(
           contentPadding: EdgeInsets.symmetric(vertical: 8.h),
-          border: const UnderlineInputBorder(
-            borderSide: BorderSide.none,
-          ),
+          border: const UnderlineInputBorder(borderSide: BorderSide.none),
           prefixIcon: Padding(
             padding: EdgeInsets.only(left: 8.h),
-            child: const Icon(
-              Icons.search,
-              size: 20,
-              color: Colors.black45,
-            ),
+            child: const Icon(Icons.search, size: 20, color: Colors.black45),
           ),
-          prefixIconConstraints: const BoxConstraints(
-            maxWidth: 36,
-            minWidth: 36,
-          ),
+          prefixIconConstraints: const BoxConstraints(maxWidth: 36, minWidth: 36),
           isDense: true,
           hintText: hint,
           hintStyle: textTheme.bodyMedium?.copyWith(color: AppColors.black.withOpacity(.5)),

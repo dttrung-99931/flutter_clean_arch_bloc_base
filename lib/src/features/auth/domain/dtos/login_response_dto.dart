@@ -1,15 +1,11 @@
-import 'package:base_project/src/features/auth/data/models/response/login_response_model.dart';
+import 'package:maingames_flutter_test/src/features/auth/data/models/response/login_response_model.dart';
 
 class LoginResponseDto {
   final String accessToken;
 
-  LoginResponseDto({
-    required this.accessToken,
-  });
+  LoginResponseDto({required this.accessToken});
 
   factory LoginResponseDto.fromModel(LoginResponseModel model) {
-    return LoginResponseDto(
-      accessToken: model.token,
-    );
+    return LoginResponseDto(accessToken: model.token);
   }
 }

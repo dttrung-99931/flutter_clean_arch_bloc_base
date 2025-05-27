@@ -1,10 +1,10 @@
-import 'package:base_project/src/features/auth/presentation/screens/login_screen.dart';
-import 'package:base_project/src/features/auth/presentation/screens/sign_up_screen.dart';
-import 'package:base_project/src/features/main/presentation/screens/main_screen.dart';
+import 'package:maingames_flutter_test/src/features/auth/presentation/screens/login_screen.dart';
+import 'package:maingames_flutter_test/src/features/auth/presentation/screens/sign_up_screen.dart';
+import 'package:maingames_flutter_test/src/features/main/presentation/screens/main_screen.dart';
 import 'package:flutter/material.dart';
 
 class AppRouter {
-  static String get initialRouter => MainScreen.router;
+  static String get initialRouter => LoginScreen.router;
 
   static Widget _buildScreen(RouteSettings settings, BuildContext context) {
     switch (settings.name) {

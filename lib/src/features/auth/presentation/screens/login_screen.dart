@@ -1,21 +1,21 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:easy_localization/easy_localization.dart';
-import 'package:base_project/core/base_bloc/base_state.dart';
-import 'package:base_project/core/utils/app_colors.dart';
-import 'package:base_project/core/utils/evm_colors.dart';
-import 'package:base_project/core/utils/extensions/num_extensions.dart';
-import 'package:base_project/core/utils/extensions/ui_extensions.dart';
-import 'package:base_project/core/utils/overlay_utils.dart';
-import 'package:base_project/global.dart';
-import 'package:base_project/src/config/theme/app_theme.dart';
-import 'package:base_project/src/features/auth/presentation/bloc/login/login_bloc.dart';
-import 'package:base_project/src/features/auth/presentation/screens/sign_up_screen.dart';
-import 'package:base_project/src/features/main/presentation/screens/main_screen.dart';
-import 'package:base_project/src/shared/widgets/common/app_custom_checkbox.dart';
-import 'package:base_project/src/shared/widgets/common/triangle_clip_path.dart';
-import 'package:base_project/src/shared/widgets/custom_bloc_builder.dart';
-import 'package:base_project/src/shared/widgets/cutstom_button.dart';
-import 'package:base_project/src/shared/widgets/text_input.dart';
+import 'package:maingames_flutter_test/core/base_bloc/base_state.dart';
+import 'package:maingames_flutter_test/core/utils/app_colors.dart';
+import 'package:maingames_flutter_test/core/utils/evm_colors.dart';
+import 'package:maingames_flutter_test/core/utils/extensions/num_extensions.dart';
+import 'package:maingames_flutter_test/core/utils/extensions/ui_extensions.dart';
+import 'package:maingames_flutter_test/core/utils/overlay_utils.dart';
+import 'package:maingames_flutter_test/global.dart';
+import 'package:maingames_flutter_test/src/config/theme/app_theme.dart';
+import 'package:maingames_flutter_test/src/features/auth/presentation/bloc/login/login_bloc.dart';
+import 'package:maingames_flutter_test/src/features/auth/presentation/screens/sign_up_screen.dart';
+import 'package:maingames_flutter_test/src/features/main/presentation/screens/main_screen.dart';
+import 'package:maingames_flutter_test/src/shared/widgets/common/app_custom_checkbox.dart';
+import 'package:maingames_flutter_test/src/shared/widgets/common/triangle_clip_path.dart';
+import 'package:maingames_flutter_test/src/shared/widgets/custom_bloc_builder.dart';
+import 'package:maingames_flutter_test/src/shared/widgets/cutstom_button.dart';
+import 'package:maingames_flutter_test/src/shared/widgets/text_input.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -68,29 +68,19 @@ class LoginScreen extends StatelessWidget {
                       TextButton(
                         onPressed: commingSoon,
                         style: TextButton.styleFrom(
-                          padding: EdgeInsets.symmetric(
-                            vertical: 4.h,
-                            horizontal: 12.w,
-                          ),
+                          padding: EdgeInsets.symmetric(vertical: 4.h, horizontal: 12.w),
                           minimumSize: Size.zero,
                         ),
                         child: Text(
                           tr('Quên mật khẩu'),
-                          style: textTheme.bodyLarge.withColor(
-                            AppColors.primary.shade300,
-                          ),
+                          style: textTheme.bodyLarge.withColor(AppColors.primary.shade300),
                         ),
                       ),
                       TextButton(
                         onPressed: () {
                           Global.pushReplacementNamed(SignUpScreen.router);
                         },
-                        child: Text(
-                          tr('Đăng ký'),
-                          style: textTheme.titleSmall.withColor(
-                            AppColors.primary,
-                          ),
-                        ),
+                        child: Text(tr('Đăng ký'), style: textTheme.titleSmall.withColor(AppColors.primary)),
                       ),
                     ],
                   ),
@@ -120,16 +110,17 @@ class _RememberPhoneCheckBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
-        animation: loginBloc.rememberPhoneController,
-        builder: (context, widget) {
-          return AppCustomCheckBox(
-            onChanged: (bool isChecked) {
-              loginBloc.rememberPhoneController.value = isChecked;
-            },
-            isChecked: loginBloc.rememberPhoneController.value,
-            title: 'Nhớ số điện thoại',
-          );
-        });
+      animation: loginBloc.rememberPhoneController,
+      builder: (context, widget) {
+        return AppCustomCheckBox(
+          onChanged: (bool isChecked) {
+            loginBloc.rememberPhoneController.value = isChecked;
+          },
+          isChecked: loginBloc.rememberPhoneController.value,
+          title: 'Nhớ số điện thoại',
+        );
+      },
+    );
   }
 }
 
@@ -200,12 +191,10 @@ class _LoginFailedText extends StatelessWidget {
       builder: (state) {
         return AnimatedSize(
           duration: 300.milliseconds,
-          child: state is LoginFailed
-              ? Text(
-                  state.failure.displayMsg,
-                  style: textTheme.bodyMedium!.copyWith(color: EVMColors.red),
-                )
-              : const SizedBox.shrink(),
+          child:
+              state is LoginFailed
+                  ? Text(state.failure.displayMsg, style: textTheme.bodyMedium!.copyWith(color: EVMColors.red))
+                  : const SizedBox.shrink(),
         );
       },
     );
@@ -221,13 +210,7 @@ class _Background extends StatelessWidget {
       children: [
         Column(
           children: [
-            ClipPath(
-              clipper: TriangleClipPath(),
-              child: Container(
-                height: 128,
-                color: AppColors.primary,
-              ),
-            ),
+            ClipPath(clipper: TriangleClipPath(), child: Container(height: 128, color: AppColors.primary)),
             // 16.shb,
             // Text(
             //   'PanShop',
@@ -239,13 +222,7 @@ class _Background extends StatelessWidget {
           alignment: Alignment.bottomCenter,
           child: RotatedBox(
             quarterTurns: 2,
-            child: ClipPath(
-              clipper: TriangleClipPath(),
-              child: Container(
-                height: 128,
-                color: AppColors.primary,
-              ),
-            ),
+            child: ClipPath(clipper: TriangleClipPath(), child: Container(height: 128, color: AppColors.primary)),
           ),
         ),
       ],

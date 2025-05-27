@@ -1,15 +1,15 @@
 import 'dart:io';
 
 import 'package:easy_localization/easy_localization.dart';
-import 'package:base_project/core/utils/utils.dart';
-import 'package:base_project/global.dart';
-import 'package:base_project/src/config/app_bloc_observer.dart';
-import 'package:base_project/src/config/app_config.dart';
-import 'package:base_project/src/config/app_nav_observer.dart';
-import 'package:base_project/src/config/app_router.dart';
-import 'package:base_project/src/config/app_translation.dart';
-import 'package:base_project/src/config/di/injection.dart';
-import 'package:base_project/src/config/theme/app_theme.dart';
+import 'package:maingames_flutter_test/core/utils/utils.dart';
+import 'package:maingames_flutter_test/global.dart';
+import 'package:maingames_flutter_test/src/config/app_bloc_observer.dart';
+import 'package:maingames_flutter_test/src/config/app_config.dart';
+import 'package:maingames_flutter_test/src/config/app_nav_observer.dart';
+import 'package:maingames_flutter_test/src/config/app_router.dart';
+import 'package:maingames_flutter_test/src/config/app_translation.dart';
+import 'package:maingames_flutter_test/src/config/di/injection.dart';
+import 'package:maingames_flutter_test/src/config/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
@@ -17,13 +17,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 Future<void> setupAndRunApp() async {
   await setupApp();
-  runApp(EasyLocalization(
-    supportedLocales: AppTranslation.supportedLocales,
-    path: AppTranslation.path,
-    fallbackLocale: AppTranslation.ja,
-    startLocale: AppTranslation.ja,
-    child: const PandaShopApp(),
-  ));
+  runApp(
+    EasyLocalization(
+      supportedLocales: AppTranslation.supportedLocales,
+      path: AppTranslation.path,
+      fallbackLocale: AppTranslation.ja,
+      startLocale: AppTranslation.ja,
+      child: const PandaShopApp(),
+    ),
+  );
 }
 
 Future<void> setupApp({bool isTest = false}) async {
@@ -55,18 +57,19 @@ class PandaShopApp extends StatelessWidget {
         splitScreenMode: true,
         builder: (_, child) {
           return AppThemeWidget(
-            builder: (themeContext) => MaterialApp(
-              localizationsDelegates: context.localizationDelegates,
-              supportedLocales: context.supportedLocales,
-              locale: context.locale,
-              navigatorKey: Global.globalKey,
-              debugShowCheckedModeBanner: false,
-              title: AppConfig.config.appName,
-              onGenerateRoute: AppRouter.onGenerateRoute,
-              theme: AppTheme.themeOf(themeContext),
-              initialRoute: AppRouter.initialRouter,
-              navigatorObservers: [AppNavObserver()],
-            ),
+            builder:
+                (themeContext) => MaterialApp(
+                  localizationsDelegates: context.localizationDelegates,
+                  supportedLocales: context.supportedLocales,
+                  locale: context.locale,
+                  navigatorKey: Global.globalKey,
+                  debugShowCheckedModeBanner: false,
+                  title: AppConfig.config.appName,
+                  onGenerateRoute: AppRouter.onGenerateRoute,
+                  theme: AppTheme.themeOf(themeContext),
+                  initialRoute: AppRouter.initialRouter,
+                  navigatorObservers: [AppNavObserver()],
+                ),
           );
         },
       ),

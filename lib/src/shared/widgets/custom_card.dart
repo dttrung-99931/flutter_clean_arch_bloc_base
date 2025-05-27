@@ -1,4 +1,4 @@
-import 'package:base_project/core/utils/evm_colors.dart';
+import 'package:maingames_flutter_test/core/utils/evm_colors.dart';
 import 'package:flutter/cupertino.dart';
 
 class CustomCard extends StatelessWidget {
@@ -13,9 +13,7 @@ class CustomCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: EVMColors.white,
         borderRadius: BorderRadius.circular(4),
-        boxShadow: [
-          BoxShadow(color: EVMColors.black.withOpacity(.3), blurRadius: 2),
-        ],
+        boxShadow: [BoxShadow(color: EVMColors.black.withOpacity(.3), blurRadius: 2)],
       ),
       padding: padding,
       child: child,

@@ -1,10 +1,10 @@
 import 'package:another_flushbar/flushbar.dart';
-import 'package:base_project/core/utils/app_colors.dart';
-import 'package:base_project/core/utils/extensions/num_extensions.dart';
-import 'package:base_project/core/utils/extensions/ui_extensions.dart';
-import 'package:base_project/global.dart';
-import 'package:base_project/src/config/theme/app_theme.dart';
-import 'package:base_project/src/shared/widgets/overlay_loading_page.dart';
+import 'package:maingames_flutter_test/core/utils/app_colors.dart';
+import 'package:maingames_flutter_test/core/utils/extensions/num_extensions.dart';
+import 'package:maingames_flutter_test/core/utils/extensions/ui_extensions.dart';
+import 'package:maingames_flutter_test/global.dart';
+import 'package:maingames_flutter_test/src/config/theme/app_theme.dart';
+import 'package:maingames_flutter_test/src/shared/widgets/overlay_loading_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -42,12 +42,7 @@ Future<void> showSnackBar(String? msg, [type = SnackType.success]) async {
   }
   await Flushbar(
     key: _flushBarKey,
-    messageText: Text(
-      msg,
-      style: textTheme.bodyMedium!.withColor(color),
-      maxLines: 4,
-      textAlign: TextAlign.center,
-    ),
+    messageText: Text(msg, style: textTheme.bodyMedium!.withColor(color), maxLines: 4, textAlign: TextAlign.center),
     margin: EdgeInsets.only(top: 20.h, left: 48.w, right: 48.w),
     padding: EdgeInsets.only(left: 20.w, right: 20.w, top: 8.h, bottom: 8.h),
     borderRadius: BorderRadius.circular(10),
@@ -57,13 +52,7 @@ Future<void> showSnackBar(String? msg, [type = SnackType.success]) async {
     flushbarStyle: FlushbarStyle.FLOATING,
     flushbarPosition: FlushbarPosition.TOP,
     animationDuration: 500.milliseconds,
-    boxShadows: [
-      BoxShadow(
-        color: AppColors.blackLight.withOpacity(0.3),
-        offset: const Offset(0, 2),
-        blurRadius: 3,
-      )
-    ],
+    boxShadows: [BoxShadow(color: AppColors.blackLight.withOpacity(0.3), offset: const Offset(0, 2), blurRadius: 3)],
   ).show(Global.context).then((value) => _showingMsg = null);
 }
 
@@ -71,10 +60,7 @@ bool _isShowingLoading = false;
 
 void showLoadingOverlay({bool canDismiss = false, Color? backgroundColor}) {
   try {
-    Global.navigator.push(OverlayLoadingPage(
-      canDismiss: canDismiss,
-      backgroundColor: backgroundColor,
-    ));
+    Global.navigator.push(OverlayLoadingPage(canDismiss: canDismiss, backgroundColor: backgroundColor));
     _isShowingLoading = true;
   } catch (e) {
     loge(e);

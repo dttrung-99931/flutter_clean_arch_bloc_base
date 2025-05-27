@@ -2,16 +2,16 @@
 import 'dart:async';
 
 import 'package:bloc/src/bloc.dart';
-import 'package:base_project/core/base_bloc/base_bloc.dart';
-import 'package:base_project/core/base_bloc/base_event.dart';
-import 'package:base_project/core/base_bloc/base_state.dart';
-import 'package:base_project/core/use_case/use_case.dart';
-import 'package:base_project/global.dart';
-import 'package:base_project/src/config/app_config.dart';
-import 'package:base_project/src/config/di/injection.dart';
-import 'package:base_project/src/features/auth/domain/dtos/login_response_dto.dart';
-import 'package:base_project/src/features/auth/domain/use_cases/login_usecase.dart';
-import 'package:base_project/src/features/auth/domain/use_cases/logout_usecase.dart';
+import 'package:maingames_flutter_test/core/base_bloc/base_bloc.dart';
+import 'package:maingames_flutter_test/core/base_bloc/base_event.dart';
+import 'package:maingames_flutter_test/core/base_bloc/base_state.dart';
+import 'package:maingames_flutter_test/core/use_case/use_case.dart';
+import 'package:maingames_flutter_test/global.dart';
+import 'package:maingames_flutter_test/src/config/app_config.dart';
+import 'package:maingames_flutter_test/src/config/di/injection.dart';
+import 'package:maingames_flutter_test/src/features/auth/domain/dtos/login_response_dto.dart';
+import 'package:maingames_flutter_test/src/features/auth/domain/use_cases/login_usecase.dart';
+import 'package:maingames_flutter_test/src/features/auth/domain/use_cases/logout_usecase.dart';
 import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
 
@@ -26,12 +26,8 @@ LoginBloc get loginBloc => getIt();
 
 @lazySingleton
 class LoginBloc extends BaseBloc {
-  LoginBloc(
-    this._login,
-    this._checkLoginUseCase,
-    this._logoutUseCase,
-    this._getRememberLoginEmailUserCase,
-  ) : super(InitialState()) {
+  LoginBloc(this._login, this._checkLoginUseCase, this._logoutUseCase, this._getRememberLoginEmailUserCase)
+    : super(InitialState()) {
     onLoad<OnLogin>(_onLogin);
     on<OnCheckLogin>(_onCheckLogin);
     on<OnDoCheckLogin>(_onDoCheckLogin);
@@ -44,12 +40,8 @@ class LoginBloc extends BaseBloc {
   final LogoutUseCase _logoutUseCase;
   final GetRememberLoginEmailUserCase _getRememberLoginEmailUserCase;
 
-  final phoneEdtController = TextEditingController(
-    text: AppConfig.config.isDevelopmentDebug ? '0988202071' : null,
-  );
-  final passwordEdtController = TextEditingController(
-    text: AppConfig.config.isDevelopmentDebug ? 'aa123456' : null,
-  );
+  final phoneEdtController = TextEditingController(text: AppConfig.config.isDevelopmentDebug ? '0988202071' : null);
+  final passwordEdtController = TextEditingController(text: AppConfig.config.isDevelopmentDebug ? 'aa123456' : null);
   final rememberPhoneController = ValueNotifier<bool>(false);
 
   Future<void> _onLogin(OnLogin event, Emitter<BaseState> emit) async {
