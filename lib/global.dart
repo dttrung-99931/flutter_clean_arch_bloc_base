@@ -1,9 +1,9 @@
 import 'package:another_flushbar/flushbar_route.dart';
 import 'package:maingames_flutter_test/src/config/app_nav_observer.dart';
-import 'package:maingames_flutter_test/src/features/auth/domain/dtos/user_detail_dto.dart';
+import 'package:maingames_flutter_test/src/features/auth/domain/models/user_detail_model.dart';
 import 'package:flutter/material.dart';
 
-import 'src/features/main/presentation/blocs/main/main_bloc.dart';
+import 'src/features/payment/presentation/blocs/payment_bloc.dart';
 
 class Global {
   static final globalKey = GlobalKey<NavigatorState>();
@@ -16,10 +16,10 @@ class Global {
 
   static const currencySymbol = 'đ';
 
-  static UserDetailDto? _userDetail;
-  static UserDetailDto? get userDetail => _userDetail;
+  static UserDetailModel? _userDetail;
+  static UserDetailModel? get userDetail => _userDetail;
   static bool get userDataLoaded => _userDetail != null;
-  static void setUserDetail(UserDetailDto detail) {
+  static void setUserDetail(UserDetailModel detail) {
     _userDetail = detail;
   }
 

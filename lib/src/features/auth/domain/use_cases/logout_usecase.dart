@@ -1,11 +1,10 @@
 import 'package:dartz/dartz.dart';
+import 'package:injectable/injectable.dart';
 import 'package:maingames_flutter_test/core/failures/failures.dart';
 import 'package:maingames_flutter_test/core/use_case/use_case.dart';
 import 'package:maingames_flutter_test/core/utils/error_handlers.dart';
 import 'package:maingames_flutter_test/core/utils/storage.dart';
 import 'package:maingames_flutter_test/global.dart';
-import 'package:flutter/material.dart';
-import 'package:injectable/injectable.dart';
 
 @lazySingleton
 class LogoutUseCase extends EitherUseCase<void, NoParams> {
@@ -17,7 +16,7 @@ class LogoutUseCase extends EitherUseCase<void, NoParams> {
   Future<Either<Failure, void>> call(NoParams param) async {
     return executeWithTryCatch(() async {
       await _storage.deleteAll();
-      Global.mainPageIndexNotifier = ValueNotifier(0);
+      Global.mainPageIndexNotifier.value = 0;
     });
   }
 }

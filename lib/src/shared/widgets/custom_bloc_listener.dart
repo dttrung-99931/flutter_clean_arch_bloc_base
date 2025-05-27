@@ -1,10 +1,9 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:maingames_flutter_test/core/base_bloc/base_bloc.dart';
 import 'package:maingames_flutter_test/core/base_bloc/base_event.dart';
 import 'package:maingames_flutter_test/core/base_bloc/base_state.dart';
 import 'package:maingames_flutter_test/core/utils/overlay_utils.dart';
-import 'package:maingames_flutter_test/src/config/di/injection.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CustomBlocListener<T extends BaseBloc> extends StatefulWidget {
   final BaseEvent? initialEvent;
@@ -13,6 +12,8 @@ class CustomBlocListener<T extends BaseBloc> extends StatefulWidget {
   final Widget? child;
   final bool handleGlobalLoading;
   final Type loadingStateTyle;
+  final T? bloc;
+
   const CustomBlocListener({
     super.key,
     this.initialEvent,
@@ -21,6 +22,7 @@ class CustomBlocListener<T extends BaseBloc> extends StatefulWidget {
     this.child,
     this.handleGlobalLoading = false,
     this.loadingStateTyle = LoadingState,
+    this.bloc,
   });
 
   @override
@@ -28,11 +30,12 @@ class CustomBlocListener<T extends BaseBloc> extends StatefulWidget {
 }
 
 class _CustomBlocListenerState<T extends BaseBloc> extends State<CustomBlocListener<T>> {
-  T _bloc = getIt();
+  late T _bloc;
 
   @override
   void initState() {
     super.initState();
+    _bloc = widget.bloc ?? context.read<T>();
     if (widget.initialEvent != null) {
       _bloc.add(widget.initialEvent!);
     }
@@ -40,7 +43,7 @@ class _CustomBlocListenerState<T extends BaseBloc> extends State<CustomBlocListe
 
   @override
   void didUpdateWidget(covariant CustomBlocListener<T> oldWidget) {
-    _bloc = getIt();
+    _bloc = widget.bloc ?? context.read<T>();
     super.didUpdateWidget(oldWidget);
   }
 
@@ -48,12 +51,11 @@ class _CustomBlocListenerState<T extends BaseBloc> extends State<CustomBlocListe
   Widget build(BuildContext context) {
     return BlocListener<T, BaseState>(
       bloc: _bloc,
-      listenWhen:
-          widget.listenForStates == null
-              ? null
-              : (previous, current) {
-                return widget.listenForStates!.contains(current.runtimeType);
-              },
+      listenWhen: widget.listenForStates == null
+          ? null
+          : (previous, current) {
+              return widget.listenForStates!.contains(current.runtimeType);
+            },
       listener: (context, state) {
         _handleShowHideGlobalLoading(state);
         widget.listener(state);

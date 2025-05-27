@@ -3,7 +3,7 @@ import 'package:maingames_flutter_test/core/base_bloc/base_state.dart';
 import 'package:maingames_flutter_test/core/utils/evm_colors.dart';
 import 'package:maingames_flutter_test/src/config/di/injection.dart';
 import 'package:maingames_flutter_test/src/config/theme/app_theme.dart';
-import 'package:maingames_flutter_test/src/features/auth/presentation/widgets/info_input.dart';
+import 'package:maingames_flutter_test/src/shared/widgets/info_input.dart';
 import 'package:maingames_flutter_test/src/shared/widgets/custom_bloc_builder.dart';
 import 'package:maingames_flutter_test/src/shared/widgets/custom_drop_down_button.dart';
 import 'package:flutter/material.dart';
@@ -30,8 +30,8 @@ class CustomDropdownInput<TDto, TId, TState extends ListLoadedState<TDto, TId>, 
     this.titleFontWeight = FontWeight.normal,
     TBloc? bloc,
     double? height,
-  }) : bloc = bloc ?? getIt(),
-       height = height ?? 56.h;
+  })  : bloc = bloc ?? getIt(),
+        height = height ?? 56.h;
 
   final bool isEditMode;
   final bool isRequired;

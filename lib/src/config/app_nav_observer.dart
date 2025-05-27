@@ -1,10 +1,10 @@
 import 'package:another_flushbar/flushbar_route.dart';
 import 'package:maingames_flutter_test/core/utils/extensions/list_extension.dart';
-import 'package:maingames_flutter_test/src/config/app_router.dart';
+import 'package:maingames_flutter_test/src/features/auth/presentation/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 
 class AppNavObserver extends NavigatorObserver {
-  static String _currentRoute = AppRouter.initialRouter;
+  static String _currentRoute = LoginScreen.route;
   static String get currentRoute => _currentRoute;
   static Object? get currentRouteArgs => _routeArgsStack.atOrNull(_routeArgsStack.length - 1);
 

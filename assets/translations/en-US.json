@@ -1,1 +1,11 @@
-{}
+{
+  "login": {
+    "appTitle": "Main Games",
+    "passwordHint": "Password",
+    "rememberPhone": "Remember phone number",
+    "forgotPassword": "Forgot password?",
+    "signUp": "Sign up",
+    "phoneHint": "Phone number",
+    "loginButton": "Login"
+  }
+}

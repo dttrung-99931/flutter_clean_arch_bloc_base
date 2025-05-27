@@ -14,24 +14,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:maingames_flutter_test/src/features/auth/presentation/bloc/login/login_bloc.dart';
+import 'package:maingames_flutter_test/src/features/auth/presentation/screens/login_screen.dart';
 
 Future<void> setupAndRunApp() async {
-  await setupApp();
-  runApp(
-    EasyLocalization(
-      supportedLocales: AppTranslation.supportedLocales,
-      path: AppTranslation.path,
-      fallbackLocale: AppTranslation.ja,
-      startLocale: AppTranslation.ja,
-      child: const PandaShopApp(),
-    ),
-  );
-}
-
-Future<void> setupApp({bool isTest = false}) async {
   final bining = WidgetsFlutterBinding.ensureInitialized();
   // Keep splash showing, splash will be removed in SplashScreen
   FlutterNativeSplash.preserve(widgetsBinding: bining);
+  await setupApp();
+  final initialRoute = await _getInitialRoute();
+  runApp(PandaShopApp(initialRoute: initialRoute));
+  FlutterNativeSplash.remove();
+}
+
+Future<String> _getInitialRoute() async {
+  return LoginScreen.route;
+}
+
+Future<void> setupApp({bool isTest = false}) async {
   if (!isTest) {
     await AppConfig.config.validateFlavorMatchingBundleId();
   }
@@ -45,20 +45,30 @@ Future<void> setupApp({bool isTest = false}) async {
 }
 
 class PandaShopApp extends StatelessWidget {
-  const PandaShopApp({super.key});
-
+  const PandaShopApp({super.key, required this.initialRoute});
+  final String initialRoute;
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext _) {
     return GestureDetector(
       onTap: removeCurrentFocus,
-      child: ScreenUtilInit(
-        designSize: const Size(540, 960),
-        minTextAdapt: true,
-        splitScreenMode: true,
-        builder: (_, child) {
-          return AppThemeWidget(
-            builder:
-                (themeContext) => MaterialApp(
+      child: EasyLocalization(
+        supportedLocales: AppTranslation.supportedLocales,
+        path: AppTranslation.path,
+        fallbackLocale: AppTranslation.en,
+        startLocale: AppTranslation.en,
+        child: MultiBlocProvider(
+          providers: [
+            BlocProvider(
+              create: (context) => getIt<LoginBloc>(),
+            ),
+          ],
+          child: ScreenUtilInit(
+            designSize: const Size(540, 960),
+            minTextAdapt: true,
+            splitScreenMode: true,
+            builder: (_, child) {
+              return AppThemeWidget(
+                builder: (context) => MaterialApp(
                   localizationsDelegates: context.localizationDelegates,
                   supportedLocales: context.supportedLocales,
                   locale: context.locale,
@@ -66,12 +76,14 @@ class PandaShopApp extends StatelessWidget {
                   debugShowCheckedModeBanner: false,
                   title: AppConfig.config.appName,
                   onGenerateRoute: AppRouter.onGenerateRoute,
-                  theme: AppTheme.themeOf(themeContext),
-                  initialRoute: AppRouter.initialRouter,
+                  theme: AppTheme.themeOf(context),
+                  initialRoute: initialRoute,
                   navigatorObservers: [AppNavObserver()],
                 ),
-          );
-        },
+              );
+            },
+          ),
+        ),
       ),
     );
   }

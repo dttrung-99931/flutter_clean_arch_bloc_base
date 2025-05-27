@@ -4,7 +4,6 @@ import 'package:maingames_flutter_test/core/utils/extensions/num_extensions.dart
 import 'package:maingames_flutter_test/core/utils/extensions/ui_extensions.dart';
 import 'package:maingames_flutter_test/global.dart';
 import 'package:maingames_flutter_test/src/shared/widgets/neutral_button.dart';
-import 'package:maingames_flutter_test/src/shared/widgets/positive_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../config/theme/app_theme.dart';
@@ -49,13 +48,12 @@ class AppAlertDialog extends StatelessWidget {
   }) async {
     return showDialog(
       context: context,
-      builder:
-          (context) => AppAlertDialog(
-            primaryColor: isPositive ? AppColors.primary : AppColors.red,
-            title: title,
-            onConfirm: onConfirm,
-            onCancelPressed: onCancel,
-          ),
+      builder: (context) => AppAlertDialog(
+        primaryColor: isPositive ? AppColors.primary : AppColors.red,
+        title: title,
+        onConfirm: onConfirm,
+        onCancelPressed: onCancel,
+      ),
     );
   }
 
@@ -100,13 +98,12 @@ class AppAlertDialog extends StatelessWidget {
                     if (negativeLabel != null)
                       Expanded(child: NeutralButton(label: negativeLabel!, onPressed: onNegativePressed, color: color)),
                     Expanded(
-                      child: PositiveButton(
-                        label: confirmLabel,
+                      child: ElevatedButton(
                         onPressed: () {
                           onConfirm?.call();
                           Global.pop();
                         },
-                        color: color,
+                        child: Text(confirmLabel),
                       ),
                     ),
                   ],

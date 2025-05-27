@@ -1,10 +1,9 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:maingames_flutter_test/core/base_bloc/base_bloc.dart';
 import 'package:maingames_flutter_test/core/base_bloc/base_event.dart';
 import 'package:maingames_flutter_test/core/base_bloc/base_state.dart';
-import 'package:maingames_flutter_test/src/config/di/injection.dart';
 import 'package:maingames_flutter_test/src/shared/widgets/loading_widget.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CustomBlocConsumer<T extends BaseBloc> extends StatefulWidget {
   final List<Type>? buildForStates;
@@ -17,6 +16,7 @@ class CustomBlocConsumer<T extends BaseBloc> extends StatefulWidget {
   final Type loadingStateType;
   final bool isSliver;
   final bool buildForErrorState;
+  final T? bloc;
 
   const CustomBlocConsumer({
     super.key,
@@ -30,6 +30,7 @@ class CustomBlocConsumer<T extends BaseBloc> extends StatefulWidget {
     this.isSliver = false,
     this.buildCondition,
     this.buildForErrorState = false,
+    this.bloc,
   });
 
   @override
@@ -37,11 +38,12 @@ class CustomBlocConsumer<T extends BaseBloc> extends StatefulWidget {
 }
 
 class _CustomBlocConsumerState<T extends BaseBloc> extends State<CustomBlocConsumer<T>> {
-  final T _bloc = getIt();
+  late T _bloc;
 
   @override
   void initState() {
     super.initState();
+    _bloc = widget.bloc ?? context.read<T>();
     if (widget.initialEvent != null) {
       _bloc.add(widget.initialEvent!);
     }
@@ -56,14 +58,13 @@ class _CustomBlocConsumerState<T extends BaseBloc> extends State<CustomBlocConsu
       bloc: _bloc,
       // only build when
       buildWhen: (previous, current) {
-        bool isOkType =
-            widget.buildForStates != null
-                ? [
-                  if (widget.handleLoading) widget.loadingStateType,
-                  if (widget.buildForErrorState) ErrorState,
-                  ...widget.buildForStates!,
-                ].contains(current.runtimeType)
-                : true;
+        bool isOkType = widget.buildForStates != null
+            ? [
+                if (widget.handleLoading) widget.loadingStateType,
+                if (widget.buildForErrorState) ErrorState,
+                ...widget.buildForStates!,
+              ].contains(current.runtimeType)
+            : true;
         bool isOkCondition = widget.buildCondition != null ? widget.buildCondition!(current) : true;
         return isOkType && isOkCondition;
       },

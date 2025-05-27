@@ -32,9 +32,9 @@ class CustomBlocBuilder<T extends BaseBloc> extends StatefulWidget {
     this.buildForErrorState = true,
     T? bloc,
     this.loadingWidgetBuilder,
-    this.useProvider = false,
-  }) : bloc = useProvider ? null : bloc ?? getIt(),
-       assert((useProvider && bloc == null) || true, 'bloc must be null when useProvider = true');
+    this.useProvider = true,
+  })  : bloc = useProvider ? null : bloc ?? getIt(),
+        assert((useProvider && bloc == null) || true, 'bloc must be null when useProvider = true');
 
   @override
   State<CustomBlocBuilder<T>> createState() => _CustomBlocBuilderState<T>();
@@ -68,14 +68,13 @@ class _CustomBlocBuilderState<T extends BaseBloc> extends State<CustomBlocBuilde
       bloc: _bloc,
       // only build when
       buildWhen: (previous, current) {
-        bool isOkType =
-            widget.buildForStates != null
-                ? [
-                  if (widget.handleLoading) widget.loadingStateType,
-                  if (widget.buildForErrorState) ErrorState,
-                  ...widget.buildForStates!,
-                ].contains(current.runtimeType)
-                : true;
+        bool isOkType = widget.buildForStates != null
+            ? [
+                if (widget.handleLoading) widget.loadingStateType,
+                if (widget.buildForErrorState) ErrorState,
+                ...widget.buildForStates!,
+              ].contains(current.runtimeType)
+            : true;
         bool isOkCondition = widget.buildCondition != null ? widget.buildCondition!(current) : true;
         return isOkType && isOkCondition;
       },

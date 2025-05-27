@@ -26,7 +26,13 @@ import '../../common/mock_dio_adapter.dart' as _i3;
 // ignore_for_file: subtype_of_sealed_class
 
 class _FakeResponseBody_0 extends _i1.SmartFake implements _i2.ResponseBody {
-  _FakeResponseBody_0(Object parent, Invocation parentInvocation) : super(parent, parentInvocation);
+  _FakeResponseBody_0(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
 }
 
 /// A class which mocks [DioAdapter].
@@ -44,14 +50,34 @@ class MockDioAdapter extends _i1.Mock implements _i3.DioAdapter {
     _i4.Future<void>? cancelFuture,
   ) =>
       (super.noSuchMethod(
-            Invocation.method(#fetch, [options, requestStream, cancelFuture]),
-            returnValue: _i4.Future<_i2.ResponseBody>.value(
-              _FakeResponseBody_0(this, Invocation.method(#fetch, [options, requestStream, cancelFuture])),
-            ),
-          )
-          as _i4.Future<_i2.ResponseBody>);
+        Invocation.method(
+          #fetch,
+          [
+            options,
+            requestStream,
+            cancelFuture,
+          ],
+        ),
+        returnValue: _i4.Future<_i2.ResponseBody>.value(_FakeResponseBody_0(
+          this,
+          Invocation.method(
+            #fetch,
+            [
+              options,
+              requestStream,
+              cancelFuture,
+            ],
+          ),
+        )),
+      ) as _i4.Future<_i2.ResponseBody>);
 
   @override
-  void close({bool? force = false}) =>
-      super.noSuchMethod(Invocation.method(#close, [], {#force: force}), returnValueForMissingStub: null);
+  void close({bool? force = false}) => super.noSuchMethod(
+        Invocation.method(
+          #close,
+          [],
+          {#force: force},
+        ),
+        returnValueForMissingStub: null,
+      );
 }

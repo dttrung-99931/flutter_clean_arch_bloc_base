@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:maingames_flutter_test/global.dart';
 import 'package:maingames_flutter_test/src/features/auth/presentation/bloc/login/login_bloc.dart';
 import 'package:maingames_flutter_test/src/features/auth/presentation/screens/login_screen.dart';
@@ -47,16 +48,16 @@ void doOnBuildUICompleted(void Function() action) {
 }
 
 void doIfLoggedIn(void Function() onDidLogin, {bool navToLoginIfNot = false}) {
-  loginBloc.add(
-    OnDoCheckLogin(
-      onDidLogin: onDidLogin,
-      onNotLogin: () {
-        if (navToLoginIfNot) {
-          Global.pushNamed(LoginScreen.router);
-        }
-      },
-    ),
-  );
+  Global.context.read<LoginBloc>().add(
+        OnDoCheckLogin(
+          onDidLogin: onDidLogin,
+          onNotLogin: () {
+            if (navToLoginIfNot) {
+              Global.pushNamed(LoginScreen.route);
+            }
+          },
+        ),
+      );
 }
 
 bool isSubtype<S, T>() => <S>[] is List<T>;
