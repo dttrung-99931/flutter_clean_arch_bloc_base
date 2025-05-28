@@ -25,3 +25,12 @@ class GetRememberLoginEmailSuccess extends LoadingCompleteState {
   @override
   List<Object?> get props => [email];
 }
+
+class RememberEmailCheckChanged extends LoadingCompleteState {
+  final bool isRemembered;
+
+  RememberEmailCheckChanged(this.isRemembered);
+
+  @override
+  List<Object?> get props => [isRemembered];
+}

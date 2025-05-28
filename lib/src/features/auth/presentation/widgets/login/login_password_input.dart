@@ -2,24 +2,29 @@
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:maingames_flutter_test/src/features/auth/presentation/bloc/login/login_bloc.dart';
+import 'package:maingames_flutter_test/core/utils/validate.dart';
 import 'package:maingames_flutter_test/src/shared/widgets/text_input.dart';
 
 class LoginPasswordInput extends StatelessWidget {
   const LoginPasswordInput({
     super.key,
+    required this.controller,
+    required this.onSubmited,
   });
+
+  final TextEditingController controller;
+  final Function(String? text) onSubmited;
 
   @override
   Widget build(BuildContext context) {
     return TextInput(
       hintText: 'login.passwordHint'.tr(),
-      controller: context.read<LoginBloc>().passwordEdtController,
+      controller: controller,
       isPasswordInput: true,
       textInputAction: TextInputAction.done,
-      onSubmited: (_) {
-        context.read<LoginBloc>().add(OnLogin());
+      onSubmited: onSubmited,
+      validator: (text) {
+        return Validate.validateRequired(text!, fieldName: 'password');
       },
     );
   }

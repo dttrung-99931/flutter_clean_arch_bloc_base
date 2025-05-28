@@ -1,11 +1,18 @@
 {
+  "messages": {
+    "email_is_required": "Email is required",
+    "please_enter_valid_email": "Please enter valid email",
+    "password_is_required": "Password is required",
+    "enter_required_field_temp": "Enter {}, please",
+    "only_enter_number_temp": "Only enter number, please"
+  },
   "login": {
     "appTitle": "Main Games",
     "passwordHint": "Password",
-    "rememberPhone": "Remember phone number",
+    "rememberEmail": "Remember email",
     "forgotPassword": "Forgot password?",
     "signUp": "Sign up",
-    "phoneHint": "Phone number",
+    "emailHint": "Email",
     "loginButton": "Login"
   }
 }

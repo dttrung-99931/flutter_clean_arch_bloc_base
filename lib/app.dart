@@ -23,7 +23,7 @@ Future<void> setupAndRunApp() async {
   FlutterNativeSplash.preserve(widgetsBinding: bining);
   await setupApp();
   final initialRoute = await _getInitialRoute();
-  runApp(PandaShopApp(initialRoute: initialRoute));
+  runApp(MaingamesApp(initialRoute: initialRoute));
   FlutterNativeSplash.remove();
 }
 
@@ -34,18 +34,20 @@ Future<String> _getInitialRoute() async {
 Future<void> setupApp({bool isTest = false}) async {
   if (!isTest) {
     await AppConfig.config.validateFlavorMatchingBundleId();
+    await EasyLocalization.ensureInitialized();
   }
-  await EasyLocalization.ensureInitialized();
   await ScreenUtil.ensureScreenSize();
-  await configureDependencies();
-  HttpOverrides.global = PandaHttpOverrides();
+  if (!isTest) {
+    await configureDependencies();
+  }
+  HttpOverrides.global = MaingamesHttpOverrides();
   if (AppConfig.config.logBloc) {
     Bloc.observer = AppBlocObserver();
   }
 }
 
-class PandaShopApp extends StatelessWidget {
-  const PandaShopApp({super.key, required this.initialRoute});
+class MaingamesApp extends StatelessWidget {
+  const MaingamesApp({super.key, required this.initialRoute});
   final String initialRoute;
   @override
   Widget build(BuildContext _) {
@@ -90,7 +92,7 @@ class PandaShopApp extends StatelessWidget {
 }
 
 // To fix CERTIFICATE_VERIFY_FAILED error
-class PandaHttpOverrides extends HttpOverrides {
+class MaingamesHttpOverrides extends HttpOverrides {
   @override
   HttpClient createHttpClient(SecurityContext? context) {
     return super.createHttpClient(context)

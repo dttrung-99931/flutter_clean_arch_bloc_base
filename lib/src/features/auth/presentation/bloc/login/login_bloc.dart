@@ -9,7 +9,6 @@ import 'package:maingames_flutter_test/core/base_bloc/base_event.dart';
 import 'package:maingames_flutter_test/core/base_bloc/base_state.dart';
 import 'package:maingames_flutter_test/core/use_case/use_case.dart';
 import 'package:maingames_flutter_test/global.dart';
-import 'package:maingames_flutter_test/src/config/app_config.dart';
 import 'package:maingames_flutter_test/src/features/auth/domain/models/login_response_model.dart';
 import 'package:maingames_flutter_test/src/features/auth/domain/use_cases/login_usecase.dart';
 import 'package:maingames_flutter_test/src/features/auth/domain/use_cases/logout_usecase.dart';
@@ -34,6 +33,7 @@ class LoginBloc extends BaseBloc {
     on<OnCheckLogin>(_onCheckLogin);
     on<OnDoCheckLogin>(_onDoCheckLogin);
     on<OnGetRememberLoginEmail>(_onGetRememberLoginEmail);
+    on<OnRememberEmailChanged>(_onRememberEmailChanged);
   }
 
   final EmailLoginUseCase _login;
@@ -41,23 +41,17 @@ class LoginBloc extends BaseBloc {
   final CheckLoginUseCase _checkLoginUseCase;
   final GetRememberLoginEmailUserCase _getRememberLoginEmailUserCase;
 
-  final emailEdtController = TextEditingController(
-    text: AppConfig.config.isDevelopmentDebug ? 'test@maingames.com' : null,
-  );
-  final passwordEdtController = TextEditingController(
-    text: AppConfig.config.isDevelopmentDebug ? 'aa123456' : null,
-  );
-  final rememberPhoneController = ValueNotifier<bool>(false);
+  bool _isEmailRemembered = false;
 
   Future<void> _onLogin(OnLogin event, Emitter<BaseState> emit) async {
     await handleUsecaseResult(
       usecaseResult: _login.call(
         LoginParams(
           requestModel: LoginRequestDto(
-            email: emailEdtController.text,
-            password: passwordEdtController.text,
+            email: event.email,
+            password: event.password,
           ),
-          rememberEmail: rememberPhoneController.value,
+          rememberEmail: _isEmailRemembered,
         ),
       ),
       emit: emit.call,
@@ -69,6 +63,11 @@ class LoginBloc extends BaseBloc {
         return LoginFailed(failure);
       },
     );
+  }
+
+  Future<void> _onRememberEmailChanged(OnRememberEmailChanged event, Emitter<BaseState> emit) async {
+    emit(RememberEmailCheckChanged(event.isRemembered));
+    _isEmailRemembered = event.isRemembered;
   }
 
   Future<void> _onLogout(OnLogout event, Emitter<BaseState> emit) async {
@@ -92,6 +91,8 @@ class LoginBloc extends BaseBloc {
       usecaseResult: _getRememberLoginEmailUserCase.call(noParam),
       emit: emit.call,
       onSuccess: (String? rememberEmail) {
+        emit(RememberEmailCheckChanged(rememberEmail != null));
+        _isEmailRemembered = rememberEmail != null;
         return GetRememberLoginEmailSuccess(rememberEmail);
       },
     );
@@ -100,13 +101,5 @@ class LoginBloc extends BaseBloc {
   FutureOr<void> _onDoCheckLogin(OnDoCheckLogin event, Emitter<BaseState> emit) async {
     bool isLoggedIn = _checkLoginUseCase.call(NoParams());
     isLoggedIn ? event.onDidLogin?.call() : event.onNotLogin?.call();
-  }
-
-  @override
-  Future<void> close() async {
-    emailEdtController.dispose();
-    passwordEdtController.dispose();
-    rememberPhoneController.dispose();
-    await super.close();
   }
 }

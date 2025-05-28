@@ -136,7 +136,7 @@ class Validate {
 
   static String? validateRequired(String? str, {required String fieldName}) {
     if (str == null || str.isEmpty) {
-      return tr('Nhập {}', args: [fieldName.tr()]);
+      return tr('messages.enter_required_field_temp', args: [fieldName.tr()]);
       // TODO: localization
       // return tr('messages.is_required', args: [fieldName.tr()]);
     }
@@ -163,7 +163,7 @@ class Validate {
 
 class DecimalTextInputFormatter extends TextInputFormatter {
   DecimalTextInputFormatter({this.decimalrange, this.beforedecimalrange})
-    : assert(decimalrange == null || decimalrange > 0 || beforedecimalrange == null || beforedecimalrange > 0);
+      : assert(decimalrange == null || decimalrange > 0 || beforedecimalrange == null || beforedecimalrange > 0);
 
   final int? decimalrange;
   final int? beforedecimalrange;

@@ -12,7 +12,7 @@ part 'auth_data_source.g.dart';
 abstract class AuthRepoteDatasourceProvider {
   @lazySingleton
   AuthDatasource provideAuthDatasource(Dio dio) {
-    // return _AuthRepoteDatasource(dio);
+    // return _AuthDatasource(dio);
     return TestAuthDataSource();
   }
 }
