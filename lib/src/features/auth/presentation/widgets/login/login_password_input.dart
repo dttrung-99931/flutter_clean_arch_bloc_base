@@ -24,7 +24,7 @@ class LoginPasswordInput extends StatelessWidget {
       textInputAction: TextInputAction.done,
       onSubmited: onSubmited,
       validator: (text) {
-        return Validate.validateRequired(text!, fieldName: 'password');
+        return Validate.validateRequired(text!, fieldName: 'login.password'.tr());
       },
     );
   }

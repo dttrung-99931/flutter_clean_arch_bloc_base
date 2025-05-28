@@ -94,5 +94,17 @@
             ],
 
         },
+        {
+            "name": "integration test",
+            "request": "launch",
+            "type": "dart",
+            // Define your flavor (here: foo) that you use in tests
+            "toolArgs": [
+                "--flavor",
+                "dev",
+            ],
+            // This is important: set it only for integration_test
+            "templateFor": "integration_test",
+        },
     ]
 }

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:maingames_flutter_test/core/model/base_response.dart';
 import 'package:maingames_flutter_test/src/features/auth/data/data_sources/auth_data_source.dart';
 import 'package:maingames_flutter_test/src/features/auth/data/dtos/request/login_request_dto.dart';
@@ -28,7 +29,7 @@ class TestAuthDataSource implements AuthDatasource {
         null,
         false,
         401,
-        'Unauthorized',
+        'loginFailed'.tr(),
       ));
     }
   }

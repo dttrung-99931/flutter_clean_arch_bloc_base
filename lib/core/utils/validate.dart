@@ -11,10 +11,10 @@ class Validate {
       return null;
     }
     if (isNullOrEmpty(email)) {
-      return 'messages.email_is_required'.tr();
+      return 'messages.emailIsRequired'.tr();
     }
     if (!isValidEmail(email!)) {
-      return 'messages.please_enter_valid_email'.tr();
+      return 'messages.plsEnterValidEmail'.tr();
     }
     return null;
   }
@@ -136,7 +136,7 @@ class Validate {
 
   static String? validateRequired(String? str, {required String fieldName}) {
     if (str == null || str.isEmpty) {
-      return tr('messages.enter_required_field_temp', args: [fieldName.tr()]);
+      return tr('messages.enterRequiredFieldTemp', args: [fieldName.tr()]);
       // TODO: localization
       // return tr('messages.is_required', args: [fieldName.tr()]);
     }
