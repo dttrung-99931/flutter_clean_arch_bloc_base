@@ -12,6 +12,31 @@ if (localPropertiesFile.exists()) {
     }
 }
 
+def stagingKeyPropertiesFile = rootProject.file('staging.key.properties')
+def devKeyPropertiesFile = rootProject.file('dev.key.properties')
+def prodKeyPropertiesFile = rootProject.file('prod.key.properties')
+
+Properties stagingKeyProperties = new Properties()
+if (stagingKeyPropertiesFile.exists()) {
+    stagingKeyPropertiesFile.withReader('UTF-8') { reader ->
+        stagingKeyProperties.load(reader)
+    }
+}
+
+Properties devKeyProperties = new Properties()
+if (devKeyPropertiesFile.exists()) {
+    devKeyPropertiesFile.withReader('UTF-8') { reader ->
+        devKeyProperties.load(reader)
+    }
+}
+
+Properties prodKeyProperties = new Properties()
+if (prodKeyPropertiesFile.exists()) {
+    prodKeyPropertiesFile.withReader('UTF-8') { reader ->
+        prodKeyProperties.load(reader)
+    }
+}
+
 def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
 if (flutterVersionCode == null) {
     flutterVersionCode = '1'
@@ -55,30 +80,30 @@ android {
     }
 
     signingConfigs {
-        production {
-            storeFile file('evm_keystore.jks')
-            keyAlias 'EVM'
-            keyPassword 'evm2023'
-            storePassword 'evm2023'
-        }
         staging {
-            storeFile file('evm_staging_keystore.jks')
-            keyAlias 'EVM Staging'
-            keyPassword 'evmstg'
-            storePassword 'evmstg'
+            storeFile file(stagingKeyProperties['storeFile'])
+            keyAlias stagingKeyProperties['keyAlias']
+            keyPassword stagingKeyProperties['keyPassword']
+            storePassword stagingKeyProperties['storePassword']
         }
         dev {
-            storeFile file('evm_dev_keystore.jks')
-            keyAlias 'EVM Dev'
-            keyPassword 'evmdev'
-            storePassword 'evmdev'
+            storeFile file(devKeyProperties['storeFile'])
+            keyAlias devKeyProperties['keyAlias']
+            keyPassword devKeyProperties['keyPassword']
+            storePassword devKeyProperties['storePassword']
+        }
+        production {
+            storeFile file(prodKeyProperties['storeFile'])
+            keyAlias prodKeyProperties['keyAlias']
+            keyPassword prodKeyProperties['keyPassword']
+            storePassword prodKeyProperties['storePassword']
         }
     }
 
     flavorDimensions "evmapp"
 
     productFlavors {
-       dev {
+        dev {
             dimension "evmapp"// TODO: change
             applicationIdSuffix ".dev"
             resValue "string", "app_name", "PanshopDev"
