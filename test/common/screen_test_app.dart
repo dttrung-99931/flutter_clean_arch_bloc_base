@@ -10,9 +10,9 @@ import 'package:maingames_flutter_test/src/config/di/injection.dart';
 import 'package:maingames_flutter_test/src/config/theme/app_theme.dart';
 import 'package:maingames_flutter_test/src/features/auth/presentation/bloc/login/login_bloc.dart';
 
-class MaingamesTestApp extends StatelessWidget {
-  const MaingamesTestApp({super.key, required this.child});
-  final Widget child;
+class MaingamesScreenTestApp extends StatelessWidget {
+  const MaingamesScreenTestApp({super.key, required this.screen});
+  final Widget screen;
 
   @override
   Widget build(BuildContext _) {
@@ -43,7 +43,7 @@ class MaingamesTestApp extends StatelessWidget {
                   navigatorKey: Global.globalKey,
                   debugShowCheckedModeBanner: false,
                   title: AppConfig.config.appName,
-                  home: child,
+                  home: screen,
                   theme: AppTheme.themeOf(context),
                 ),
               );

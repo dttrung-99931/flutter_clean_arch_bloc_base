@@ -6,8 +6,13 @@ import 'package:maingames_flutter_test/src/shared/widgets/text_input.dart';
 
 class LoginEmailInput extends StatelessWidget {
   final TextEditingController controller;
+  final FocusNode? focusNode;
 
-  const LoginEmailInput({super.key, required this.controller});
+  const LoginEmailInput({
+    super.key,
+    required this.controller,
+    this.focusNode,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -16,6 +21,7 @@ class LoginEmailInput extends StatelessWidget {
       controller: controller,
       textInputType: TextInputType.emailAddress,
       textInputAction: TextInputAction.next,
+      focusNode: focusNode,
       validator: Validate.email,
     );
   }

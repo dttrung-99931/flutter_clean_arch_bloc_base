@@ -41,10 +41,12 @@ void main() {
     testWidgets('Test login widgets', (WidgetTester tester) async {
       whenListen(
         loginBloc,
-        Stream<BaseState>.fromIterable([]),
+        Stream<BaseState>.fromIterable([
+          RememberEmailCheckChanged(false),
+        ]),
         initialState: InitialState(),
       );
-      await tester.pumpWidget(const MaingamesTestApp(child: LoginScreen()));
+      await tester.pumpWidget(const MaingamesScreenTestApp(screen: LoginScreen()));
       await tester.pumpAndSettle();
       expect(find.byType(LoginScreen), findsOneWidget);
       expect(find.byType(LoginEmailInput), findsOneWidget);
