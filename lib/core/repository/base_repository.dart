@@ -28,27 +28,22 @@ abstract class BaseRepo {
     return result.fold((Failure l) => Left(l..log()), (Either<Failure, T> r) => r);
   }
 
-  Future<Either<Failure, TRepoModel>> handleServerErrors<TRepoModel, TDatasourceModel>({
-    required Future<BaseResponse<TDatasourceModel?>> datasourceResponse,
-    TRepoModel Function(TDatasourceModel model)? mapper,
+  Future<Either<Failure, T>> handleServerErrors<T>({
+    required Future<BaseResponse<T?>> datasourceResponse,
   }) async {
     try {
-      BaseResponse<TDatasourceModel?> response = await datasourceResponse;
+      BaseResponse<T?> response = await datasourceResponse;
       if (response.success) {
-        if (mapper != null) {
-          return Right(mapper(response.data as TDatasourceModel));
+        if (response.data is T) {
+          return Right(response.data as T);
         }
 
-        if (response.data is TRepoModel) {
-          return Right(response.data as TRepoModel);
-        }
-
-        if (response is PaginatedListResponse && isSubtype<TRepoModel, PaginatedList>()) {
+        if (response is PaginatedListResponse && isSubtype<T, PaginatedList>()) {
           PaginatedListResponse pagiResponse = response as PaginatedListResponse;
-          return Right(pagiResponse.toPaginiatedList() as TRepoModel);
+          return Right(pagiResponse.toPaginiatedList() as T);
         }
 
-        throw 'Required mapper to map TDatasourceModel => TRepoModel';
+        throw 'Cannot map to $T';
       }
 
       return Left(ServerError(msg: response.message ?? '', statusCode: response.statusCode)..log());

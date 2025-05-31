@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
 import 'package:maingames_flutter_test/core/failures/failures.dart';
 import 'package:maingames_flutter_test/core/repository/base_repository.dart';
-import 'package:maingames_flutter_test/src/features/auth/data/dtos/request/login_request_dto.dart';
-import 'package:maingames_flutter_test/src/features/auth/data/dtos/response/login_response_dto.dart';
+import 'package:maingames_flutter_test/src/features/auth/domain/entities/request/login_request.dart';
+import 'package:maingames_flutter_test/src/features/auth/domain/entities/response/login_response.dart';
 
 abstract class AuthRepo extends BaseRepo {
-  Future<Either<Failure, LoginResponseDto>> login(LoginRequestDto param);
+  Future<Either<Failure, LoginResponse>> login(LoginRequest param);
 }

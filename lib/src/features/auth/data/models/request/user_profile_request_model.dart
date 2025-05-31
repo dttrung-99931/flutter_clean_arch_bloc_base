@@ -1,15 +1,15 @@
 import 'package:json_annotation/json_annotation.dart';
 
-part 'user_profile_request_dto.g.dart';
+part 'user_profile_request_model.g.dart';
 
 @JsonSerializable(includeIfNull: false, createFactory: false)
-class UserProfileRequestDto {
+class UserProfileRequestModel {
   @JsonKey(name: 'pass_chosse_manufacture')
   final bool? passChooseManufacturer;
 
-  UserProfileRequestDto({
+  UserProfileRequestModel({
     this.passChooseManufacturer,
   });
 
-  Map<String, dynamic> toJson() => _$UserProfileRequestDtoToJson(this);
+  Map<String, dynamic> toJson() => _$UserProfileRequestModelToJson(this);
 }

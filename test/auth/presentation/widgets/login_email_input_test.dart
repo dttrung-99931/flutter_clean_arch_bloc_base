@@ -16,7 +16,7 @@ void main() {
   tearDownAll(() {});
 
   group('LoginEmailInput', () {
-    testWidgets('Test LoginEmailInput widget', (tester) async {
+    testWidgets('should contains TextField and input text corectly', (tester) async {
       final emailController = TextEditingController();
       final focusNode = FocusNode();
       await tester.pumpWidget(

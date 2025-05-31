@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'user_detail_dto.dart';
+part of 'user_detail_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-UserDetailDto _$UserDetailDtoFromJson(Map<String, dynamic> json) =>
-    UserDetailDto(
+UserDetailModel _$UserDetailModelFromJson(Map<String, dynamic> json) =>
+    UserDetailModel(
       (json['id'] as num).toInt(),
       json['name'] as String,
       json['phone'] as String,

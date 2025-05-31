@@ -18,13 +18,15 @@ class _AuthDatasource implements AuthDatasource {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<BaseResponse<LoginResponseDto?>> login(LoginRequestDto param) async {
+  Future<BaseResponse<LoginResponseModel?>> login(
+    LoginRequestModel param,
+  ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(param.toJson());
-    final _options = _setStreamType<BaseResponse<LoginResponseDto?>>(
+    final _options = _setStreamType<BaseResponse<LoginResponseModel?>>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -35,13 +37,13 @@ class _AuthDatasource implements AuthDatasource {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late BaseResponse<LoginResponseDto?> _value;
+    late BaseResponse<LoginResponseModel?> _value;
     try {
-      _value = BaseResponse<LoginResponseDto?>.fromJson(
+      _value = BaseResponse<LoginResponseModel?>.fromJson(
         _result.data!,
         (json) => json == null
             ? null
-            : LoginResponseDto.fromJson(json as Map<String, dynamic>),
+            : LoginResponseModel.fromJson(json as Map<String, dynamic>),
       );
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);

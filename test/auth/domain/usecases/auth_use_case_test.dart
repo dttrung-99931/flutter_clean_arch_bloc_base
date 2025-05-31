@@ -3,9 +3,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:maingames_flutter_test/core/failures/failures.dart';
 import 'package:maingames_flutter_test/core/utils/storage.dart';
 import 'package:maingames_flutter_test/src/config/di/injection.dart';
-import 'package:maingames_flutter_test/src/features/auth/data/dtos/request/login_request_dto.dart';
-import 'package:maingames_flutter_test/src/features/auth/data/dtos/response/login_response_dto.dart';
-import 'package:maingames_flutter_test/src/features/auth/domain/models/login_response_model.dart';
+import 'package:maingames_flutter_test/src/features/auth/domain/entities/request/login_request.dart';
+import 'package:maingames_flutter_test/src/features/auth/domain/entities/response/login_response.dart';
 import 'package:maingames_flutter_test/src/features/auth/domain/repositories/auth_repo.dart';
 import 'package:maingames_flutter_test/src/features/auth/domain/use_cases/login_usecase.dart';
 import 'package:mockito/annotations.dart';
@@ -36,31 +35,31 @@ void main() {
   });
 
   group('Test auth use cases', () {
-    test('Login success', () async {
-      final LoginRequestDto request = LoginRequestDto(
+    test('Should return correct LoginResponse when repository call successs', () async {
+      final LoginRequest request = LoginRequest(
         email: 'test@gmail.com',
         password: 'aa123456',
       );
-      final mockResponse = LoginResponseDto(token: 'token', userID: 123, cartId: 321);
+      final mockResponse = LoginResponse(token: 'token');
       when(mockAuthRepo.login(request)).thenAnswer(
         (_) async => Right(mockResponse),
       );
-      final Either<Failure, LoginResponseModel> result = await loginUseCase.call(
-        LoginParams(requestModel: request, rememberEmail: false),
+      final Either<Failure, LoginResponse> result = await loginUseCase.call(
+        LoginParams(request: request, rememberEmail: false),
       );
       expect(result.isRight(), true);
       result.fold(
         (l) => null,
-        (LoginResponseModel r) {
-          expect(r.accessToken, mockResponse.token);
+        (LoginResponse r) {
+          expect(r.token, mockResponse.token);
           final storage = getIt<Storage>();
           expect(storage.token, mockResponse.token);
         },
       );
     });
 
-    test('Login failed', () async {
-      final LoginRequestDto request = LoginRequestDto(
+    test('Should return Failure(ServerError) when repository call failed', () async {
+      final LoginRequest request = LoginRequest(
         email: 'test@gmail.com',
         password: 'aa123456',
       );
@@ -68,8 +67,8 @@ void main() {
       when(mockAuthRepo.login(request)).thenAnswer(
         (_) async => Left(mockAPIError),
       );
-      final Either<Failure, LoginResponseModel> result = await loginUseCase.call(
-        LoginParams(requestModel: request, rememberEmail: false),
+      final Either<Failure, LoginResponse> result = await loginUseCase.call(
+        LoginParams(request: request, rememberEmail: false),
       );
       expect(result.isLeft(), true);
       result.fold(
@@ -84,8 +83,8 @@ void main() {
       );
     });
 
-    test('Login network error', () async {
-      final LoginRequestDto request = LoginRequestDto(
+    test('Should return Failure(NetworkFailure) when repository call network error', () async {
+      final LoginRequest request = LoginRequest(
         email: 'test@gmail.com',
         password: 'aa123456',
       );
@@ -93,8 +92,8 @@ void main() {
       when(mockAuthRepo.login(request)).thenAnswer(
         (_) async => Left(mockNetworkError),
       );
-      final Either<Failure, LoginResponseModel> result = await loginUseCase.call(
-        LoginParams(requestModel: request, rememberEmail: false),
+      final Either<Failure, LoginResponse> result = await loginUseCase.call(
+        LoginParams(request: request, rememberEmail: false),
       );
       expect(result.isLeft(), true);
       result.fold(

@@ -15,7 +15,7 @@ void main() {
   tearDownAll(() {});
 
   group('LoginButton', () {
-    testWidgets('Test LoginButton widget', (tester) async {
+    testWidgets('should have correct title and clickable', (tester) async {
       bool isPressed = false;
       await tester.pumpWidget(
         MaingamesWidgetTestApp(

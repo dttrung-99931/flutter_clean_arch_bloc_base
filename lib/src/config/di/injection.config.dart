@@ -74,12 +74,12 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i1036.PaymentBloc(gh<_i872.Storage>()));
     gh.lazySingleton<_i707.AuthInterceptor>(
         () => _i707.AuthInterceptor(gh<_i872.Storage>()));
+    gh.lazySingleton<_i93.LogoutUseCase>(
+        () => _i93.LogoutUseCase(gh<_i872.Storage>()));
     gh.lazySingleton<_i869.CheckLoginUseCase>(
         () => _i869.CheckLoginUseCase(gh<_i872.Storage>()));
     gh.lazySingleton<_i278.GetRememberLoginEmailUserCase>(
         () => _i278.GetRememberLoginEmailUserCase(gh<_i872.Storage>()));
-    gh.lazySingleton<_i93.LogoutUseCase>(
-        () => _i93.LogoutUseCase(gh<_i872.Storage>()));
     gh.lazySingleton<_i361.Dio>(
         () => appModuleDepedenciesProvider.provideNetworkDio(
               gh<_i707.AuthInterceptor>(),

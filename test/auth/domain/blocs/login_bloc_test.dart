@@ -4,7 +4,7 @@ import 'package:maingames_flutter_test/core/base_bloc/base_state.dart';
 import 'package:maingames_flutter_test/core/failures/failures.dart';
 import 'package:maingames_flutter_test/core/utils/storage.dart';
 import 'package:maingames_flutter_test/src/config/di/injection.dart';
-import 'package:maingames_flutter_test/src/features/auth/domain/models/login_response_model.dart';
+import 'package:maingames_flutter_test/src/features/auth/domain/entities/response/login_response.dart';
 import 'package:maingames_flutter_test/src/features/auth/domain/use_cases/login_usecase.dart';
 import 'package:maingames_flutter_test/src/features/auth/presentation/bloc/login/login_bloc.dart';
 import 'package:mockito/annotations.dart';
@@ -17,13 +17,11 @@ import 'login_bloc_test.mocks.dart';
 @GenerateMocks([EmailLoginUseCase])
 void main() {
   late MockEmailLoginUseCase mockLoginUseCase;
-  late LoginBloc loginBloc;
 
   setUpAll(() async {
     await baseTestSetup();
     getIt.registerTestDependecy<EmailLoginUseCase>(MockEmailLoginUseCase());
     mockLoginUseCase = getIt<EmailLoginUseCase>() as MockEmailLoginUseCase;
-    loginBloc = getIt();
   });
 
   tearDown(() {
@@ -36,13 +34,13 @@ void main() {
 
   group('Test auth bloc', () {
     blocTest<LoginBloc, BaseState>(
-      'Test login success',
+      'Should emit correct state when login success',
       build: () {
-        return loginBloc;
+        return getIt();
       },
       setUp: () {
         when(mockLoginUseCase.call(any)).thenAnswer(
-          (_) async => Right(LoginResponseModel(accessToken: 'accessToken')),
+          (_) async => Right(LoginResponse(token: 'accessToken')),
         );
       },
       act: (LoginBloc bloc) {
@@ -55,13 +53,16 @@ void main() {
         LoadingState(),
         LoginSuccess(),
       ],
+      verify: (bloc) {
+        bloc.close();
+      },
     );
 
     final serverError = ServerError(msg: 'Login failed', statusCode: 401);
     blocTest<LoginBloc, BaseState>(
-      'Test login failed',
+      'Should emit correct state when login failed',
       build: () {
-        return loginBloc;
+        return getIt();
       },
       setUp: () {
         when(mockLoginUseCase.call(any)).thenAnswer(
@@ -80,13 +81,16 @@ void main() {
         LoadingState(),
         LoginFailed(serverError),
       ],
+      verify: (bloc) {
+        bloc.close();
+      },
     );
 
     final networkFailure = NetworkFailure();
     blocTest<LoginBloc, BaseState>(
-      'Test login network error',
+      'Should emit correct state when login network error',
       build: () {
-        return loginBloc;
+        return getIt();
       },
       setUp: () {
         when(mockLoginUseCase.call(any)).thenAnswer(
@@ -105,6 +109,9 @@ void main() {
         LoadingState(),
         LoginFailed(networkFailure),
       ],
+      verify: (bloc) {
+        bloc.close();
+      },
     );
   });
 }

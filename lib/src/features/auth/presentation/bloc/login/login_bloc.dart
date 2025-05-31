@@ -9,11 +9,11 @@ import 'package:maingames_flutter_test/core/base_bloc/base_event.dart';
 import 'package:maingames_flutter_test/core/base_bloc/base_state.dart';
 import 'package:maingames_flutter_test/core/use_case/use_case.dart';
 import 'package:maingames_flutter_test/global.dart';
-import 'package:maingames_flutter_test/src/features/auth/domain/models/login_response_model.dart';
+import 'package:maingames_flutter_test/src/features/auth/domain/entities/request/login_request.dart';
+import 'package:maingames_flutter_test/src/features/auth/domain/entities/response/login_response.dart';
 import 'package:maingames_flutter_test/src/features/auth/domain/use_cases/login_usecase.dart';
 import 'package:maingames_flutter_test/src/features/auth/domain/use_cases/logout_usecase.dart';
 
-import '../../../data/dtos/request/login_request_dto.dart';
 import '../../../domain/use_cases/check_login_usecase.dart';
 import '../../../domain/use_cases/get_remember_login_email_usecase.dart';
 
@@ -47,7 +47,7 @@ class LoginBloc extends BaseBloc {
     await handleUsecaseResult(
       usecaseResult: _login.call(
         LoginParams(
-          requestModel: LoginRequestDto(
+          request: LoginRequest(
             email: event.email,
             password: event.password,
           ),
@@ -55,7 +55,7 @@ class LoginBloc extends BaseBloc {
         ),
       ),
       emit: emit.call,
-      onSuccess: (LoginResponseModel result) {
+      onSuccess: (LoginResponse result) {
         Global.mainPageIndexNotifier = ValueNotifier(0);
         return LoginSuccess();
       },

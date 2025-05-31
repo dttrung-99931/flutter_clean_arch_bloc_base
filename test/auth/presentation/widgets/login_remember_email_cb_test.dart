@@ -1,4 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:maingames_flutter_test/app.dart';
 import 'package:maingames_flutter_test/src/features/auth/presentation/widgets/login/remember_email_check_box.dart';
@@ -15,7 +16,7 @@ void main() {
   tearDownAll(() {});
 
   group('RememberEmailCheckBox', () {
-    testWidgets('Test RememberEmailCheckBox widget', (tester) async {
+    testWidgets('should contains Checkbox and clickable', (tester) async {
       bool isChecked = false;
       await tester.pumpWidget(
         MaingamesWidgetTestApp(
@@ -29,7 +30,7 @@ void main() {
       );
       await tester.pumpAndSettle();
 
-      final cb = find.byType(RememberEmailCheckBox);
+      final cb = find.byType(Checkbox);
       expect(cb, findsOneWidget);
 
       final hintText = find.text('login.rememberEmail'.tr());

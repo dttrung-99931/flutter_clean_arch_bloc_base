@@ -7,9 +7,7 @@ import 'dart:async' as _i4;
 
 import 'package:dartz/dartz.dart' as _i2;
 import 'package:maingames_flutter_test/core/failures/failures.dart' as _i5;
-import 'package:maingames_flutter_test/src/features/auth/data/dtos/response/login_response_dto.dart'
-    as _i7;
-import 'package:maingames_flutter_test/src/features/auth/domain/models/login_response_model.dart'
+import 'package:maingames_flutter_test/src/features/auth/domain/entities/response/login_response.dart'
     as _i6;
 import 'package:maingames_flutter_test/src/features/auth/domain/use_cases/login_usecase.dart'
     as _i3;
@@ -48,7 +46,7 @@ class MockEmailLoginUseCase extends _i1.Mock implements _i3.EmailLoginUseCase {
   }
 
   @override
-  _i4.Future<_i2.Either<_i5.Failure, _i6.LoginResponseModel>> call(
+  _i4.Future<_i2.Either<_i5.Failure, _i6.LoginResponse>> call(
           _i3.LoginParams? loginParam) =>
       (super.noSuchMethod(
         Invocation.method(
@@ -56,38 +54,38 @@ class MockEmailLoginUseCase extends _i1.Mock implements _i3.EmailLoginUseCase {
           [loginParam],
         ),
         returnValue:
-            _i4.Future<_i2.Either<_i5.Failure, _i6.LoginResponseModel>>.value(
-                _FakeEither_0<_i5.Failure, _i6.LoginResponseModel>(
+            _i4.Future<_i2.Either<_i5.Failure, _i6.LoginResponse>>.value(
+                _FakeEither_0<_i5.Failure, _i6.LoginResponse>(
           this,
           Invocation.method(
             #call,
             [loginParam],
           ),
         )),
-      ) as _i4.Future<_i2.Either<_i5.Failure, _i6.LoginResponseModel>>);
+      ) as _i4.Future<_i2.Either<_i5.Failure, _i6.LoginResponse>>);
 
   @override
-  _i4.Future<_i2.Either<_i5.Failure, _i6.LoginResponseModel>> onLoginSuccess(
-    _i7.LoginResponseDto? loginResponse, {
+  _i4.Future<_i2.Either<_i5.Failure, _i6.LoginResponse>> onLoginSuccess(
+    _i6.LoginResponse? response, {
     _i3.LoginParams? loginParam,
   }) =>
       (super.noSuchMethod(
         Invocation.method(
           #onLoginSuccess,
-          [loginResponse],
+          [response],
           {#loginParam: loginParam},
         ),
         returnValue:
-            _i4.Future<_i2.Either<_i5.Failure, _i6.LoginResponseModel>>.value(
-                _FakeEither_0<_i5.Failure, _i6.LoginResponseModel>(
+            _i4.Future<_i2.Either<_i5.Failure, _i6.LoginResponse>>.value(
+                _FakeEither_0<_i5.Failure, _i6.LoginResponse>(
           this,
           Invocation.method(
             #onLoginSuccess,
-            [loginResponse],
+            [response],
             {#loginParam: loginParam},
           ),
         )),
-      ) as _i4.Future<_i2.Either<_i5.Failure, _i6.LoginResponseModel>>);
+      ) as _i4.Future<_i2.Either<_i5.Failure, _i6.LoginResponse>>);
 
   @override
   _i4.Future<_i2.Either<_i5.Failure, TDto>> handleRepoResult<TDto, TModel>({

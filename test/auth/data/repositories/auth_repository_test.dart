@@ -5,8 +5,10 @@ import 'package:maingames_flutter_test/core/model/base_response.dart';
 import 'package:maingames_flutter_test/core/utils/network/network_info.dart';
 import 'package:maingames_flutter_test/src/config/di/injection.dart';
 import 'package:maingames_flutter_test/src/features/auth/data/data_sources/auth_data_source.dart';
-import 'package:maingames_flutter_test/src/features/auth/data/dtos/request/login_request_dto.dart';
-import 'package:maingames_flutter_test/src/features/auth/data/dtos/response/login_response_dto.dart';
+import 'package:maingames_flutter_test/src/features/auth/data/models/request/login_request_model.dart';
+import 'package:maingames_flutter_test/src/features/auth/data/models/response/login_response_model.dart';
+import 'package:maingames_flutter_test/src/features/auth/domain/entities/request/login_request.dart';
+import 'package:maingames_flutter_test/src/features/auth/domain/entities/response/login_response.dart';
 import 'package:maingames_flutter_test/src/features/auth/domain/repositories/auth_repo.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
@@ -33,13 +35,13 @@ void main() {
   });
 
   group('Test auth repository', () {
-    test('Login success', () async {
-      final LoginRequestDto request = LoginRequestDto(
+    test('Should return correct LoginResponse when datasource call success', () async {
+      final LoginRequest request = LoginRequest(
         email: 'test@gmail.com',
         password: 'aa123456',
       );
-      final mockResponse = BaseResponse<LoginResponseDto?>(
-        LoginResponseDto(
+      final mockResponse = BaseResponse<LoginResponseModel?>(
+        LoginResponseModel(
           token: 'token',
           userID: 123,
           cartId: 321,
@@ -48,36 +50,35 @@ void main() {
         200,
         null,
       );
-      when(mockAuthDatasource.login(request)).thenAnswer(
+      when(mockAuthDatasource.login(any)).thenAnswer(
         (_) async => mockResponse,
       );
-      final Either<Failure, LoginResponseDto> dtsResponse = await authRepo.login(request);
-      expect(dtsResponse.isRight(), true);
-      dtsResponse.fold(
+      final Either<Failure, LoginResponse> response = await authRepo.login(request);
+      expect(response.isRight(), true);
+      verify(mockAuthDatasource.login(any)).called(1);
+      response.fold(
         (l) => null,
         (r) {
           expect(r.token, mockResponse.data?.token);
-          expect(r.userID, mockResponse.data?.userID);
-          expect(r.cartId, mockResponse.data?.cartId);
         },
       );
     });
 
-    test('Login failed', () async {
-      final LoginRequestDto request = LoginRequestDto(
+    test('Should return correct Failure when datasource call failed', () async {
+      final LoginRequest request = LoginRequest(
         email: 'test@gmail.com',
         password: 'aa123456',
       );
-      final mockFailedLogin = BaseResponse<LoginResponseDto?>(
+      final mockFailedLogin = BaseResponse<LoginResponseModel?>(
         null,
         false,
         401,
         'Unauthorized',
       );
-      when(mockAuthDatasource.login(request)).thenAnswer(
+      when(mockAuthDatasource.login(any)).thenAnswer(
         (_) async => mockFailedLogin,
       );
-      final Either<Failure, LoginResponseDto> dtsResponse = await authRepo.login(request);
+      final Either<Failure, LoginResponse> dtsResponse = await authRepo.login(request);
       expect(dtsResponse.isLeft(), true);
       dtsResponse.fold(
         (Failure l) {
@@ -119,14 +120,14 @@ void main() {
     //   );
     // });
 
-    test('Login network error', () async {
+    test('Should return correct Failure when datasource call network error', () async {
       getIt.registerTestDependecy<NetworkInfo>(MockNetworkInfo(isConnectedMock: false));
-      final LoginRequestDto request = LoginRequestDto(
+      final LoginRequest request = LoginRequest(
         email: 'test@gmail.com',
         password: 'aa123456',
       );
-      final mockResponse = BaseResponse<LoginResponseDto?>(
-        LoginResponseDto(
+      final mockResponse = BaseResponse<LoginResponseModel?>(
+        LoginResponseModel(
           token: 'token',
           userID: 123,
           cartId: 321,
@@ -135,10 +136,10 @@ void main() {
         200,
         null,
       );
-      when(mockAuthDatasource.login(request)).thenAnswer(
+      when(mockAuthDatasource.login(LoginRequestModel.fromEntity(request))).thenAnswer(
         (_) async => mockResponse,
       );
-      final Either<Failure, LoginResponseDto> dtsResponse = await authRepo.login(request);
+      final Either<Failure, LoginResponse> dtsResponse = await authRepo.login(request);
       expect(dtsResponse.isLeft(), true);
       dtsResponse.fold(
         (l) {

@@ -1,6 +1,6 @@
 import 'package:another_flushbar/flushbar_route.dart';
 import 'package:maingames_flutter_test/src/config/app_nav_observer.dart';
-import 'package:maingames_flutter_test/src/features/auth/domain/models/user_detail_model.dart';
+import 'package:maingames_flutter_test/src/features/auth/domain/entities/response/user_detail_model.dart';
 import 'package:flutter/material.dart';
 
 import 'src/features/payment/presentation/blocs/payment_bloc.dart';

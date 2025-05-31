@@ -8,9 +8,9 @@ import 'dart:async' as _i4;
 import 'package:dartz/dartz.dart' as _i2;
 import 'package:maingames_flutter_test/core/failures/failures.dart' as _i5;
 import 'package:maingames_flutter_test/core/model/base_response.dart' as _i8;
-import 'package:maingames_flutter_test/src/features/auth/data/dtos/request/login_request_dto.dart'
+import 'package:maingames_flutter_test/src/features/auth/domain/entities/request/login_request.dart'
     as _i7;
-import 'package:maingames_flutter_test/src/features/auth/data/dtos/response/login_response_dto.dart'
+import 'package:maingames_flutter_test/src/features/auth/domain/entities/response/login_response.dart'
     as _i6;
 import 'package:maingames_flutter_test/src/features/auth/domain/repositories/auth_repo.dart'
     as _i3;
@@ -49,23 +49,23 @@ class MockAuthRepo extends _i1.Mock implements _i3.AuthRepo {
   }
 
   @override
-  _i4.Future<_i2.Either<_i5.Failure, _i6.LoginResponseDto>> login(
-          _i7.LoginRequestDto? param) =>
+  _i4.Future<_i2.Either<_i5.Failure, _i6.LoginResponse>> login(
+          _i7.LoginRequest? param) =>
       (super.noSuchMethod(
         Invocation.method(
           #login,
           [param],
         ),
         returnValue:
-            _i4.Future<_i2.Either<_i5.Failure, _i6.LoginResponseDto>>.value(
-                _FakeEither_0<_i5.Failure, _i6.LoginResponseDto>(
+            _i4.Future<_i2.Either<_i5.Failure, _i6.LoginResponse>>.value(
+                _FakeEither_0<_i5.Failure, _i6.LoginResponse>(
           this,
           Invocation.method(
             #login,
             [param],
           ),
         )),
-      ) as _i4.Future<_i2.Either<_i5.Failure, _i6.LoginResponseDto>>);
+      ) as _i4.Future<_i2.Either<_i5.Failure, _i6.LoginResponse>>);
 
   @override
   _i4.Future<_i2.Either<_i5.Failure, T>> handleNetwork<T>({
@@ -96,32 +96,22 @@ class MockAuthRepo extends _i1.Mock implements _i3.AuthRepo {
       ) as _i4.Future<_i2.Either<_i5.Failure, T>>);
 
   @override
-  _i4.Future<_i2.Either<_i5.Failure, TRepoModel>>
-      handleServerErrors<TRepoModel, TDatasourceModel>({
-    required _i4.Future<_i8.BaseResponse<TDatasourceModel?>>?
-        datasourceResponse,
-    TRepoModel Function(TDatasourceModel)? mapper,
-  }) =>
-          (super.noSuchMethod(
-            Invocation.method(
-              #handleServerErrors,
-              [],
-              {
-                #datasourceResponse: datasourceResponse,
-                #mapper: mapper,
-              },
-            ),
-            returnValue: _i4.Future<_i2.Either<_i5.Failure, TRepoModel>>.value(
-                _FakeEither_0<_i5.Failure, TRepoModel>(
-              this,
-              Invocation.method(
-                #handleServerErrors,
-                [],
-                {
-                  #datasourceResponse: datasourceResponse,
-                  #mapper: mapper,
-                },
-              ),
-            )),
-          ) as _i4.Future<_i2.Either<_i5.Failure, TRepoModel>>);
+  _i4.Future<_i2.Either<_i5.Failure, T>> handleServerErrors<T>(
+          {required _i4.Future<_i8.BaseResponse<T?>>? datasourceResponse}) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #handleServerErrors,
+          [],
+          {#datasourceResponse: datasourceResponse},
+        ),
+        returnValue: _i4.Future<_i2.Either<_i5.Failure, T>>.value(
+            _FakeEither_0<_i5.Failure, T>(
+          this,
+          Invocation.method(
+            #handleServerErrors,
+            [],
+            {#datasourceResponse: datasourceResponse},
+          ),
+        )),
+      ) as _i4.Future<_i2.Either<_i5.Failure, T>>);
 }
