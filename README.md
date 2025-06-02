@@ -2,6 +2,11 @@
 
 A Flutter project following Clean Architecture principles, using BLoC for state management and comprehensive testing.
 
+<p align="center">
+  <img src="screenshot/login.png" width="300"/>
+</p>
+
+
 ## 🏗️ Project Structure
 
 The project follows Clean Architecture with the following layers:

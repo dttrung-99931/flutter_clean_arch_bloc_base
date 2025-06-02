@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class AppColors {
   static const background = lightGrey;
-  static const primary = Colors.orange;
+  static const primary = Colors.cyan;
   static const primaryShop = blue2;
   static get primaryByRole => Global.isUserMode ? primaryShop : primary;
 

@@ -7,7 +7,7 @@
     "onlyEnterNumberTemp": "Only enter number, please"
   },
   "login": {
-    "appTitle": "Main Games",
+    "appTitle": "Base App",
     "passwordHint": "Password",
     "rememberEmail": "Remember email",
     "forgotPassword": "Forgot password?",

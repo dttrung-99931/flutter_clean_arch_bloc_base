@@ -2,6 +2,18 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "dev",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "debug",
+            "program": "lib/main_dev.dart",
+            // "preLaunchTask": "reverse-tcp", Use this if you want app can access local API https://localhost...
+            "args": [
+                "--flavor",
+                "dev"
+            ]
+        },
+        {
             "name": "production",
             "request": "launch",
             "type": "dart",
@@ -22,77 +34,6 @@
                 "--flavor",
                 "staging"
             ]
-        },
-        {
-            "name": "staging_dev",
-            "request": "launch",
-            "type": "dart",
-            "flutterMode": "debug",
-            "program": "lib/main_staging_dev.dart",
-            "args": [
-                "--flavor",
-                "staging"
-            ]
-        },
-        {
-            "name": "dev",
-            "request": "launch",
-            "type": "dart",
-            "flutterMode": "debug",
-            "program": "lib/main_dev.dart",
-            "preLaunchTask": "reverse-tcp",
-            "args": [
-                "--flavor",
-                "dev"
-            ]
-        },
-        {
-            "name": "dev home",
-            "request": "launch",
-            "type": "dart",
-            "flutterMode": "debug",
-            "program": "lib/main_dev_home.dart",
-            "preLaunchTask": "reverse-tcp-home",
-            "args": [
-                "--flavor",
-                "dev"
-            ]
-        },
-        {
-            "name": "dev home release",
-            "request": "launch",
-            "type": "dart",
-            "flutterMode": "release",
-            "program": "lib/main_dev_home.dart",
-            "preLaunchTask": "reverse-tcp-home",
-            "args": [
-                "--flavor",
-                "dev"
-            ]
-        },
-        {
-            "name": "dev home wifi",
-            "request": "launch",
-            "type": "dart",
-            "flutterMode": "debug",
-            "program": "lib/main_dev_home_wifi.dart",
-            "args": [
-                "--flavor",
-                "dev"
-            ],
-
-        },
-        {
-            "name": "dev home wifi release",
-            "request": "launch",
-            "type": "dart",
-            "flutterMode": "release",
-            "program": "lib/main_dev_home_wifi.dart",
-            "args": [
-                "--flavor",
-                "dev"
-            ],
-
         },
         {
             "name": "integration test",
