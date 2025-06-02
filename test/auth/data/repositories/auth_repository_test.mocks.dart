@@ -5,7 +5,7 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i4;
 
-import 'package:maingames_flutter_test/core/model/base_response.dart' as _i2;
+import 'package:maingames_flutter_test/core/models/base_response.dart' as _i2;
 import 'package:maingames_flutter_test/features/auth/data/data_sources/auth_data_source.dart' as _i3;
 import 'package:maingames_flutter_test/features/auth/data/models/request/login_request_model.dart' as _i6;
 import 'package:maingames_flutter_test/features/auth/data/models/response/login_model.dart' as _i5;

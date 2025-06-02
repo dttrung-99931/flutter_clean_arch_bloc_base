@@ -7,7 +7,7 @@ import 'dart:async' as _i4;
 
 import 'package:dartz/dartz.dart' as _i2;
 import 'package:maingames_flutter_test/core/failures/failures.dart' as _i5;
-import 'package:maingames_flutter_test/core/model/base_response.dart' as _i8;
+import 'package:maingames_flutter_test/core/models/base_response.dart' as _i8;
 import 'package:maingames_flutter_test/features/auth/domain/entities/request/login_request.dart' as _i7;
 import 'package:maingames_flutter_test/features/auth/domain/entities/response/login_response.dart' as _i6;
 import 'package:maingames_flutter_test/features/auth/domain/repositories/auth_repo.dart' as _i3;

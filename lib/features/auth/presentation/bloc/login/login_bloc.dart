@@ -7,7 +7,7 @@ import 'package:injectable/injectable.dart';
 import 'package:maingames_flutter_test/core/base_bloc/base_bloc.dart';
 import 'package:maingames_flutter_test/core/base_bloc/base_event.dart';
 import 'package:maingames_flutter_test/core/base_bloc/base_state.dart';
-import 'package:maingames_flutter_test/core/use_case/use_case.dart';
+import 'package:maingames_flutter_test/core/use_cases/use_case.dart';
 import 'package:maingames_flutter_test/config/global.dart';
 import 'package:maingames_flutter_test/features/auth/domain/entities/request/login_request.dart';
 import 'package:maingames_flutter_test/features/auth/domain/entities/response/login_response.dart';

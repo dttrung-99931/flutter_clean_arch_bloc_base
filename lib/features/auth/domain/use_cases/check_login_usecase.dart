@@ -1,6 +1,6 @@
 import 'dart:developer';
 
-import 'package:maingames_flutter_test/core/use_case/use_case.dart';
+import 'package:maingames_flutter_test/core/use_cases/use_case.dart';
 import 'package:maingames_flutter_test/core/utils/storage.dart';
 import 'package:injectable/injectable.dart';
 

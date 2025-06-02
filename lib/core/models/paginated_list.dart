@@ -1,6 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:json_annotation/json_annotation.dart';
-
+import 'package:maingames_flutter_test/core/entities/pagination.dart';
 
 @JsonSerializable(genericArgumentFactories: true)
 class PaginatedList<T> {
@@ -28,4 +28,12 @@ class PaginatedList<T> {
   bool get isEmpty => data.isEmpty;
 
   bool get isNotEmpty => data.isNotEmpty;
+
+  Pagination getPagination() {
+    return Pagination(
+      pageSize: pageSize,
+      pageNum: pageNum,
+      total: total,
+    );
+  }
 }

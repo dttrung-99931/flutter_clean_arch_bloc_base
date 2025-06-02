@@ -2,12 +2,12 @@ import 'dart:io';
 
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
-import 'package:maingames_flutter_test/core/model/paginated_list.dart';
+import 'package:maingames_flutter_test/core/models/paginated_list.dart';
 import 'package:maingames_flutter_test/core/utils/log.dart';
 import 'package:maingames_flutter_test/core/utils/utils.dart';
 
 import '../failures/failures.dart';
-import '../model/base_response.dart';
+import '../models/base_response.dart';
 import '../utils/error_handlers.dart';
 import '../utils/network/network_utils.dart';
 

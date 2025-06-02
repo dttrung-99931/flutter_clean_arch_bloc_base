@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:maingames_flutter_test/core/failures/failures.dart';
-import 'package:maingames_flutter_test/core/model/base_response.dart';
+import 'package:maingames_flutter_test/core/models/base_response.dart';
 import 'package:maingames_flutter_test/core/utils/network/network_info.dart';
 import 'package:maingames_flutter_test/config/di/injection.dart';
 import 'package:maingames_flutter_test/features/auth/data/data_sources/auth_data_source.dart';

@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
-import 'package:maingames_flutter_test/core/model/base_response.dart';
+import 'package:maingames_flutter_test/core/models/base_response.dart';
 import 'package:maingames_flutter_test/features/auth/data/models/request/login_request_model.dart';
 import 'package:maingames_flutter_test/features/auth/data/models/response/login_model.dart';
 import 'package:retrofit/retrofit.dart';
