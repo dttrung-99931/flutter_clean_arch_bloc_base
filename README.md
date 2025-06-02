@@ -100,7 +100,7 @@ Check it out at [app_router.dart](lib/config/app_router.dart)
 1. **Clone the repository**
    ```bash
    git clone https://github.com/dttrung-99931/flutter_clean_arch_bloc_base
-   cd flutter_base_app
+   cd flutter_clean_arch_bloc_base
    ```
 
 2. **Install Flutter version FVM**
