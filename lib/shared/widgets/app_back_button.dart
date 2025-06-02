@@ -1,8 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:maingames_flutter_test/core/utils/app_colors.dart';
-import 'package:maingames_flutter_test/config/app_router.dart';
+import 'package:flutter_base_app/core/utils/app_colors.dart';
+import 'package:flutter_base_app/config/app_router.dart';
 
 class AppBackButton extends StatelessWidget {
   const AppBackButton({super.key, this.color = AppColors.black});

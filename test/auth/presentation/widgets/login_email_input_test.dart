@@ -1,8 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:maingames_flutter_test/app.dart';
-import 'package:maingames_flutter_test/features/auth/presentation/widgets/login/login_email_input.dart';
+import 'package:flutter_base_app/app.dart';
+import 'package:flutter_base_app/features/auth/presentation/widgets/login/login_email_input.dart';
 
 import '../../../common/base_setup.dart';
 import '../../../common/widget_test_app.dart';

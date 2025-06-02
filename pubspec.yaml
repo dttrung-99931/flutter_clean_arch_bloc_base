@@ -1,10 +1,10 @@
-name: maingames_flutter_test
+name: flutter_base_app
 
-description: Maingames Flutter Test App
+description: Flutter clean architecture base app
 
 publish_to: "none"
 
-version: 1.0.0+4
+version: 1.0.0+1
 
 environment:
   sdk: ">=3.0.0 <4.0.0"

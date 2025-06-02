@@ -1,10 +1,10 @@
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
-import 'package:maingames_flutter_test/core/failures/failures.dart';
-import 'package:maingames_flutter_test/core/use_cases/use_case.dart';
-import 'package:maingames_flutter_test/core/utils/error_handlers.dart';
-import 'package:maingames_flutter_test/core/utils/storage.dart';
-import 'package:maingames_flutter_test/config/global.dart';
+import 'package:flutter_base_app/core/failures/failures.dart';
+import 'package:flutter_base_app/core/use_cases/use_case.dart';
+import 'package:flutter_base_app/core/utils/error_handlers.dart';
+import 'package:flutter_base_app/core/utils/storage.dart';
+import 'package:flutter_base_app/config/global.dart';
 
 @lazySingleton
 class LogoutUseCase extends EitherUseCase<void, NoParams> {

@@ -1,5 +1,5 @@
-import 'package:maingames_flutter_test/core/utils/assets/assets.dart';
-import 'package:maingames_flutter_test/core/utils/encode_utils.dart';
+import 'package:flutter_base_app/core/utils/assets/assets.dart';
+import 'package:flutter_base_app/core/utils/encode_utils.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -25,12 +25,11 @@ class Base64Image extends StatelessWidget {
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: isCircle ? BorderRadius.circular(200) : BorderRadius.zero,
-      child:
-          base64Image != null
-              ? base64Image!.contains('data:image/svg')
-                  ? SvgPicture.string(decodeBase64String(base64Image!), width: width, height: height, fit: fit)
-                  : Image(image: MemoryImage(decodeBase64(base64Image!)!), width: width, height: height, fit: fit)
-              : defaultImageAsset.contains('svg')
+      child: base64Image != null
+          ? base64Image!.contains('data:image/svg')
+              ? SvgPicture.string(decodeBase64String(base64Image!), width: width, height: height, fit: fit)
+              : Image(image: MemoryImage(decodeBase64(base64Image!)!), width: width, height: height, fit: fit)
+          : defaultImageAsset.contains('svg')
               ? defaultImageAsset.buildSvg(width: width, height: height, fit: fit)
               : defaultImageAsset.build(width: width, height: height, fit: fit),
     );

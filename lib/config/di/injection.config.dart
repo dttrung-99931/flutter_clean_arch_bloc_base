@@ -13,22 +13,22 @@ import 'package:dio/dio.dart' as _i361;
 import 'package:dio_cache_interceptor/dio_cache_interceptor.dart' as _i695;
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
-import 'package:maingames_flutter_test/core/cache/panda_cache_provider.dart' as _i364;
-import 'package:maingames_flutter_test/core/interceptors/api_log_interceptor.dart' as _i67;
-import 'package:maingames_flutter_test/core/interceptors/auth_interceptor.dart' as _i707;
-import 'package:maingames_flutter_test/core/utils/network/network_info.dart' as _i415;
-import 'package:maingames_flutter_test/core/utils/network/network_info_impl.dart' as _i410;
-import 'package:maingames_flutter_test/core/utils/storage.dart' as _i872;
-import 'package:maingames_flutter_test/config/di/injection.dart' as _i895;
-import 'package:maingames_flutter_test/features/auth/data/data_sources/auth_data_source.dart' as _i840;
-import 'package:maingames_flutter_test/features/auth/data/repositories/auth_repo_impl.dart' as _i868;
-import 'package:maingames_flutter_test/features/auth/domain/repositories/auth_repo.dart' as _i1071;
-import 'package:maingames_flutter_test/features/auth/domain/use_cases/check_login_usecase.dart' as _i869;
-import 'package:maingames_flutter_test/features/auth/domain/use_cases/get_remember_login_email_usecase.dart' as _i278;
-import 'package:maingames_flutter_test/features/auth/domain/use_cases/login_usecase.dart' as _i780;
-import 'package:maingames_flutter_test/features/auth/domain/use_cases/logout_usecase.dart' as _i93;
-import 'package:maingames_flutter_test/features/auth/presentation/bloc/login/login_bloc.dart' as _i1067;
-import 'package:maingames_flutter_test/features/home/presentation/blocs/home_bloc.dart' as _i64;
+import 'package:flutter_base_app/core/cache/panda_cache_provider.dart' as _i364;
+import 'package:flutter_base_app/core/interceptors/api_log_interceptor.dart' as _i67;
+import 'package:flutter_base_app/core/interceptors/auth_interceptor.dart' as _i707;
+import 'package:flutter_base_app/core/utils/network/network_info.dart' as _i415;
+import 'package:flutter_base_app/core/utils/network/network_info_impl.dart' as _i410;
+import 'package:flutter_base_app/core/utils/storage.dart' as _i872;
+import 'package:flutter_base_app/config/di/injection.dart' as _i895;
+import 'package:flutter_base_app/features/auth/data/data_sources/auth_data_source.dart' as _i840;
+import 'package:flutter_base_app/features/auth/data/repositories/auth_repo_impl.dart' as _i868;
+import 'package:flutter_base_app/features/auth/domain/repositories/auth_repo.dart' as _i1071;
+import 'package:flutter_base_app/features/auth/domain/use_cases/check_login_usecase.dart' as _i869;
+import 'package:flutter_base_app/features/auth/domain/use_cases/get_remember_login_email_usecase.dart' as _i278;
+import 'package:flutter_base_app/features/auth/domain/use_cases/login_usecase.dart' as _i780;
+import 'package:flutter_base_app/features/auth/domain/use_cases/logout_usecase.dart' as _i93;
+import 'package:flutter_base_app/features/auth/presentation/bloc/login/login_bloc.dart' as _i1067;
+import 'package:flutter_base_app/features/home/presentation/blocs/home_bloc.dart' as _i64;
 
 extension GetItInjectableX on _i174.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt

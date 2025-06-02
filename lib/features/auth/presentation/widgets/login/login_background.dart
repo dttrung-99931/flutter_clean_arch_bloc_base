@@ -1,8 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 
 import 'package:flutter/material.dart';
-import 'package:maingames_flutter_test/core/utils/app_colors.dart';
-import 'package:maingames_flutter_test/shared/widgets/common/triangle_clip_path.dart';
+import 'package:flutter_base_app/core/utils/app_colors.dart';
+import 'package:flutter_base_app/shared/widgets/common/triangle_clip_path.dart';
 
 class LoginBackground extends StatelessWidget {
   const LoginBackground({super.key});

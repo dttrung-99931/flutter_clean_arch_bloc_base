@@ -1,6 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:maingames_flutter_test/core/utils/evm_colors.dart';
-import 'package:maingames_flutter_test/config/theme/app_theme.dart';
+import 'package:flutter_base_app/core/utils/evm_colors.dart';
+import 'package:flutter_base_app/config/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

@@ -2,8 +2,8 @@
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:maingames_flutter_test/core/utils/validate.dart';
-import 'package:maingames_flutter_test/shared/widgets/text_input.dart';
+import 'package:flutter_base_app/core/utils/validate.dart';
+import 'package:flutter_base_app/shared/widgets/text_input.dart';
 
 class LoginPasswordInput extends StatelessWidget {
   const LoginPasswordInput({

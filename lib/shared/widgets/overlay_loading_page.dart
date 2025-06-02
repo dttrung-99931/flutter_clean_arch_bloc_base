@@ -1,6 +1,6 @@
-import 'package:maingames_flutter_test/core/utils/evm_colors.dart';
-import 'package:maingames_flutter_test/core/utils/extensions/num_extensions.dart';
-import 'package:maingames_flutter_test/shared/widgets/loading_widget.dart';
+import 'package:flutter_base_app/core/utils/evm_colors.dart';
+import 'package:flutter_base_app/core/utils/extensions/num_extensions.dart';
+import 'package:flutter_base_app/shared/widgets/loading_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

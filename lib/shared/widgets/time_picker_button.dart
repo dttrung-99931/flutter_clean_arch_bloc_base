@@ -1,10 +1,10 @@
 import 'dart:developer';
 
-import 'package:maingames_flutter_test/core/utils/assets/assets.dart';
-import 'package:maingames_flutter_test/core/utils/evm_colors.dart';
-import 'package:maingames_flutter_test/core/utils/extensions/ui_extensions.dart';
-import 'package:maingames_flutter_test/core/utils/format_utils.dart';
-import 'package:maingames_flutter_test/config/theme/app_theme.dart';
+import 'package:flutter_base_app/core/utils/assets/assets.dart';
+import 'package:flutter_base_app/core/utils/evm_colors.dart';
+import 'package:flutter_base_app/core/utils/extensions/ui_extensions.dart';
+import 'package:flutter_base_app/core/utils/format_utils.dart';
+import 'package:flutter_base_app/config/theme/app_theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

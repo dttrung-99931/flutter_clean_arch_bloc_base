@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:maingames_flutter_test/core/utils/log.dart';
-import 'package:maingames_flutter_test/core/utils/storage.dart';
+import 'package:flutter_base_app/core/utils/log.dart';
+import 'package:flutter_base_app/core/utils/storage.dart';
 import 'package:injectable/injectable.dart';
 
 @lazySingleton

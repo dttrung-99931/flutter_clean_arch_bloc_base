@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:maingames_flutter_test/config/app_nav_observer.dart';
-import 'package:maingames_flutter_test/config/app_router.dart';
-import 'package:maingames_flutter_test/features/auth/domain/entities/response/user.dart';
-import 'package:maingames_flutter_test/shared/enums/app_mode.dart';
+import 'package:flutter_base_app/config/app_nav_observer.dart';
+import 'package:flutter_base_app/config/app_router.dart';
+import 'package:flutter_base_app/features/auth/domain/entities/response/user.dart';
+import 'package:flutter_base_app/shared/enums/app_mode.dart';
 
 class Global {
   static GlobalKey<NavigatorState> get globalKey => AppRouter.navigationKey;

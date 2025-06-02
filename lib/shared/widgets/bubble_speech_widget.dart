@@ -1,4 +1,4 @@
-import 'package:maingames_flutter_test/core/utils/evm_colors.dart';
+import 'package:flutter_base_app/core/utils/evm_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -35,10 +35,9 @@ class BubbleSpeechWidget extends StatelessWidget {
             ],
           ),
           padding: EdgeInsets.symmetric(horizontal: 16.w),
-          margin:
-              alignment == BubbleAlignment.bottom
-                  ? EdgeInsets.only(bottom: triangleSize - 1) // trừ 1 là để tam giác nằm sát Container hơn
-                  : EdgeInsets.only(top: triangleSize - 1),
+          margin: alignment == BubbleAlignment.bottom
+              ? EdgeInsets.only(bottom: triangleSize - 1) // trừ 1 là để tam giác nằm sát Container hơn
+              : EdgeInsets.only(top: triangleSize - 1),
           child: child,
         ),
         Positioned(
@@ -71,11 +70,10 @@ class TriangleCustomPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    Paint paint =
-        Paint()
-          ..color = color
-          ..strokeWidth = 0
-          ..style = PaintingStyle.fill;
+    Paint paint = Paint()
+      ..color = color
+      ..strokeWidth = 0
+      ..style = PaintingStyle.fill;
 
     final path = _getPath(size.width, size.height);
     if (shadowColor != null) {

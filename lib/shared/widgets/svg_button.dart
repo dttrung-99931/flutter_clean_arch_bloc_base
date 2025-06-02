@@ -1,5 +1,5 @@
-import 'package:maingames_flutter_test/core/utils/evm_colors.dart';
-import 'package:maingames_flutter_test/core/utils/utils.dart';
+import 'package:flutter_base_app/core/utils/evm_colors.dart';
+import 'package:flutter_base_app/core/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 

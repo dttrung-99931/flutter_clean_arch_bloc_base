@@ -1,9 +1,9 @@
 import 'dart:async';
 
 import 'package:dartz/dartz.dart';
-import 'package:maingames_flutter_test/core/base_bloc/base_event.dart';
-import 'package:maingames_flutter_test/core/base_bloc/base_state.dart';
-import 'package:maingames_flutter_test/core/utils/bloc_concurrency.dart';
+import 'package:flutter_base_app/core/base_bloc/base_event.dart';
+import 'package:flutter_base_app/core/base_bloc/base_state.dart';
+import 'package:flutter_base_app/core/utils/bloc_concurrency.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 mixin BlocValidationMixin on Bloc<BaseEvent, BaseState> {

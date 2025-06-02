@@ -1,4 +1,4 @@
-import 'package:maingames_flutter_test/shared/widgets/section.dart';
+import 'package:flutter_base_app/shared/widgets/section.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 

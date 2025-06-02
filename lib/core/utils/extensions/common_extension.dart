@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:maingames_flutter_test/core/failures/failures.dart';
+import 'package:flutter_base_app/core/failures/failures.dart';
 
 extension FutureExt on Future {
   Future<T2> thenMap<T1, T2>(

@@ -1,15 +1,15 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:maingames_flutter_test/core/failures/failures.dart';
-import 'package:maingames_flutter_test/core/models/base_response.dart';
-import 'package:maingames_flutter_test/core/utils/network/network_info.dart';
-import 'package:maingames_flutter_test/config/di/injection.dart';
-import 'package:maingames_flutter_test/features/auth/data/data_sources/auth_data_source.dart';
-import 'package:maingames_flutter_test/features/auth/data/models/request/login_request_model.dart';
-import 'package:maingames_flutter_test/features/auth/data/models/response/login_model.dart';
-import 'package:maingames_flutter_test/features/auth/domain/entities/request/login_request.dart';
-import 'package:maingames_flutter_test/features/auth/domain/entities/response/login_response.dart';
-import 'package:maingames_flutter_test/features/auth/domain/repositories/auth_repo.dart';
+import 'package:flutter_base_app/core/failures/failures.dart';
+import 'package:flutter_base_app/core/models/base_response.dart';
+import 'package:flutter_base_app/core/utils/network/network_info.dart';
+import 'package:flutter_base_app/config/di/injection.dart';
+import 'package:flutter_base_app/features/auth/data/data_sources/auth_data_source.dart';
+import 'package:flutter_base_app/features/auth/data/models/request/login_request_model.dart';
+import 'package:flutter_base_app/features/auth/data/models/response/login_model.dart';
+import 'package:flutter_base_app/features/auth/domain/entities/request/login_request.dart';
+import 'package:flutter_base_app/features/auth/domain/entities/response/login_response.dart';
+import 'package:flutter_base_app/features/auth/domain/repositories/auth_repo.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 

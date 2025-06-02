@@ -1,11 +1,11 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 
 import 'package:flutter/material.dart';
-import 'package:maingames_flutter_test/core/utils/evm_colors.dart';
-import 'package:maingames_flutter_test/core/utils/extensions/num_extensions.dart';
-import 'package:maingames_flutter_test/config/theme/app_theme.dart';
-import 'package:maingames_flutter_test/features/auth/presentation/bloc/login/login_bloc.dart';
-import 'package:maingames_flutter_test/shared/widgets/custom_bloc_builder.dart';
+import 'package:flutter_base_app/core/utils/evm_colors.dart';
+import 'package:flutter_base_app/core/utils/extensions/num_extensions.dart';
+import 'package:flutter_base_app/config/theme/app_theme.dart';
+import 'package:flutter_base_app/features/auth/presentation/bloc/login/login_bloc.dart';
+import 'package:flutter_base_app/shared/widgets/custom_bloc_builder.dart';
 
 class LoginFailedText extends StatelessWidget {
   const LoginFailedText({super.key});

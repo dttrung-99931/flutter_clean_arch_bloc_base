@@ -1,4 +1,4 @@
-import 'package:maingames_flutter_test/core/utils/extensions/list_extension.dart';
+import 'package:flutter_base_app/core/utils/extensions/list_extension.dart';
 import 'package:flutter/material.dart';
 
 class SpacingColumn extends Column {

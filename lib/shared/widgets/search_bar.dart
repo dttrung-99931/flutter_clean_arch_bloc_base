@@ -1,5 +1,5 @@
-import 'package:maingames_flutter_test/config/app_router.dart';
-import 'package:maingames_flutter_test/config/global.dart';
+import 'package:flutter_base_app/config/app_router.dart';
+import 'package:flutter_base_app/config/global.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

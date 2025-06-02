@@ -1,6 +1,6 @@
 import 'package:another_flushbar/flushbar_route.dart';
-import 'package:maingames_flutter_test/core/utils/extensions/list_extension.dart';
-import 'package:maingames_flutter_test/features/auth/presentation/screens/login_screen.dart';
+import 'package:flutter_base_app/core/utils/extensions/list_extension.dart';
+import 'package:flutter_base_app/features/auth/presentation/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 
 class AppNavObserver extends NavigatorObserver {

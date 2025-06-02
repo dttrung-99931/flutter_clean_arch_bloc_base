@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:maingames_flutter_test/core/failures/failures.dart';
+import 'package:flutter_base_app/core/failures/failures.dart';
 
 import 'log.dart';
 

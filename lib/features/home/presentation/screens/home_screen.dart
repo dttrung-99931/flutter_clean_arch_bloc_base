@@ -1,8 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:maingames_flutter_test/core/utils/app_colors.dart';
-import 'package:maingames_flutter_test/core/utils/extensions/ui_extensions.dart';
-import 'package:maingames_flutter_test/config/theme/app_theme.dart';
+import 'package:flutter_base_app/core/utils/app_colors.dart';
+import 'package:flutter_base_app/core/utils/extensions/ui_extensions.dart';
+import 'package:flutter_base_app/config/theme/app_theme.dart';
 
 class HomeScreen extends StatefulWidget {
   static const route = '/home';

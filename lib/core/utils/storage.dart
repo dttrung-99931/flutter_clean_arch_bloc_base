@@ -1,8 +1,8 @@
 // ignore_for_file: constant_identifier_names
 
 import 'package:injectable/injectable.dart';
-import 'package:maingames_flutter_test/core/utils/extensions/list_extension.dart';
-import 'package:maingames_flutter_test/shared/enums/app_mode.dart';
+import 'package:flutter_base_app/core/utils/extensions/list_extension.dart';
+import 'package:flutter_base_app/shared/enums/app_mode.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 const KEY_TOKEN = '_KEY_TOKEN';

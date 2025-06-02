@@ -1,8 +1,8 @@
 import 'package:another_flushbar/flushbar_route.dart';
-import 'package:maingames_flutter_test/config/app_nav_observer.dart';
+import 'package:flutter_base_app/config/app_nav_observer.dart';
 import 'package:flutter/material.dart';
-import 'package:maingames_flutter_test/features/auth/presentation/screens/login_screen.dart';
-import 'package:maingames_flutter_test/features/home/presentation/screens/home_screen.dart';
+import 'package:flutter_base_app/features/auth/presentation/screens/login_screen.dart';
+import 'package:flutter_base_app/features/home/presentation/screens/home_screen.dart';
 
 class AppRouter {
   static final navigationKey = GlobalKey<NavigatorState>();

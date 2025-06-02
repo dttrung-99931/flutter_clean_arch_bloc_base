@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:maingames_flutter_test/core/utils/evm_colors.dart';
-import 'package:maingames_flutter_test/config/app_router.dart';
+import 'package:flutter_base_app/core/utils/evm_colors.dart';
+import 'package:flutter_base_app/config/app_router.dart';
 
 class PositionDialog extends StatelessWidget {
   const PositionDialog({super.key, required this.child, required this.showingPosition});

@@ -1,6 +1,6 @@
-import 'package:maingames_flutter_test/core/utils/storage.dart';
-import 'package:maingames_flutter_test/main_dev.dart';
-import 'package:maingames_flutter_test/config/di/injection.dart';
+import 'package:flutter_base_app/core/utils/storage.dart';
+import 'package:flutter_base_app/main_dev.dart';
+import 'package:flutter_base_app/config/di/injection.dart';
 import 'package:get_it/get_it.dart';
 import 'package:mockito/annotations.dart';
 

@@ -1,8 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:maingames_flutter_test/core/utils/validate.dart';
-import 'package:maingames_flutter_test/shared/widgets/text_input.dart';
+import 'package:flutter_base_app/core/utils/validate.dart';
+import 'package:flutter_base_app/shared/widgets/text_input.dart';
 
 class LoginEmailInput extends StatelessWidget {
   final TextEditingController controller;

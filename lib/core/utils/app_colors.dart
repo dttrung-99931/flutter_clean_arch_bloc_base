@@ -1,5 +1,5 @@
-import 'package:maingames_flutter_test/core/utils/dimensions.dart';
-import 'package:maingames_flutter_test/config/global.dart';
+import 'package:flutter_base_app/core/utils/dimensions.dart';
+import 'package:flutter_base_app/config/global.dart';
 import 'package:flutter/material.dart';
 
 class AppColors {

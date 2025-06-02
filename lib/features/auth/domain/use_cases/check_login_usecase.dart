@@ -1,7 +1,7 @@
 import 'dart:developer';
 
-import 'package:maingames_flutter_test/core/use_cases/use_case.dart';
-import 'package:maingames_flutter_test/core/utils/storage.dart';
+import 'package:flutter_base_app/core/use_cases/use_case.dart';
+import 'package:flutter_base_app/core/utils/storage.dart';
 import 'package:injectable/injectable.dart';
 
 @lazySingleton

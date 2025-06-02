@@ -2,9 +2,9 @@ import 'dart:io';
 
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
-import 'package:maingames_flutter_test/core/models/paginated_list.dart';
-import 'package:maingames_flutter_test/core/utils/log.dart';
-import 'package:maingames_flutter_test/core/utils/utils.dart';
+import 'package:flutter_base_app/core/models/paginated_list.dart';
+import 'package:flutter_base_app/core/utils/log.dart';
+import 'package:flutter_base_app/core/utils/utils.dart';
 
 import '../failures/failures.dart';
 import '../models/base_response.dart';

@@ -1,5 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:maingames_flutter_test/core/models/paginated_list.dart';
+import 'package:flutter_base_app/core/models/paginated_list.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'base_response.g.dart';

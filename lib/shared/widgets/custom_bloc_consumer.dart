@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:maingames_flutter_test/core/base_bloc/base_bloc.dart';
-import 'package:maingames_flutter_test/core/base_bloc/base_event.dart';
-import 'package:maingames_flutter_test/core/base_bloc/base_state.dart';
-import 'package:maingames_flutter_test/shared/widgets/loading_widget.dart';
+import 'package:flutter_base_app/core/base_bloc/base_bloc.dart';
+import 'package:flutter_base_app/core/base_bloc/base_event.dart';
+import 'package:flutter_base_app/core/base_bloc/base_state.dart';
+import 'package:flutter_base_app/shared/widgets/loading_widget.dart';
 
 class CustomBlocConsumer<T extends BaseBloc> extends StatefulWidget {
   final List<Type>? buildForStates;

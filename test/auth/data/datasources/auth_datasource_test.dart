@@ -2,11 +2,11 @@ import 'dart:convert';
 
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:maingames_flutter_test/core/models/base_response.dart';
-import 'package:maingames_flutter_test/config/di/injection.dart';
-import 'package:maingames_flutter_test/features/auth/data/data_sources/auth_data_source.dart';
-import 'package:maingames_flutter_test/features/auth/data/models/request/login_request_model.dart';
-import 'package:maingames_flutter_test/features/auth/data/models/response/login_model.dart';
+import 'package:flutter_base_app/core/models/base_response.dart';
+import 'package:flutter_base_app/config/di/injection.dart';
+import 'package:flutter_base_app/features/auth/data/data_sources/auth_data_source.dart';
+import 'package:flutter_base_app/features/auth/data/models/request/login_request_model.dart';
+import 'package:flutter_base_app/features/auth/data/models/response/login_model.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 

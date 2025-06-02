@@ -46,24 +46,6 @@ lib/
   ├── main_staging.dart          # Staging entry point
 ```
 
-## 🗺️ Routing
-Check it out at [app_router.dart](lib/config/app_router.dart)
-
-## 🧪 Testing
-
-### Unit Tests
-- Tests for Datasources
-- Tests for Repositories
-- Tests for UseCases
-- Tests for BLoCs
-
-### Widget Tests
-- Tests for UI Widges
-- Tests for widget interactions
-
-### Integration Tests
-- Test for End-to-end features
-
 ## 🚦 BLoC Pattern
 
 The app uses the BLoC (Business Logic Component) pattern for state management:
@@ -90,12 +72,30 @@ class IncrementBloc extends BaseBloc {
 }
 ```
 
+## 🗺️ Routing
+Check it out at [app_router.dart](lib/config/app_router.dart)
+
+## 🧪 Testing
+
+### Unit Tests
+- Tests for Datasources
+- Tests for Repositories
+- Tests for UseCases
+- Tests for BLoCs
+
+### Widget Tests
+- Tests for UI Widges
+- Tests for widget interactions
+
+### Integration Tests
+- Test for End-to-end features
+
 ## 🛠️ Getting Started
 
 1. **Clone the repository**
    ```bash
    git clone https://github.com/dttrung-99931/flutter_clean_arch_bloc_base
-   cd maingames_flutter_test
+   cd flutter_base_app
    ```
 
 2. **Install Flutter version FVM**
@@ -105,17 +105,31 @@ class IncrementBloc extends BaseBloc {
    OR change flutter sdk version to the verssion in .fvm/fvm_config.json
    
 
-3. **Install dependencies**
+3. Change appName, bundleId
+    Use `rename` to change app name, bundleId
+    
+    Install rename if not installed
+    ```bash
+    fvm flutter pub global activate rename
+    ```
+    
+    Change app name, bundleId
+    ```bash
+    rename setAppName --value "YourAppName"
+    rename setBundleId --value "com.yourcompany.yourapp"
+    ```
+
+4. **Install dependencies**
    ```bash
    fvm flutter pub get
    ```
 
-4. **Gen code**
+5. **Gen code**
    ```bash
    fvm flutter pub run build_runner build --delete-conflicting-outputs
    ```
 
-5. **Run the app**
+6. **Run the app**
    Run dev
    ```bash
    fvm flutter run --flavor dev -t lib/main_dev.dart
@@ -142,6 +156,21 @@ class IncrementBloc extends BaseBloc {
   genhtml coverage/lcov.info -o coverage/
   open coverage/index.html
   ```
+
+## ENV
+
+Follow the example in the `.env.example` file in the `assets/env/` folder to create a env file for each flavor (dev (.env.dev), staging (.env.staging), production (.env)).
+
+Example:
+.env.dev
+```bash
+appName=Flutter Base App
+apiUrl=https://api.example.com
+logResponse=true
+logRequest=true
+logBloc=true
+```
+
 
 ## 📦 Dependencies
 

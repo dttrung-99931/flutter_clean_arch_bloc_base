@@ -1,4 +1,4 @@
-import 'package:maingames_flutter_test/core/utils/app_colors.dart';
+import 'package:flutter_base_app/core/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class MyCard extends StatelessWidget {

@@ -3,12 +3,12 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:dio/io.dart';
 import 'package:dio_cache_interceptor/dio_cache_interceptor.dart';
-import 'package:maingames_flutter_test/core/cache/panda_cache_provider.dart';
-import 'package:maingames_flutter_test/core/interceptors/api_log_interceptor.dart';
-import 'package:maingames_flutter_test/core/interceptors/auth_interceptor.dart';
-import 'package:maingames_flutter_test/core/utils/storage.dart';
-import 'package:maingames_flutter_test/config/app_config.dart';
-import 'package:maingames_flutter_test/config/di/injection.config.dart';
+import 'package:flutter_base_app/core/cache/panda_cache_provider.dart';
+import 'package:flutter_base_app/core/interceptors/api_log_interceptor.dart';
+import 'package:flutter_base_app/core/interceptors/auth_interceptor.dart';
+import 'package:flutter_base_app/core/utils/storage.dart';
+import 'package:flutter_base_app/config/app_config.dart';
+import 'package:flutter_base_app/config/di/injection.config.dart';
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 

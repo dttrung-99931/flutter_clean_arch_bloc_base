@@ -1,8 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:dio/dio.dart';
 import 'package:dio_cache_interceptor/dio_cache_interceptor.dart';
-import 'package:maingames_flutter_test/core/utils/constants.dart';
-import 'package:maingames_flutter_test/core/utils/extensions/list_extension.dart';
+import 'package:flutter_base_app/core/utils/constants.dart';
+import 'package:flutter_base_app/core/utils/extensions/list_extension.dart';
 import 'package:injectable/injectable.dart';
 
 @module

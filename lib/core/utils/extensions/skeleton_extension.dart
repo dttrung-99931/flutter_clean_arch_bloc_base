@@ -1,5 +1,5 @@
-import 'package:maingames_flutter_test/core/utils/mixins/is_loading_mixin.dart';
-import 'package:maingames_flutter_test/core/utils/app_colors.dart';
+import 'package:flutter_base_app/core/utils/mixins/is_loading_mixin.dart';
+import 'package:flutter_base_app/core/utils/app_colors.dart';
 import 'package:flutter/widgets.dart';
 import 'package:redacted/redacted.dart';
 

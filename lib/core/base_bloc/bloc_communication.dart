@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:maingames_flutter_test/core/base_bloc/base_bloc.dart';
-import 'package:maingames_flutter_test/core/base_bloc/base_state.dart';
-import 'package:maingames_flutter_test/config/di/injection.dart';
+import 'package:flutter_base_app/core/base_bloc/base_bloc.dart';
+import 'package:flutter_base_app/core/base_bloc/base_state.dart';
+import 'package:flutter_base_app/config/di/injection.dart';
 import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
 

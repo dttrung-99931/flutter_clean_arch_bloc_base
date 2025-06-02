@@ -1,13 +1,13 @@
 import 'dart:async';
 
 import 'package:dartz/dartz.dart';
-import 'package:maingames_flutter_test/core/base_bloc/base_event.dart';
-import 'package:maingames_flutter_test/core/base_bloc/base_state.dart';
-import 'package:maingames_flutter_test/core/base_bloc/bloc_communication.dart';
-import 'package:maingames_flutter_test/core/base_bloc/bloc_validation_mixin.dart';
-import 'package:maingames_flutter_test/core/failures/failures.dart';
-import 'package:maingames_flutter_test/core/utils/overlay_utils.dart';
-import 'package:maingames_flutter_test/config/global.dart';
+import 'package:flutter_base_app/core/base_bloc/base_event.dart';
+import 'package:flutter_base_app/core/base_bloc/base_state.dart';
+import 'package:flutter_base_app/core/base_bloc/bloc_communication.dart';
+import 'package:flutter_base_app/core/base_bloc/bloc_validation_mixin.dart';
+import 'package:flutter_base_app/core/failures/failures.dart';
+import 'package:flutter_base_app/core/utils/overlay_utils.dart';
+import 'package:flutter_base_app/config/global.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

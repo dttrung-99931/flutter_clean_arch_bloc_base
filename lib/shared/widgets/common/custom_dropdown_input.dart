@@ -1,11 +1,11 @@
-import 'package:maingames_flutter_test/core/base_bloc/base_bloc.dart';
-import 'package:maingames_flutter_test/core/base_bloc/base_state.dart';
-import 'package:maingames_flutter_test/core/utils/evm_colors.dart';
-import 'package:maingames_flutter_test/config/di/injection.dart';
-import 'package:maingames_flutter_test/config/theme/app_theme.dart';
-import 'package:maingames_flutter_test/shared/widgets/info_input.dart';
-import 'package:maingames_flutter_test/shared/widgets/custom_bloc_builder.dart';
-import 'package:maingames_flutter_test/shared/widgets/custom_drop_down_button.dart';
+import 'package:flutter_base_app/core/base_bloc/base_bloc.dart';
+import 'package:flutter_base_app/core/base_bloc/base_state.dart';
+import 'package:flutter_base_app/core/utils/evm_colors.dart';
+import 'package:flutter_base_app/config/di/injection.dart';
+import 'package:flutter_base_app/config/theme/app_theme.dart';
+import 'package:flutter_base_app/shared/widgets/info_input.dart';
+import 'package:flutter_base_app/shared/widgets/custom_bloc_builder.dart';
+import 'package:flutter_base_app/shared/widgets/custom_drop_down_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

@@ -1,7 +1,7 @@
-import 'package:maingames_flutter_test/core/failures/failures.dart';
+import 'package:flutter_base_app/core/failures/failures.dart';
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
-import 'package:maingames_flutter_test/core/utils/error_handlers.dart';
+import 'package:flutter_base_app/core/utils/error_handlers.dart';
 
 abstract class UseCase<Type, Params> {
   Type call(Params param);

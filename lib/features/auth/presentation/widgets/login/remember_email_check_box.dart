@@ -2,7 +2,7 @@
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:maingames_flutter_test/shared/widgets/common/app_custom_checkbox.dart';
+import 'package:flutter_base_app/shared/widgets/common/app_custom_checkbox.dart';
 
 class RememberEmailCheckBox extends StatelessWidget {
   const RememberEmailCheckBox({

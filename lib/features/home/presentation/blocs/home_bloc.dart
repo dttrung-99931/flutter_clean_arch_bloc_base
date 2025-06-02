@@ -4,12 +4,12 @@ import 'dart:async';
 import 'package:bloc/src/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
-import 'package:maingames_flutter_test/core/base_bloc/base_bloc.dart';
-import 'package:maingames_flutter_test/core/base_bloc/base_event.dart';
-import 'package:maingames_flutter_test/core/base_bloc/base_state.dart';
-import 'package:maingames_flutter_test/core/utils/storage.dart';
-import 'package:maingames_flutter_test/config/global.dart';
-import 'package:maingames_flutter_test/shared/enums/app_mode.dart';
+import 'package:flutter_base_app/core/base_bloc/base_bloc.dart';
+import 'package:flutter_base_app/core/base_bloc/base_event.dart';
+import 'package:flutter_base_app/core/base_bloc/base_state.dart';
+import 'package:flutter_base_app/core/utils/storage.dart';
+import 'package:flutter_base_app/config/global.dart';
+import 'package:flutter_base_app/shared/enums/app_mode.dart';
 
 part 'home_event.dart';
 part 'home_state.dart';

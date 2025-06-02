@@ -2,13 +2,13 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:maingames_flutter_test/core/utils/utils.dart';
-import 'package:maingames_flutter_test/config/global.dart';
-import 'package:maingames_flutter_test/config/app_config.dart';
-import 'package:maingames_flutter_test/config/app_translation.dart';
-import 'package:maingames_flutter_test/config/di/injection.dart';
-import 'package:maingames_flutter_test/config/theme/app_theme.dart';
-import 'package:maingames_flutter_test/features/auth/presentation/bloc/login/login_bloc.dart';
+import 'package:flutter_base_app/core/utils/utils.dart';
+import 'package:flutter_base_app/config/global.dart';
+import 'package:flutter_base_app/config/app_config.dart';
+import 'package:flutter_base_app/config/app_translation.dart';
+import 'package:flutter_base_app/config/di/injection.dart';
+import 'package:flutter_base_app/config/theme/app_theme.dart';
+import 'package:flutter_base_app/features/auth/presentation/bloc/login/login_bloc.dart';
 
 class MaingamesScreenTestApp extends StatelessWidget {
   const MaingamesScreenTestApp({super.key, required this.screen});

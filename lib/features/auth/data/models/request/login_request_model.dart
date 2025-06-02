@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:maingames_flutter_test/features/auth/domain/entities/request/login_request.dart';
+import 'package:flutter_base_app/features/auth/domain/entities/request/login_request.dart';
 part 'login_request_model.g.dart';
 
 @JsonSerializable(createFactory: false)

@@ -1,4 +1,4 @@
-import 'package:maingames_flutter_test/core/utils/constants.dart';
+import 'package:flutter_base_app/core/utils/constants.dart';
 
 abstract class PaginatedRequest {
   final int pageSize;
@@ -9,6 +9,6 @@ abstract class PaginatedRequest {
     required int? pageNum,
     // this.pageSize = Constants.defaultPageSize,
     // this.pageNum = Constants.startPageNum,
-  }) : pageSize = pageSize ?? Constants.defaultPageSize,
-       pageNum = pageNum ?? Constants.startPageNum;
+  })  : pageSize = pageSize ?? Constants.defaultPageSize,
+        pageNum = pageNum ?? Constants.startPageNum;
 }

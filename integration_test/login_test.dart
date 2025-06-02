@@ -1,12 +1,12 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
-import 'package:maingames_flutter_test/app.dart';
-import 'package:maingames_flutter_test/features/auth/presentation/screens/login_screen.dart';
-import 'package:maingames_flutter_test/features/auth/presentation/widgets/login/login_buttons.dart';
-import 'package:maingames_flutter_test/features/auth/presentation/widgets/login/login_email_input.dart';
-import 'package:maingames_flutter_test/features/auth/presentation/widgets/login/login_password_input.dart';
-import 'package:maingames_flutter_test/features/home/presentation/screens/home_screen.dart';
+import 'package:flutter_base_app/app.dart';
+import 'package:flutter_base_app/features/auth/presentation/screens/login_screen.dart';
+import 'package:flutter_base_app/features/auth/presentation/widgets/login/login_buttons.dart';
+import 'package:flutter_base_app/features/auth/presentation/widgets/login/login_email_input.dart';
+import 'package:flutter_base_app/features/auth/presentation/widgets/login/login_password_input.dart';
+import 'package:flutter_base_app/features/home/presentation/screens/home_screen.dart';
 
 import '../test/common/base_setup.dart';
 

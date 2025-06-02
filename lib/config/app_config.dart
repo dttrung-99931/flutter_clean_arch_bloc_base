@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:maingames_flutter_test/main.dart';
-import 'package:maingames_flutter_test/main_dev.dart';
-import 'package:maingames_flutter_test/main_staging.dart';
+import 'package:flutter_base_app/main.dart';
+import 'package:flutter_base_app/main_dev.dart';
+import 'package:flutter_base_app/main_staging.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:package_info_plus/package_info_plus.dart';

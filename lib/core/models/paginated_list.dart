@@ -1,6 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:json_annotation/json_annotation.dart';
-import 'package:maingames_flutter_test/core/entities/pagination.dart';
+import 'package:flutter_base_app/core/entities/pagination.dart';
 
 @JsonSerializable(genericArgumentFactories: true)
 class PaginatedList<T> {
