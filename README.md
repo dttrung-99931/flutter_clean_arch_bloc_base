@@ -3,7 +3,7 @@
 A Flutter project following Clean Architecture principles, using BLoC for state management and comprehensive testing.
 
 <p align="center">
-  <img src="screenshot/login.png" width="300"/>
+  <img src="screenshot/login.png" width="160" style="aspect-ratio: 9/16;"/>
 </p>
 
 
