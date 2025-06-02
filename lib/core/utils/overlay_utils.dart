@@ -2,9 +2,10 @@ import 'package:another_flushbar/flushbar.dart';
 import 'package:maingames_flutter_test/core/utils/app_colors.dart';
 import 'package:maingames_flutter_test/core/utils/extensions/num_extensions.dart';
 import 'package:maingames_flutter_test/core/utils/extensions/ui_extensions.dart';
-import 'package:maingames_flutter_test/global.dart';
-import 'package:maingames_flutter_test/src/config/theme/app_theme.dart';
-import 'package:maingames_flutter_test/src/shared/widgets/overlay_loading_page.dart';
+import 'package:maingames_flutter_test/config/app_router.dart';
+import 'package:maingames_flutter_test/config/global.dart';
+import 'package:maingames_flutter_test/config/theme/app_theme.dart';
+import 'package:maingames_flutter_test/shared/widgets/overlay_loading_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -60,7 +61,7 @@ bool _isShowingLoading = false;
 
 void showLoadingOverlay({bool canDismiss = false, Color? backgroundColor}) {
   try {
-    Global.navigator.push(OverlayLoadingPage(canDismiss: canDismiss, backgroundColor: backgroundColor));
+    AppRouter.navigator.push(OverlayLoadingPage(canDismiss: canDismiss, backgroundColor: backgroundColor));
     _isShowingLoading = true;
   } catch (e) {
     loge(e);
@@ -70,8 +71,8 @@ void showLoadingOverlay({bool canDismiss = false, Color? backgroundColor}) {
 void hideLoadingOverlay() {
   try {
     if (_isShowingLoading) {
-      Global.hideAllSnackbars();
-      Global.navigator.pop();
+      AppRouter.hideAllSnackbars();
+      AppRouter.navigator.pop();
       _isShowingLoading = false;
     }
   } catch (e) {

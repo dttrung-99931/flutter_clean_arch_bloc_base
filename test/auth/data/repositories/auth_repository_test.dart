@@ -3,13 +3,13 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:maingames_flutter_test/core/failures/failures.dart';
 import 'package:maingames_flutter_test/core/model/base_response.dart';
 import 'package:maingames_flutter_test/core/utils/network/network_info.dart';
-import 'package:maingames_flutter_test/src/config/di/injection.dart';
-import 'package:maingames_flutter_test/src/features/auth/data/data_sources/auth_data_source.dart';
-import 'package:maingames_flutter_test/src/features/auth/data/models/request/login_request_model.dart';
-import 'package:maingames_flutter_test/src/features/auth/data/models/response/login_response_model.dart';
-import 'package:maingames_flutter_test/src/features/auth/domain/entities/request/login_request.dart';
-import 'package:maingames_flutter_test/src/features/auth/domain/entities/response/login_response.dart';
-import 'package:maingames_flutter_test/src/features/auth/domain/repositories/auth_repo.dart';
+import 'package:maingames_flutter_test/config/di/injection.dart';
+import 'package:maingames_flutter_test/features/auth/data/data_sources/auth_data_source.dart';
+import 'package:maingames_flutter_test/features/auth/data/models/request/login_request_model.dart';
+import 'package:maingames_flutter_test/features/auth/data/models/response/login_model.dart';
+import 'package:maingames_flutter_test/features/auth/domain/entities/request/login_request.dart';
+import 'package:maingames_flutter_test/features/auth/domain/entities/response/login_response.dart';
+import 'package:maingames_flutter_test/features/auth/domain/repositories/auth_repo.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 
@@ -40,8 +40,8 @@ void main() {
         email: 'test@gmail.com',
         password: 'aa123456',
       );
-      final mockResponse = BaseResponse<LoginResponseModel?>(
-        LoginResponseModel(
+      final mockResponse = BaseResponse<LoginModel?>(
+        LoginModel(
           token: 'token',
           userID: 123,
           cartId: 321,
@@ -69,7 +69,7 @@ void main() {
         email: 'test@gmail.com',
         password: 'aa123456',
       );
-      final mockFailedLogin = BaseResponse<LoginResponseModel?>(
+      final mockFailedLogin = BaseResponse<LoginModel?>(
         null,
         false,
         401,
@@ -126,8 +126,8 @@ void main() {
         email: 'test@gmail.com',
         password: 'aa123456',
       );
-      final mockResponse = BaseResponse<LoginResponseModel?>(
-        LoginResponseModel(
+      final mockResponse = BaseResponse<LoginModel?>(
+        LoginModel(
           token: 'token',
           userID: 123,
           cartId: 321,

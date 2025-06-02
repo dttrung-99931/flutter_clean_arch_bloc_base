@@ -1,9 +1,10 @@
 import 'dart:async';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:maingames_flutter_test/global.dart';
-import 'package:maingames_flutter_test/src/features/auth/presentation/bloc/login/login_bloc.dart';
-import 'package:maingames_flutter_test/src/features/auth/presentation/screens/login_screen.dart';
+import 'package:maingames_flutter_test/config/app_router.dart';
+import 'package:maingames_flutter_test/config/global.dart';
+import 'package:maingames_flutter_test/features/auth/presentation/bloc/login/login_bloc.dart';
+import 'package:maingames_flutter_test/features/auth/presentation/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 
@@ -53,7 +54,7 @@ void doIfLoggedIn(void Function() onDidLogin, {bool navToLoginIfNot = false}) {
           onDidLogin: onDidLogin,
           onNotLogin: () {
             if (navToLoginIfNot) {
-              Global.pushNamed(LoginScreen.route);
+              AppRouter.pushNamed(LoginScreen.route);
             }
           },
         ),

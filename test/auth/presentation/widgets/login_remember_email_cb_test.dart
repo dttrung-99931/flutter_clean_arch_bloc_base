@@ -2,7 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:maingames_flutter_test/app.dart';
-import 'package:maingames_flutter_test/src/features/auth/presentation/widgets/login/remember_email_check_box.dart';
+import 'package:maingames_flutter_test/features/auth/presentation/widgets/login/remember_email_check_box.dart';
 
 import '../../../common/base_setup.dart';
 import '../../../common/widget_test_app.dart';

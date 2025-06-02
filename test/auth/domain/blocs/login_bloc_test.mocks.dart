@@ -7,10 +7,8 @@ import 'dart:async' as _i4;
 
 import 'package:dartz/dartz.dart' as _i2;
 import 'package:maingames_flutter_test/core/failures/failures.dart' as _i5;
-import 'package:maingames_flutter_test/src/features/auth/domain/entities/response/login_response.dart'
-    as _i6;
-import 'package:maingames_flutter_test/src/features/auth/domain/use_cases/login_usecase.dart'
-    as _i3;
+import 'package:maingames_flutter_test/features/auth/domain/entities/response/login_response.dart' as _i6;
+import 'package:maingames_flutter_test/features/auth/domain/use_cases/login_usecase.dart' as _i3;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint
@@ -46,16 +44,13 @@ class MockEmailLoginUseCase extends _i1.Mock implements _i3.EmailLoginUseCase {
   }
 
   @override
-  _i4.Future<_i2.Either<_i5.Failure, _i6.LoginResponse>> call(
-          _i3.LoginParams? loginParam) =>
-      (super.noSuchMethod(
+  _i4.Future<_i2.Either<_i5.Failure, _i6.LoginResponse>> call(_i3.LoginParams? loginParam) => (super.noSuchMethod(
         Invocation.method(
           #call,
           [loginParam],
         ),
         returnValue:
-            _i4.Future<_i2.Either<_i5.Failure, _i6.LoginResponse>>.value(
-                _FakeEither_0<_i5.Failure, _i6.LoginResponse>(
+            _i4.Future<_i2.Either<_i5.Failure, _i6.LoginResponse>>.value(_FakeEither_0<_i5.Failure, _i6.LoginResponse>(
           this,
           Invocation.method(
             #call,
@@ -76,8 +71,7 @@ class MockEmailLoginUseCase extends _i1.Mock implements _i3.EmailLoginUseCase {
           {#loginParam: loginParam},
         ),
         returnValue:
-            _i4.Future<_i2.Either<_i5.Failure, _i6.LoginResponse>>.value(
-                _FakeEither_0<_i5.Failure, _i6.LoginResponse>(
+            _i4.Future<_i2.Either<_i5.Failure, _i6.LoginResponse>>.value(_FakeEither_0<_i5.Failure, _i6.LoginResponse>(
           this,
           Invocation.method(
             #onLoginSuccess,
@@ -105,8 +99,7 @@ class MockEmailLoginUseCase extends _i1.Mock implements _i3.EmailLoginUseCase {
             #onError: onError,
           },
         ),
-        returnValue: _i4.Future<_i2.Either<_i5.Failure, TDto>>.value(
-            _FakeEither_0<_i5.Failure, TDto>(
+        returnValue: _i4.Future<_i2.Either<_i5.Failure, TDto>>.value(_FakeEither_0<_i5.Failure, TDto>(
           this,
           Invocation.method(
             #handleRepoResult,

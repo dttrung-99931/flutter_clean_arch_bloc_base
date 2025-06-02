@@ -8,12 +8,9 @@ import 'dart:async' as _i4;
 import 'package:dartz/dartz.dart' as _i2;
 import 'package:maingames_flutter_test/core/failures/failures.dart' as _i5;
 import 'package:maingames_flutter_test/core/model/base_response.dart' as _i8;
-import 'package:maingames_flutter_test/src/features/auth/domain/entities/request/login_request.dart'
-    as _i7;
-import 'package:maingames_flutter_test/src/features/auth/domain/entities/response/login_response.dart'
-    as _i6;
-import 'package:maingames_flutter_test/src/features/auth/domain/repositories/auth_repo.dart'
-    as _i3;
+import 'package:maingames_flutter_test/features/auth/domain/entities/request/login_request.dart' as _i7;
+import 'package:maingames_flutter_test/features/auth/domain/entities/response/login_response.dart' as _i6;
+import 'package:maingames_flutter_test/features/auth/domain/repositories/auth_repo.dart' as _i3;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint
@@ -49,16 +46,13 @@ class MockAuthRepo extends _i1.Mock implements _i3.AuthRepo {
   }
 
   @override
-  _i4.Future<_i2.Either<_i5.Failure, _i6.LoginResponse>> login(
-          _i7.LoginRequest? param) =>
-      (super.noSuchMethod(
+  _i4.Future<_i2.Either<_i5.Failure, _i6.LoginResponse>> login(_i7.LoginRequest? param) => (super.noSuchMethod(
         Invocation.method(
           #login,
           [param],
         ),
         returnValue:
-            _i4.Future<_i2.Either<_i5.Failure, _i6.LoginResponse>>.value(
-                _FakeEither_0<_i5.Failure, _i6.LoginResponse>(
+            _i4.Future<_i2.Either<_i5.Failure, _i6.LoginResponse>>.value(_FakeEither_0<_i5.Failure, _i6.LoginResponse>(
           this,
           Invocation.method(
             #login,
@@ -81,8 +75,7 @@ class MockAuthRepo extends _i1.Mock implements _i3.AuthRepo {
             #onLocal: onLocal,
           },
         ),
-        returnValue: _i4.Future<_i2.Either<_i5.Failure, T>>.value(
-            _FakeEither_0<_i5.Failure, T>(
+        returnValue: _i4.Future<_i2.Either<_i5.Failure, T>>.value(_FakeEither_0<_i5.Failure, T>(
           this,
           Invocation.method(
             #handleNetwork,
@@ -104,8 +97,7 @@ class MockAuthRepo extends _i1.Mock implements _i3.AuthRepo {
           [],
           {#datasourceResponse: datasourceResponse},
         ),
-        returnValue: _i4.Future<_i2.Either<_i5.Failure, T>>.value(
-            _FakeEither_0<_i5.Failure, T>(
+        returnValue: _i4.Future<_i2.Either<_i5.Failure, T>>.value(_FakeEither_0<_i5.Failure, T>(
           this,
           Invocation.method(
             #handleServerErrors,

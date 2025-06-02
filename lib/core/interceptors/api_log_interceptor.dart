@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:maingames_flutter_test/core/utils/log.dart';
 import 'package:injectable/injectable.dart';
 
-import '../../src/config/app_config.dart';
+import '../../config/app_config.dart';
 
 @lazySingleton
 class ApiLogInterceptor extends Interceptor {

@@ -2,11 +2,11 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 import 'package:maingames_flutter_test/app.dart';
-import 'package:maingames_flutter_test/src/features/auth/presentation/screens/login_screen.dart';
-import 'package:maingames_flutter_test/src/features/auth/presentation/widgets/login/login_buttons.dart';
-import 'package:maingames_flutter_test/src/features/auth/presentation/widgets/login/login_email_input.dart';
-import 'package:maingames_flutter_test/src/features/auth/presentation/widgets/login/login_password_input.dart';
-import 'package:maingames_flutter_test/src/features/payment/presentation/screens/payment_screen.dart';
+import 'package:maingames_flutter_test/features/auth/presentation/screens/login_screen.dart';
+import 'package:maingames_flutter_test/features/auth/presentation/widgets/login/login_buttons.dart';
+import 'package:maingames_flutter_test/features/auth/presentation/widgets/login/login_email_input.dart';
+import 'package:maingames_flutter_test/features/auth/presentation/widgets/login/login_password_input.dart';
+import 'package:maingames_flutter_test/features/home/presentation/screens/home_screen.dart';
 
 import '../test/common/base_setup.dart';
 
@@ -20,7 +20,7 @@ void main() {
 
   group('Login', () {
     testWidgets('Test login successfully', (tester) async {
-      await tester.pumpWidget(const MaingamesApp(initialRoute: LoginScreen.route));
+      await tester.pumpWidget(const App(initialRoute: LoginScreen.route));
       await tester.pumpAndSettle();
 
       await typeAccount(tester, email: 'test@maingames.com', password: 'aa123456');
@@ -28,12 +28,12 @@ void main() {
       await tester.pumpAndSettle();
 
       // Login succeesfully, and navigate to payment screen
-      final paymentScreen = find.byType(PaymentScreen);
+      final paymentScreen = find.byType(HomeScreen);
       expect(paymentScreen, findsOneWidget);
     });
 
     testWidgets('Test login failed', (tester) async {
-      await tester.pumpWidget(const MaingamesApp(initialRoute: LoginScreen.route));
+      await tester.pumpWidget(const App(initialRoute: LoginScreen.route));
       await tester.pumpAndSettle();
 
       await typeAccount(tester, email: 'test@maingames.com', password: 'aa123456___'); // wrong password
@@ -46,13 +46,13 @@ void main() {
       // expect(overlayMsg, findsOneWidget);
 
       // Login failed, users stay in login screen
-      final paymentScreen = find.byType(PaymentScreen);
+      final paymentScreen = find.byType(HomeScreen);
       expect(paymentScreen, findsNothing);
     });
   });
 
   testWidgets('Test input validations', (tester) async {
-    await tester.pumpWidget(const MaingamesApp(initialRoute: LoginScreen.route));
+    await tester.pumpWidget(const App(initialRoute: LoginScreen.route));
     await tester.pumpAndSettle();
 
     // Miss email
@@ -83,7 +83,7 @@ void main() {
     expect(find.text('messages.plsEnterValidEmail'.tr()), findsOneWidget);
 
     // Login failed, users stay in login screen
-    final paymentScreen = find.byType(PaymentScreen);
+    final paymentScreen = find.byType(HomeScreen);
     expect(paymentScreen, findsNothing);
   });
 

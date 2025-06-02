@@ -6,12 +6,9 @@
 import 'dart:async' as _i4;
 
 import 'package:maingames_flutter_test/core/model/base_response.dart' as _i2;
-import 'package:maingames_flutter_test/src/features/auth/data/data_sources/auth_data_source.dart'
-    as _i3;
-import 'package:maingames_flutter_test/src/features/auth/data/models/request/login_request_model.dart'
-    as _i6;
-import 'package:maingames_flutter_test/src/features/auth/data/models/response/login_response_model.dart'
-    as _i5;
+import 'package:maingames_flutter_test/features/auth/data/data_sources/auth_data_source.dart' as _i3;
+import 'package:maingames_flutter_test/features/auth/data/models/request/login_request_model.dart' as _i6;
+import 'package:maingames_flutter_test/features/auth/data/models/response/login_model.dart' as _i5;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint
@@ -28,8 +25,7 @@ import 'package:mockito/mockito.dart' as _i1;
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-class _FakeBaseResponse_0<T> extends _i1.SmartFake
-    implements _i2.BaseResponse<T> {
+class _FakeBaseResponse_0<T> extends _i1.SmartFake implements _i2.BaseResponse<T> {
   _FakeBaseResponse_0(
     Object parent,
     Invocation parentInvocation,
@@ -48,21 +44,17 @@ class MockAuthDatasource extends _i1.Mock implements _i3.AuthDatasource {
   }
 
   @override
-  _i4.Future<_i2.BaseResponse<_i5.LoginResponseModel?>> login(
-          _i6.LoginRequestModel? param) =>
-      (super.noSuchMethod(
+  _i4.Future<_i2.BaseResponse<_i5.LoginModel?>> login(_i6.LoginRequestModel? param) => (super.noSuchMethod(
         Invocation.method(
           #login,
           [param],
         ),
-        returnValue:
-            _i4.Future<_i2.BaseResponse<_i5.LoginResponseModel?>>.value(
-                _FakeBaseResponse_0<_i5.LoginResponseModel?>(
+        returnValue: _i4.Future<_i2.BaseResponse<_i5.LoginModel?>>.value(_FakeBaseResponse_0<_i5.LoginModel?>(
           this,
           Invocation.method(
             #login,
             [param],
           ),
         )),
-      ) as _i4.Future<_i2.BaseResponse<_i5.LoginResponseModel?>>);
+      ) as _i4.Future<_i2.BaseResponse<_i5.LoginModel?>>);
 }

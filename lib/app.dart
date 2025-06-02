@@ -2,20 +2,20 @@ import 'dart:io';
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:maingames_flutter_test/core/utils/utils.dart';
-import 'package:maingames_flutter_test/global.dart';
-import 'package:maingames_flutter_test/src/config/app_bloc_observer.dart';
-import 'package:maingames_flutter_test/src/config/app_config.dart';
-import 'package:maingames_flutter_test/src/config/app_nav_observer.dart';
-import 'package:maingames_flutter_test/src/config/app_router.dart';
-import 'package:maingames_flutter_test/src/config/app_translation.dart';
-import 'package:maingames_flutter_test/src/config/di/injection.dart';
-import 'package:maingames_flutter_test/src/config/theme/app_theme.dart';
+import 'package:maingames_flutter_test/config/global.dart';
+import 'package:maingames_flutter_test/config/app_bloc_observer.dart';
+import 'package:maingames_flutter_test/config/app_config.dart';
+import 'package:maingames_flutter_test/config/app_nav_observer.dart';
+import 'package:maingames_flutter_test/config/app_router.dart';
+import 'package:maingames_flutter_test/config/app_translation.dart';
+import 'package:maingames_flutter_test/config/di/injection.dart';
+import 'package:maingames_flutter_test/config/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:maingames_flutter_test/src/features/auth/presentation/bloc/login/login_bloc.dart';
-import 'package:maingames_flutter_test/src/features/auth/presentation/screens/login_screen.dart';
+import 'package:maingames_flutter_test/features/auth/presentation/bloc/login/login_bloc.dart';
+import 'package:maingames_flutter_test/features/auth/presentation/screens/login_screen.dart';
 
 Future<void> setupAndRunApp() async {
   final bining = WidgetsFlutterBinding.ensureInitialized();
@@ -23,7 +23,7 @@ Future<void> setupAndRunApp() async {
   FlutterNativeSplash.preserve(widgetsBinding: bining);
   await setupApp();
   final initialRoute = await _getInitialRoute();
-  runApp(MaingamesApp(initialRoute: initialRoute));
+  runApp(App(initialRoute: initialRoute));
   FlutterNativeSplash.remove();
 }
 
@@ -46,8 +46,8 @@ Future<void> setupApp({bool isTest = false}) async {
   }
 }
 
-class MaingamesApp extends StatelessWidget {
-  const MaingamesApp({super.key, required this.initialRoute});
+class App extends StatelessWidget {
+  const App({super.key, required this.initialRoute});
   final String initialRoute;
   @override
   Widget build(BuildContext _) {

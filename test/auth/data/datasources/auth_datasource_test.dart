@@ -3,10 +3,10 @@ import 'dart:convert';
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:maingames_flutter_test/core/model/base_response.dart';
-import 'package:maingames_flutter_test/src/config/di/injection.dart';
-import 'package:maingames_flutter_test/src/features/auth/data/data_sources/auth_data_source.dart';
-import 'package:maingames_flutter_test/src/features/auth/data/models/request/login_request_model.dart';
-import 'package:maingames_flutter_test/src/features/auth/data/models/response/login_response_model.dart';
+import 'package:maingames_flutter_test/config/di/injection.dart';
+import 'package:maingames_flutter_test/features/auth/data/data_sources/auth_data_source.dart';
+import 'package:maingames_flutter_test/features/auth/data/models/request/login_request_model.dart';
+import 'package:maingames_flutter_test/features/auth/data/models/response/login_model.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 
@@ -48,7 +48,7 @@ void main() {
         (_) async => mockResponse,
       );
 
-      final BaseResponse<LoginResponseModel?> response = await authDataSource.login(request);
+      final BaseResponse<LoginModel?> response = await authDataSource.login(request);
       expect(response.success, true);
       expect(response.data?.token, mockResponseJosn['data']['token']);
       expect(response.data?.userID, mockResponseJosn['data']['userID']);
@@ -71,7 +71,7 @@ void main() {
         (_) async => response,
       );
 
-      final BaseResponse<LoginResponseModel?> dtsResponse = await authDataSource.login(request);
+      final BaseResponse<LoginModel?> dtsResponse = await authDataSource.login(request);
       expect(dtsResponse.success, false);
       expect(dtsResponse.statusCode, 401);
       expect(dtsResponse.data, null);
